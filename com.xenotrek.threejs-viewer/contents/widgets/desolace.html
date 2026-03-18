@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d e s o l a c e</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    :root { --glow-color: rgba(255,255,255,0.7); --text-color: rgba(255,255,255,0.8); --accent-color: rgba(255,255,255,0.2); }
+    body { margin: 0; background: #030303; color: var(--text-color); font-family: monospace; overflow-x: hidden; }
+    #background-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3; }
+    .header-container { position: relative; padding: 2rem; text-align: center; overflow: hidden; }
+    .ascii-art { font-family: monospace; white-space: pre; display: inline-block; position: relative; font-size: 10px; line-height: 1.2; margin: 20px auto; text-shadow: 0 0 10px var(--glow-color); animation: float 6s ease-in-out infinite; }
+    .ascii-art::before, .ascii-art::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .ascii-art::before { color: #ff0000; animation: glitch-1 4.5s infinite; }
+    .ascii-art::after { color: #0000ff; animation: glitch-2 4.5s infinite; }
+    .floating-text { position: absolute; color: var(--accent-color); pointer-events: none; font-size: 12px; white-space: nowrap; text-shadow: 0 0 5px var(--accent-color); }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes glitch-1 { 0%, 94%, 100% { transform: none; } 95% { transform: skew(0.5deg); } 97% { transform: skew(0.7deg); } 99% { transform: skew(0.5deg); } }
+    @keyframes glitch-2 { 0%, 94%, 100% { transform: none; } 95% { transform: skew(-0.5deg); } 97% { transform: skew(-0.7deg); } 99% { transform: skew(-0.5deg); } }
+    .scanlines { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 1px, transparent 1px, transparent 2px); z-index: 10; }
+  </style>
+</head>
+<body>
+  <canvas id="background-canvas"></canvas>
+  <div class="header-container">
+    <div class="ascii-art" data-text="&#10;&#9617;&#9608;&#9608;&#9608;&#9608;&#9604; &#9617;&#9608;&#9608;&#9608;&#9608;&#9608;   &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  &#9618;&#9608;&#9608;&#9608;&#9608;&#9608;  &#9608;&#9608;&#9618;    &#9604;&#9604;&#9604;       &#9604;&#9608;&#9608;&#9608;&#9608;&#9604;  &#9617;&#9608;&#9608;&#9608;&#9608;&#9608; &#10;&#9618;&#9608;&#9608;&#9600; &#9608;&#9608;&#9619;&#9617;&#9608;&#9608;   &#9600; &#9618;&#9608;&#9608;    &#9618; &#9618;&#9608;&#9608;&#9618;  &#9608;&#9618;&#9608;&#9618;&#9618;&#9618;&#9618;   &#9618;&#9604;&#9604;&#9604;&#9604;&#9608;    &#9618;&#9608;&#9608;&#9600; &#9600;&#9608;  &#9617;&#9608;&#9608;   &#9600; &#10;&#9619;&#9608;&#9608;   &#9619;&#9619;&#9618;&#9618;&#9618;&#9618;&#9618;   &#9619; &#9617;&#9617;&#9617;&#9608;&#9608;&#9604;   &#9618;&#9608;&#9608;&#9619;  &#9608;&#9618;&#9618;&#9608;&#9619;&#9618;   &#9618;&#9608;&#9608;  &#9600;&#9608;&#9604;  &#9618;&#9619;&#9608;&#9608;&#9608;&#9608; &#9618;&#9617;&#9618;&#9618;&#9618;&#10;">
+    </div>
+  </div>
+  <svg style="position:absolute;width:0;height:0;"><filter id="turbulence"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></svg>
+  <div class="scanlines"></div>
+  <script>
+    function initBackground() {
+      const canvas = document.getElementById('background-canvas');
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const scene = new THREE.Scene();
+      function resize() { renderer.setSize(window.innerWidth, window.innerHeight); camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); }
+      window.addEventListener('resize', resize); resize();
+      const particles = new THREE.BufferGeometry();
+      const count = 1000;
+      const positions = new Float32Array(count * 3);
+      for(let i = 0; i < count * 3; i += 3) { positions[i] = (Math.random()-0.5)*20; positions[i+1] = (Math.random()-0.5)*20; positions[i+2] = (Math.random()-0.5)*20; }
+      particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.02, transparent: true, opacity: 0.6 });
+      const ps = new THREE.Points(particles, material);
+      scene.add(ps); camera.position.z = 5;
+      function animate() {
+        requestAnimationFrame(animate);
+        ps.rotation.x += 0.0002; ps.rotation.y += 0.0001;
+        const pos = particles.attributes.position.array;
+        const t = Date.now() * 0.0001;
+        for(let i = 0; i < pos.length; i += 3) pos[i+1] += Math.sin(t + pos[i]) * 0.002;
+        particles.attributes.position.needsUpdate = true;
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+    function createFloatingText() {
+      const texts = ['void','empty','silent','forgotten','lost'];
+      const container = document.querySelector('.header-container');
+      texts.forEach(text => {
+        const el = document.createElement('div');
+        el.className = 'floating-text'; el.textContent = text;
+        el.style.left = Math.random()*90+5+'%'; el.style.top = Math.random()*90+5+'%';
+        el.style.opacity = Math.random()*0.5+0.1;
+        container.appendChild(el);
+        const angle = Math.random()*Math.PI*2, radius = 50+Math.random()*100, speed = 0.5+Math.random()*2;
+        function anim() { const t = Date.now()*0.001*speed; el.style.transform = `translate(${Math.cos(angle+t)*radius}px,${Math.sin(angle+t)*radius}px)`; requestAnimationFrame(anim); }
+        anim();
+      });
+    }
+    window.addEventListener('load', () => { initBackground(); createFloatingText(); });
+  </script>
+</body>
+</html>

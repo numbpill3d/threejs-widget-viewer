@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "splicer@xenotrek",
+                "Name": "xenotrek"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "Renders local Three.js HTML widgets directly on your KDE Plasma desktop. Drop any HTML file into the widgets folder, register it in manifest.json, and select it from the widget config panel. No browser, no Electron.",
+        "Icon": "text-html",
+        "Id": "com.xenotrek.threejs-viewer",
+        "License": "GPL-2.0-or-later",
+        "Name": "ThreeJS Widget Viewer",
+        "Version": "1.0.0",
+        "Website": "https://github.com/numbpill3d/threejs-widget-viewer"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-StandAloneApp": false
+}
