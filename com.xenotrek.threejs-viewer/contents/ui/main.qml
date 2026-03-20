@@ -69,8 +69,13 @@ PlasmoidItem {
                 if (loadRequest.status === WebEngineView.LoadSucceededStatus) {
                     webView.runJavaScript(
                         "document.documentElement.style.background = 'transparent';" +
+                        "document.documentElement.style.overflow = 'hidden';" +
                         "document.body.style.background = 'transparent';" +
-                        "document.body.style.backgroundColor = 'transparent';"
+                        "document.body.style.backgroundColor = 'transparent';" +
+                        "document.body.style.overflow = 'hidden';" +
+                        "var s = document.createElement('style');" +
+                        "s.textContent = '::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }';" +
+                        "document.head.appendChild(s);"
                     )
                 }
             }
