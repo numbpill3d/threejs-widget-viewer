@@ -62,7 +62,6 @@ PlasmoidItem {
             settings.accelerated2dCanvasEnabled: true
 
             backgroundColor: "transparent"
-            color: "transparent"
 
             url: root.targetUrl !== "" ? root.targetUrl : "about:blank"
 
