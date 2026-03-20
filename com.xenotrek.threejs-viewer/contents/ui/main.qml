@@ -96,6 +96,7 @@ PlasmoidItem {
                 const manifest = JSON.parse(xhr.responseText)
                 widgetList  = manifest.widgets.map(w => w.file)
                 widgetNames = manifest.widgets.map(w => w.name)
+                Plasmoid.configuration.widgetListJson = JSON.stringify(manifest.widgets)
 
                 const saved = Plasmoid.configuration.selectedWidget
                 const savedIdx = widgetList.indexOf(saved)

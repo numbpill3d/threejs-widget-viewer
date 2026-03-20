@@ -17,5 +17,8 @@
         <entry name="transparentBackground" type="Bool">
             <default>true</default>
         </entry>
+        <entry name="widgetListJson" type="String">
+            <default></default>
+        </entry>
     </group>
 </kcfg>

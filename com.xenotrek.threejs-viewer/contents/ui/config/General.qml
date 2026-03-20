@@ -10,20 +10,44 @@ Kirigami.FormLayout {
     property int    cfg_widgetWidth:           600
     property int    cfg_widgetHeight:          400
     property bool   cfg_transparentBackground: false
+    property string cfg_widgetListJson:        ""
 
     property string widgetsDir: Qt.resolvedUrl("../../widgets/").toString().replace("file://", "")
 
     ListModel { id: widgetModel }
 
     Component.onCompleted: {
-        loadManifest()
+        populateModel()
     }
 
-    function loadManifest() {
+    onCfg_widgetListJsonChanged: {
+        if (widgetModel.count === 0)
+            populateModel()
+    }
+
+    function populateModel() {
+        // Primary: read from config cache written by main.qml (no XHR needed)
+        if (cfg_widgetListJson !== "") {
+            try {
+                const widgets = JSON.parse(cfg_widgetListJson)
+                widgetModel.clear()
+                widgets.forEach(function(w) {
+                    widgetModel.append({ text: w.name, value: w.file })
+                })
+                restoreSelection()
+                return
+            } catch(e) {
+                console.error("ThreeJS config: cache parse error:", e)
+            }
+        }
+        // Fallback: XHR (requires QML_XHR_ALLOW_FILE_READ=1 in env)
+        loadManifestXhr()
+    }
+
+    function loadManifestXhr() {
         const xhr = new XMLHttpRequest()
         xhr.open("GET", "file://" + widgetsDir + "manifest.json", false)
         xhr.send()
-
         if (xhr.status === 0 || xhr.status === 200) {
             try {
                 const manifest = JSON.parse(xhr.responseText)
@@ -31,14 +55,18 @@ Kirigami.FormLayout {
                 manifest.widgets.forEach(function(w) {
                     widgetModel.append({ text: w.name, value: w.file })
                 })
-                for (let i = 0; i < widgetModel.count; i++) {
-                    if (widgetModel.get(i).value === cfg_selectedWidget) {
-                        widgetCombo.currentIndex = i
-                        break
-                    }
-                }
-            } catch (e) {
+                restoreSelection()
+            } catch(e) {
                 console.error("ThreeJS config: manifest parse error:", e)
+            }
+        }
+    }
+
+    function restoreSelection() {
+        for (let i = 0; i < widgetModel.count; i++) {
+            if (widgetModel.get(i).value === cfg_selectedWidget) {
+                widgetCombo.currentIndex = i
+                return
             }
         }
     }
@@ -57,7 +85,10 @@ Kirigami.FormLayout {
 
     QQC2.Button {
         text: "Reload widget list"
-        onClicked: loadManifest()
+        onClicked: {
+            cfg_widgetListJson = ""
+            loadManifestXhr()
+        }
     }
 
     Kirigami.Separator {

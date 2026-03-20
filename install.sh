@@ -34,6 +34,9 @@ fi
 
 echo ""
 echo "[*] Restarting plasmashell..."
+# Source the env file so plasmashell inherits the vars immediately (no logout needed)
+# shellcheck disable=SC1090
+[[ -f "$ENV_FILE" ]] && source "$ENV_FILE"
 killall plasmashell 2>/dev/null || true
 sleep 1
 plasmashell --replace &
