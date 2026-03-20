@@ -14,7 +14,9 @@ PlasmoidItem {
 
     preferredRepresentation: fullRepresentation
 
-    Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
+    Plasmoid.backgroundHints: Plasmoid.configuration.transparentBackground
+                              ? PlasmaCore.Types.NoBackground
+                              : PlasmaCore.Types.DefaultBackground
 
     Plasmoid.title: widgetNames.length > 0
                     ? "ThreeJS: " + widgetNames[currentIndex]

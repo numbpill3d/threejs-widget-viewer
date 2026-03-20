@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chlorocryptic Gnosis</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Share+Tech+Mono&display=swap');
+
+    :root {
+        --void: #020402;
+        --bio-slime: #0f2a15;
+        --terminal: #00ff41;
+        --ether: #ccffdd;
+        --occult-dim: #004d1a;
+        --glitch-color: #ff00ff;
+    }
+
+    * {
+        box-sizing: border-box;
+        cursor: crosshair;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--void);
+        color: var(--terminal);
+        font-family: 'Share Tech Mono', monospace;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+    }
+
+    /* --- Background Atmosphere --- */
+    .noise-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        z-index: 0;
+    }
+
+    .scanlines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0),
+            rgba(255,255,255,0) 50%,
+            rgba(0,0,0,0.4) 50%,
+            rgba(0,0,0,0.4)
+        );
+        background-size: 100% 4px;
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .vignette {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, transparent 40%, #000 120%);
+        z-index: 90;
+        pointer-events: none;
+    }
+
+    /* --- Main Interface --- */
+    .altar-container {
+        position: relative;
+        z-index: 10;
+        width: 800px;
+        height: 600px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 4fr 1fr;
+        gap: 20px;
+    }
+
+    /* --- Ethereal Glow Orb --- */
+    .spirit-orb {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,255,65,0.2) 0%, rgba(0,0,0,0) 70%);
+        filter: url(#wavy);
+        opacity: 0.6;
+        animation: breathe 8s infinite ease-in-out;
+        z-index: -1;
+    }
+
+    /* --- The Sigil (Center) --- */
+    .sigil-wrapper {
+        grid-column: 2;
+        grid-row: 2;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ring {
+        position: absolute;
+        border: 1px solid var(--terminal);
+        border-radius: 50%;
+        box-shadow: 0 0 15px var(--occult-dim);
+    }
+
+    .ring-1 { width: 300px; height: 300px; border-left: transparent; animation: spin 10s linear infinite; }
+    .ring-2 { width: 260px; height: 260px; border-right: transparent; border-top: transparent; border-color: var(--ether); animation: spin-rev 15s linear infinite; opacity: 0.7; }
+    .ring-3 { width: 180px; height: 180px; border-style: dashed; animation: spin 20s linear infinite; opacity: 0.5; }
+
+    .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 173.2px solid rgba(0, 255, 65, 0.1);
+        filter: drop-shadow(0 0 5px var(--terminal));
+    }
+    
+    .tri-up { animation: float 6s ease-in-out infinite; }
+    .tri-down { transform: rotate(180deg); animation: float-rev 6s ease-in-out infinite; }
+
+    .eye {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 4rem;
+        color: var(--ether);
+        text-shadow: 0 0 20px var(--terminal), 0 0 40px var(--terminal);
+        z-index: 20;
+        animation: flicker 3s infinite;
+        user-select: none;
+    }
+
+    /* --- Data Columns --- */
+    .data-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid rgba(0, 255, 65, 0.2);
+        background: rgba(0, 10, 0, 0.4);
+        backdrop-filter: blur(2px);
+    }
+
+    .data-col.left { grid-column: 1; grid-row: 2; border-right: 2px solid var(--terminal); }
+    .data-col.right { grid-column: 3; grid-row: 2; border-left: 2px solid var(--terminal); text-align: right; }
+
+    .header-bar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--terminal);
+    }
+
+    .footer-bar {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid var(--terminal);
+    }
+
+    /* --- Typography & Elements --- */
+    h1 {
+        margin: 0;
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 2rem;
+        letter-spacing: 4px;
+        color: var(--ether);
+        text-shadow: 0 0 10px var(--terminal);
+    }
+
+    .sub {
+        font-size: 0.8rem;
+        color: var(--occult-dim);
+        background: var(--terminal);
+        padding: 2px 5px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .glyph-stream {
+        font-size: 10px;
+        line-height: 12px;
+        color: var(--occult-dim);
+        overflow: hidden;
+        height: 100px;
+        opacity: 0.7;
+    }
+
+    .status-item {
+        margin-bottom: 10px;
+    }
+    
+    .label { font-size: 0.7rem; color: var(--ether); opacity: 0.6; }
+    .value { font-size: 1rem; color: var(--terminal); text-shadow: 0 0 5px var(--terminal); }
+
+    .btn-invoke {
+        background: transparent;
+        border: 1px solid var(--terminal);
+        color: var(--terminal);
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.2rem;
+        padding: 10px 40px;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-invoke:hover {
+        background: var(--terminal);
+        color: var(--void);
+        box-shadow: 0 0 30px var(--terminal);
+        cursor: pointer;
+    }
+
+    .btn-invoke::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+        transition: 0.5s;
+    }
+
+    .btn-invoke:hover::before {
+        left: 100%;
+    }
+
+    /* --- Glitch Effects --- */
+    .glitch-text {
+        position: relative;
+    }
+
+    .glitch-text::before, .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--void);
+    }
+
+    .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 red;
+        clip: rect(24px, 550px, 90px, 0);
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 blue;
+        clip: rect(85px, 550px, 140px, 0);
+        animation: glitch-anim 2.5s infinite linear alternate-reverse;
+    }
+
+    /* --- Animations --- */
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
+    
+    @keyframes breathe {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+    }
+
+    @keyframes flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 20px var(--terminal); }
+        20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+    }
+
+    @keyframes glitch-anim {
+        0% { clip: rect(10px, 9999px, 30px, 0); }
+        20% { clip: rect(50px, 9999px, 80px, 0); }
+        40% { clip: rect(20px, 9999px, 60px, 0); }
+        60% { clip: rect(80px, 9999px, 10px, 0); }
+        80% { clip: rect(40px, 9999px, 90px, 0); }
+        100% { clip: rect(70px, 9999px, 20px, 0); }
+    }
+    
+    @keyframes glitch-anim-2 {
+        0% { clip: rect(60px, 9999px, 10px, 0); }
+        20% { clip: rect(10px, 9999px, 50px, 0); }
+        40% { clip: rect(90px, 9999px, 20px, 0); }
+        60% { clip: rect(30px, 9999px, 80px, 0); }
+        80% { clip: rect(70px, 9999px, 40px, 0); }
+        100% { clip: rect(20px, 9999px, 90px, 0); }
+    }
+
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes float-rev { 0%, 100% { transform: rotate(180deg) translateY(0); } 50% { transform: rotate(180deg) translateY(-10px); } }
+
+    .hex-bg {
+        position: absolute;
+        font-size: 10rem;
+        color: rgba(0, 255, 65, 0.02);
+        top: 20%;
+        left: 20%;
+        z-index: 0;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+
+    <!-- SVG Filters for Ethereal Effects -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <filter id="wavy">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
+        </filter>
+    </svg>
+
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <div class="hex-bg">†</div>
+
+    <main class="altar-container">
+        
+        <header class="header-bar">
+            <div>
+                <h1 class="glitch-text" data-text="CHLOROCRYPTIC">CHLOROCRYPTIC</h1>
+                <span class="sub">LVL.07 // DEEP_NET_PROTOCOL</span>
+            </div>
+            <div style="text-align: right;">
+                <div class="label">SESSION_ID</div>
+                <div class="value" id="session-id">0x9F_A3</div>
+            </div>
+        </header>
+
+        <!-- Left Data Column -->
+        <aside class="data-col left">
+            <div class="status-item">
+                <div class="label">PSYCHE_INTEGRITY</div>
+                <div class="value" style="color: var(--ether)">96.4%</div>
+                <div style="width: 100%; height: 2px; background: #004d1a; margin-top: 5px;">
+                    <div style="width: 96%; height: 100%; background: var(--terminal); box-shadow: 0 0 5px var(--terminal);"></div>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="label">ETHER_PING</div>
+                <div class="value">33ms</div>
+            </div>
+            <div class="glyph-stream" id="stream-left">
+                01001101 01011001 01010011 01010100 01001001 01000011 
+                VOID_ENTRY_DETECTED
+                PARSING_SOUL_DATA...
+                HEX_DUMP: 0x00A 0xFF2
+            </div>
+        </aside>
+
+        <!-- Center Sigil -->
+        <div class="sigil-wrapper">
+            <div class="spirit-orb"></div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="triangle tri-up"></div>
+            <div class="triangle tri-down"></div>
+            <div class="eye">👁</div>
+        </div>
+
+        <!-- Right Data Column -->
+        <aside class="data-col right">
+            <div class="status-item">
+                <div class="label">DAEMON_STATUS</div>
+                <div class="value blink">LISTENING</div>
+            </div>
+            <div class="status-item">
+                <div class="label">ENCRYPTION</div>
+                <div class="value">AES-256-GCM-OCCULT</div>
+            </div>
+            <div class="glyph-stream" id="stream-right">
+                CONNECTING...
+                HANDSHAKE_INIT
+                ACCESS_GRANTED
+                DOWNLOADING_GNOSIS
+            </div>
+        </aside>
+
+        <footer class="footer-bar">
+            <button class="btn-invoke" onclick="alert('RITUAL_INITIATED: DO_NOT_DISCONNECT_SOUL')">
+                [ INVOKE_DAEMON ]
+            </button>
+        </footer>
+
+    </main>
+
+    <script>
+        // Matrix Stream Effect for side panels
+        function updateStream(elementId) {
+            const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ†‡§abcdefghijklmnopqrstuvwxyz';
+            const el = document.getElementById(elementId);
+            let text = '';
+            for(let i=0; i<15; i++) {
+                let line = '';
+                for(let j=0; j<8; j++) {
+                    line += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                text += line + '<br>';
+            }
+            el.innerHTML = text;
+        }
+
+        setInterval(() => {
+            updateStream('stream-left');
+            updateStream('stream-right');
+        }, 150);
+
+        // Random Session ID generation
+        document.getElementById('session-id').innerText = '0x' + Math.floor(Math.random()*16777215).toString(16).toUpperCase();
+        
+        // Interactive Eye Follow (Subtle)
+        document.addEventListener('mousemove', (e) => {
+            const eye = document.querySelector('.eye');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            eye.style.transform = `translate(${-x}px, ${-y}px)`;
+        });
+    </script>
+</body>
+</html>

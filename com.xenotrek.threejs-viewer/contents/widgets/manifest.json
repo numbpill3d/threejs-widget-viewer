@@ -7,6 +7,9 @@
         { "name": "Ethereal Sigil Banner",           "file": "sigil-banner.html" },
         { "name": "Void Buffer (Amethyst OS)",       "file": "void-buffer.html" },
         { "name": "Chrome Alchemist (PS1 Low-Poly)", "file": "chrome-alchemist.html" },
-        { "name": "Soul Executor (Dark Window)",     "file": "soul-executor.html" }
+        { "name": "Soul Executor (Dark Window)",     "file": "soul-executor.html" },
+        { "name": "Clorophilic Alchemist",           "file": "clorophilic-alchemist.html" },
+        { "name": "Plasma Divider",                  "file": "plasma-divider.html" },
+        { "name": "Rotating Geometry",               "file": "rotating-geometry.html" }
     ]
 }

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Plasma Widget</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .widget-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background-color: #000000;
+      border: 1px solid white;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .titlebar {
+      height: 18px;
+      background: linear-gradient(90deg, #333333, #111111);
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      border-bottom: 1px solid white;
+    }
+
+    .titlebar-text {
+      margin-left: 4px;
+      flex-grow: 1;
+      font-family: monospace;
+    }
+
+    #canvas {
+      width: 100%;
+      height: 232px;
+      image-rendering: pixelated;
+      cursor: crosshair;
+      display: block;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 18px;
+      background-color: #000000;
+      border-top: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px;
+      font-size: 10px;
+      color: #ffffff;
+      font-family: monospace;
+    }
+
+    .glitch-text {
+      position: absolute;
+      color: white;
+      font-family: monospace;
+      font-size: 10px;
+      pointer-events: none;
+      opacity: 0;
+      mix-blend-mode: difference;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget-container">
+    <div class="titlebar">
+      <div class="titlebar-text">[PLASMA_SIGNAL.exe]</div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+      <span id="status">[ wandering_souls.plsm ]</span>
+      <span id="palette-name">[ CGA ]</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Wait a bit to ensure everything is rendered
+      setTimeout(initPlasma, 100);
+    });
+    
+    function initPlasma() {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const status = document.getElementById('status');
+      const paletteName = document.getElementById('palette-name');
+      
+      // Set fixed dimensions for stability
+      const WIDTH = 100;
+      const HEIGHT = 80;
+      
+      canvas.width = WIDTH;
+      canvas.height = HEIGHT;
+      
+      // Initialize buffers
+      let buffer1 = new Array(WIDTH * HEIGHT).fill(0);
+      let buffer2 = new Array(WIDTH * HEIGHT).fill(0);
+      
+      // Palette options (more cyberpunk/glitch inspired for the site aesthetic)
+      const palettes = [
+        // CGA inspired
+        [
+          [0, 0, 0],      // Black
+          [170, 0, 170],  // Magenta
+          [0, 170, 170],  // Cyan
+          [170, 170, 170] // White
+        ],
+        // Cyberpunk
+        [
+          [0, 0, 30],      // Dark blue
+          [120, 0, 128],   // Purple
+          [200, 20, 180],  // Magenta
+          [255, 100, 200]  // Pink
+        ],
+        // Hacker green
+        [
+          [0, 20, 0],      // Very dark green
+          [0, 60, 0],      // Dark green
+          [0, 120, 0],     // Medium green
+          [30, 255, 30]    // Bright green
+        ],
+        // Glitch
+        [
+          [50, 0, 80],     // Dark purple
+          [255, 0, 80],    // Hot pink
+          [0, 200, 255],   // Cyan
+          [255, 255, 100]  // Yellow
+        ],
+        // Red alert
+        [
+          [20, 0, 0],      // Very dark red
+          [80, 0, 0],      // Dark red
+          [180, 0, 0],     // Medium red
+          [255, 30, 30]    // Bright red
+        ]
+      ];
+      
+      const paletteNames = ["[ CGA ]", "[ CYBER ]", "[ HACKER ]", "[ GLITCH ]", "[ ALERT ]"];
+      
+      let currentPalette = 0;
+      let imageData = ctx.createImageData(WIDTH, HEIGHT);
+      
+      // Mouse tracking
+      let mouseX = WIDTH / 2;
+      let mouseY = HEIGHT / 2;
+      let mousePressed = false;
+      let clickPoints = [];
+      
+      // Glitch text array
+      const glitchTexts = [
+        "NO SIGNAL", "GLITCH", "ERROR", "VOID", "STATIC",
+        "LOST", "FOUND", "UNKNOWN", "SYSTEM FAILURE", "CORRUPT",
+        "FORGOTTEN", "REMEMBER", "DECODE", "ENCRYPT", "LOST DATA",
+        "WANDERING", "SOULS", "DIGITAL GHOSTS", "MEMORY LEAK", "OVERFLOW"
+      ];
+      const glitchTextElements = [];
+      
+      // Initialize with some plasma
+      for (let i = 0; i < WIDTH; i++) {
+        for (let j = 0; j < HEIGHT; j++) {
+          const idx = i + j * WIDTH;
+          buffer1[idx] = Math.sin(i / 8.0) + Math.sin(j / 8.0) + Math.sin((i + j) / 16.0) + Math.sin(Math.sqrt(i*i + j*j) / 8.0);
+        }
+      }
+      
+      // Create some floating glitch text elements
+      function createGlitchTexts() {
+        const container = document.querySelector('.widget-container');
+        for (let i = 0; i < 5; i++) {
+          const textEl = document.createElement('div');
+          textEl.className = 'glitch-text';
+          textEl.textContent = glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
+          textEl.style.left = `${Math.random() * 80}%`;
+          textEl.style.top = `${Math.random() * 80}%`;
+          container.appendChild(textEl);
+          glitchTextElements.push(textEl);
+        }
+      }
+      
+      // Convert mouse position on canvas
+      function getCanvasCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        
+        return {
+          x: Math.floor((e.clientX - rect.left) * scaleX),
+          y: Math.floor((e.clientY - rect.top) * scaleY)
+        };
+      }
+      
+      // Event listeners
+      canvas.addEventListener('mousemove', (e) => {
+        const coords = getCanvasCoordinates(e);
+        mouseX = coords.x;
+        mouseY = coords.y;
+        
+        if (mousePressed) {
+          clickPoints.push({
+            x: mouseX,
+            y: mouseY,
+            age: 0,
+            strength: 1.0
+          });
+        }
+      });
+      
+      canvas.addEventListener('mousedown', (e) => {
+        mousePressed = true;
+        const coords = getCanvasCoordinates(e);
+        
+        clickPoints.push({
+          x: coords.x,
+          y: coords.y,
+          age: 0,
+          strength: 1.0
+        });
+        
+        // Randomly show a glitch text
+        if (Math.random() < 0.3) {
+          const textEl = glitchTextElements[Math.floor(Math.random() * glitchTextElements.length)];
+          textEl.style.left = `${Math.random() * 80}%`;
+          textEl.style.top = `${Math.random() * 80}%`;
+          textEl.style.opacity = '1';
+          setTimeout(() => {
+            textEl.style.opacity = '0';
+          }, 500 + Math.random() * 1000);
+        }
+      });
+      
+      canvas.addEventListener('mouseup', () => {
+        mousePressed = false;
+      });
+      
+      canvas.addEventListener('mouseleave', () => {
+        mousePressed = false;
+      });
+      
+      canvas.addEventListener('click', () => {
+        // Change palette on click
+        currentPalette = (currentPalette + 1) % palettes.length;
+        paletteName.textContent = paletteNames[currentPalette];
+        status.textContent = "[ palette_shift.exe ]";
+        setTimeout(() => {
+          status.textContent = "[ wandering_souls.plsm ]";
+        }, 1000);
+      });
+      
+      // Occasional glitch effect
+      function createGlitchEffect() {
+        if (Math.random() < 0.01) {
+          canvas.style.filter = `hue-rotate(${Math.random() * 360}deg) saturate(${1 + Math.random() * 3}) brightness(${0.8 + Math.random() * 0.4})`;
+          setTimeout(() => {
+            canvas.style.filter = 'none';
+          }, 100 + Math.random() * 200);
+          
+          // Show random glitch text
+          const textEl = glitchTextElements[Math.floor(Math.random() * glitchTextElements.length)];
+          textEl.textContent = glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
+          textEl.style.left = `${Math.random() * 80}%`;
+          textEl.style.top = `${Math.random() * 80}%`;
+          textEl.style.opacity = '1';
+          setTimeout(() => {
+            textEl.style.opacity = '0';
+          }, 200 + Math.random() * 300);
+        }
+      }
+      
+      // Animation frame
+      function animate() {
+        // Time value for animation
+        const time = Date.now() / 1000;
+        
+        // Update buffer2 based on buffer1 (plasma diffusion)
+        for (let i = 1; i < WIDTH - 1; i++) {
+          for (let j = 1; j < HEIGHT - 1; j++) {
+            const idx = i + j * WIDTH;
+            // Simple diffusion algorithm
+            buffer2[idx] = (
+              buffer1[idx - 1] + 
+              buffer1[idx + 1] + 
+              buffer1[idx - WIDTH] + 
+              buffer1[idx + WIDTH]
+            ) / 4.05; // Slightly less than 4 to slowly dissipate
+            
+            // Add time-based motion
+            buffer2[idx] += Math.sin(time + i / 10) * 0.01;
+            buffer2[idx] += Math.cos(time + j / 10) * 0.01;
+            
+            // Add mouse influence
+            const dx = i - mouseX;
+            const dy = j - mouseY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 20) {
+              buffer2[idx] += (20 - dist) / 20 * 0.2 * Math.sin(time * 5);
+            }
+          }
+        }
+        
+        // Process click points (ripples)
+        for (let p = 0; p < clickPoints.length; p++) {
+          const point = clickPoints[p];
+          point.age++;
+          
+          // Expand ripple
+          const rippleRadius = point.age / 2;
+          const rippleStrength = Math.max(0, 1.0 - point.age / 50) * point.strength;
+          
+          if (rippleStrength > 0.01) {
+            for (let i = 0; i < WIDTH; i++) {
+              for (let j = 0; j < HEIGHT; j++) {
+                const dx = i - point.x;
+                const dy = j - point.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                // Create ripple effect at specific radius
+                if (Math.abs(dist - rippleRadius) < 2) {
+                  const idx = i + j * WIDTH;
+                  buffer2[idx] += rippleStrength * Math.sin(dist - point.age / 4);
+                }
+              }
+            }
+          }
+        }
+        
+        // Remove old click points
+        clickPoints = clickPoints.filter(p => p.age < 50);
+        
+        // Swap buffers
+        [buffer1, buffer2] = [buffer2, buffer1];
+        
+        // Create random glitches
+        createGlitchEffect();
+        
+        // Render to canvas
+        const palette = palettes[currentPalette];
+        for (let i = 0; i < WIDTH; i++) {
+          for (let j = 0; j < HEIGHT; j++) {
+            const idx = i + j * WIDTH;
+            const pixelIdx = (i + j * WIDTH) * 4;
+            
+            // Map buffer value to color
+            const colorIndex = Math.floor((Math.sin(buffer1[idx] * Math.PI) + 1) * palette.length / 2) % palette.length;
+            const color = palette[colorIndex];
+            
+            imageData.data[pixelIdx] = color[0];
+            imageData.data[pixelIdx + 1] = color[1];
+            imageData.data[pixelIdx + 2] = color[2];
+            imageData.data[pixelIdx + 3] = 255; // Alpha
+            
+            // Occasionally add static/noise
+            if (Math.random() < 0.001) {
+              imageData.data[pixelIdx] = Math.random() * 255;
+              imageData.data[pixelIdx + 1] = Math.random() * 255;
+              imageData.data[pixelIdx + 2] = Math.random() * 255;
+            }
+          }
+        }
+        
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(animate);
+      }
+      
+      // Initialize glitch texts
+      createGlitchTexts();
+      
+      // Start animation
+      animate();
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Plasma Widget</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .widget-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background-color: #000000;
+      border: 1px solid white;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .titlebar {
+      height: 18px;
+      background: linear-gradient(90deg, #333333, #111111);
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      border-bottom: 1px solid white;
+    }
+
+    .titlebar-text {
+      margin-left: 4px;
+      flex-grow: 1;
+      font-family: monospace;
+    }
+
+    #canvas {
+      width: 100%;
+      height: 232px;
+      image-rendering: pixelated;
+      cursor: crosshair;
+      display: block;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 18px;
+      background-color: #000000;
+      border-top: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px;
+      font-size: 10px;
+      color: #ffffff;
+      font-family: monospace;
+    }
+
+    .glitch-text {
+      position: absolute;
+      color: white;
+      font-family: monospace;
+      font-size: 10px;
+      pointer-events: none;
+      opacity: 0;
+      mix-blend-mode: difference;
+    }
+  </style>
+</head>
+<body>
+  </html>

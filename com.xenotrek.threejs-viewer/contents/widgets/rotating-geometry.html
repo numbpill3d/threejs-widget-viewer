@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHROME_ALCHEMIST_v1.0.8</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <style>
+        :root {
+            --chrome: #c0c0c0;
+            --dark-metal: #1a1a1a;
+            --neon-blue: #00f0ff;
+            --ritual-purple: #7000ff;
+            --border-style: 2px solid #fff;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: "MS Gothic", "Courier New", monospace;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* SCANLINE EFFECT */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            ), linear-gradient(
+                90deg, 
+                rgba(255, 0, 0, 0.06), 
+                rgba(0, 255, 0, 0.02), 
+                rgba(0, 0, 255, 0.06)
+            );
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* UI COMPONENTS */
+        .window {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.85);
+            border: var(--border-style);
+            z-index: 20;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .title-bar {
+            background: #fff;
+            color: #000;
+            padding: 2px 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            padding: 10px;
+            border-top: var(--border-style);
+        }
+
+        /* MAIN RITUAL PANEL */
+        #ritual-panel {
+            top: 20px;
+            left: 20px;
+            width: 280px;
+        }
+
+        .status-bar {
+            height: 15px;
+            background: #333;
+            margin: 5px 0;
+            border: 1px solid #fff;
+            position: relative;
+        }
+
+        .status-fill {
+            height: 100%;
+            background: var(--neon-blue);
+            width: 65%;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* INTERACTIVE ELEMENTS */
+        .btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.1s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+        }
+
+        /* NAV COMPONENT */
+        #nav-window {
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+        }
+
+        /* PS1 ERA SYMBOLS */
+        .glyph {
+            font-size: 24px;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+        }
+
+        .corner-accent {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+        }
+
+        .top-l { top: -5px; left: -5px; }
+        .top-r { top: -5px; right: -5px; }
+        .bot-l { bottom: -5px; left: -5px; }
+        .bot-r { bottom: -5px; right: -5px; }
+
+        marquee {
+            position: fixed;
+            bottom: 0;
+            background: #fff;
+            color: #000;
+            font-size: 12px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+    <div id="canvas-container"></div>
+
+    <!-- MAIN RITUAL WINDOW -->
+    <div class="window" id="ritual-panel">
+        <div class="title-bar">
+            <span>RITUAL_MANIFEST.EXE</span>
+            <span>[X]</span>
+        </div>
+        <div class="content">
+            <div class="glyph">✧ ⟁ ✧</div>
+            <label>CHROME_STABILITY</label>
+            <div class="status-bar"><div class="status-fill"></div></div>
+            <p style="font-size: 10px; color: #888;">MEMORY_SECTOR: 0x00FF81<br>LOW_POLY_MESH: ACTIVE</p>
+            <button class="btn">_INITIATE SYNTHESIS</button>
+            <button class="btn">_REFRACT METALS</button>
+            <button class="btn">_PURGE SOUL_DATA</button>
+        </div>
+        <div class="corner-accent top-l"></div>
+        <div class="corner-accent top-r"></div>
+        <div class="corner-accent bot-l"></div>
+        <div class="corner-accent bot-r"></div>
+    </div>
+
+    <!-- SECONDARY WINDOW -->
+    <div class="window" id="nav-window">
+        <div class="title-bar">
+            <span>KINGDOM_LINK</span>
+        </div>
+        <div class="content">
+            <div style="border: 1px solid #444; height: 80px; margin-bottom: 10px; background: repeating-linear-gradient(45deg, #111, #111 5px, #222 5px, #222 10px);"></div>
+            <div style="font-size: 11px;">
+                > TARGET: HEART_LOCKED<br>
+                > WORLD: NULL_VOID<br>
+                > STATUS: ALCHEMY_STABLE
+            </div>
+        </div>
+    </div>
+
+    <marquee scrollamount="10">CORE_STABLE // PS1_EMULATION_MODE // LIQUID_CHROME_DETECTED // NO_HEARTS_FOUND // MEMORY_CARD_INSERTED // RITUAL_IN_PROGRESS...</marquee>
+
+    <script>
+        // THREE.JS - LOW POLY CHROME ENGINE
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio / 4); // Pixelated look
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // Low Poly Liquid Heart (Octahedron for PS1 vibes)
+        const geometry = new THREE.OctahedronGeometry(2, 0); 
+        const material = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            specular: 0x00f0ff,
+            shininess: 100,
+            flatShading: true,
+            wireframe: false
+        });
+
+        // Add secondary wireframe for that tech-ritual look
+        const wireframeGeo = new THREE.OctahedronGeometry(2.1, 0);
+        const wireframeMat = new THREE.MeshBasicMaterial({ color: 0x7000ff, wireframe: true, transparent: true, opacity: 0.3 });
+        
+        const mesh = new THREE.Mesh(geometry, material);
+        const wireframe = new THREE.Mesh(wireframeGeo, wireframeMat);
+        
+        const group = new THREE.Group();
+        group.add(mesh);
+        group.add(wireframe);
+        scene.add(group);
+
+        // Lighting
+        const light = new THREE.PointLight(0x00f0ff, 2, 100);
+        light.position.set(10, 10, 10);
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 2); 
+        scene.add(ambientLight);
+
+        const ritualLight = new THREE.PointLight(0x7000ff, 5, 50);
+        ritualLight.position.set(-10, -10, 5);
+        scene.add(ritualLight);
+
+        camera.position.z = 5;
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            group.rotation.y += 0.01;
+            group.rotation.x += 0.005;
+            
+            // Pulsing scale
+            const scale = 1 + Math.sin(Date.now() * 0.002) * 0.1;
+            group.scale.set(scale, scale, scale);
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+
+        // Jitter effect for windows (PS1 vertex wobble simulation)
+        setInterval(() => {
+            const windows = document.querySelectorAll('.window');
+            windows.forEach(win => {
+                if(Math.random() > 0.95) {
+                    win.style.transform = `translate(${Math.random() * 2}px, ${Math.random() * 2}px)`;
+                } else {
+                    win.style.transform = `translate(0, 0)`;
+                }
+            });
+        }, 50);
+    </script>
+</body>
+</html>
