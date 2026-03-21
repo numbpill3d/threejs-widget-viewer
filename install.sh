@@ -20,6 +20,16 @@ echo "[*] Installing $PLASMOID_ID..."
 cp -r "$PLASMOID_SRC" "$HOME/.local/share/plasma/plasmoids/"
 echo "[+] Files copied to $INSTALL_DIR"
 
+# Install icon into user hicolor theme so KDE widget browser picks it up
+ICON_SRC="$PLASMOID_SRC/icon.png"
+ICON_DEST="$HOME/.local/share/icons/hicolor/256x256/apps/$PLASMOID_ID.png"
+if [[ -f "$ICON_SRC" ]]; then
+    mkdir -p "$(dirname "$ICON_DEST")"
+    cp "$ICON_SRC" "$ICON_DEST"
+    kbuildsycoca6 2>/dev/null || true
+    echo "[+] Icon installed to $ICON_DEST"
+fi
+
 # Ensure env file exists
 ENV_FILE="$HOME/.config/plasma-workspace/env/webengine.sh"
 mkdir -p "$(dirname "$ENV_FILE")"
