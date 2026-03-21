@@ -7,8 +7,8 @@
                 "Name": "splicer Scorn"
             }
         ],
-        "Category": "Utilities",
-        "Description": "Renders local Three.js HTML widgets directly on your KDE Plasma 6 desktop. Drop any HTML file into the widgets folder, register it in manifest.json, and select it from the widget config panel. No browser, no Electron. Comes with 11 premade ThreeJS visual widgets to choose from via the plasmoid config menu.",
+        "Category": "Appearance",
+        "Description": "Renders local Three.js HTML widgets directly on your KDE Plasma 6 desktop. Drop any HTML file into the widgets folder, register it in manifest.json, and select it from the widget config panel. No browser, no Electron. Comes with 9 premade aesthetic Three.js widgets — retrowave, glitch, lo-fi 3D, and more.",
         "Icon": "com.xenotrek.threejs-viewer",
         "Id": "com.xenotrek.threejs-viewer",
         "License": "GPL-2.0-or-later",
