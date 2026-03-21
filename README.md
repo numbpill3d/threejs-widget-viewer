@@ -2,7 +2,7 @@
 
 A frameless, transparent KDE Plasma 6 applet that renders any local Three.js HTML file directly on your desktop via QtWebEngine.
 
-![preview](preview.png)
+![preview](screenshots/preview.gif)
 
 ---
 
