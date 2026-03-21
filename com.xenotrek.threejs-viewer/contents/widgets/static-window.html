@@ -1,1423 +1,424 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>
-WIN98_GALLERY
-        </title>
-        <meta name="title" content="WIN98_GALLERY">
-        <style type="text/css">
-<!-- #toc,
-.toc,
-.mw-warning {
-	border: 1px solid #aaa;
-	background-color: #f9f9f9;
-	padding: 5px;
-	font-size: 95%;
-}
-#toc h2,
-.toc h2 {
-	display: inline;
-	border: none;
-	padding: 0;
-	font-size: 100%;
-	font-weight: bold;
-}
-#toc #toctitle,
-.toc #toctitle,
-#toc .toctitle,
-.toc .toctitle {
-	text-align: center;
-}
-#toc ul,
-.toc ul {
-	list-style-type: none;
-	list-style-image: none;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: left;
-}
-#toc ul ul,
-.toc ul ul {
-	margin: 0 0 0 2em;
-}
-#toc .toctoggle,
-.toc .toctoggle {
-	font-size: 94%;
-}p, h1, h2, h3, li {
-	color:#000000;
-	font-family:'Liberation Serif';
-	font-size:12pt;
-	text-align:left;
-	vertical-align:normal;
-}
-body{
-padding-top : 1in;
-padding-bottom : 1in;
-padding-left : 1in;
-padding-right : 1in;
-font-family:'Liberation Serif';
-font-variant:normal;
-text-indent:0in;
-widows:2;
-font-style:normal;
-font-weight:normal;
-text-decoration:none;
-color:#000000;
-text-align:left;
-font-size:12pt;
-} -->
-        </style>
-
-    </head>
-<body>        <div>
-            <p class="" style="text-align:left">
-<span>&lt;!DOCTYPE html&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;html lang="en"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta charset="UTF-8"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;title&gt;STATIC_BLOOM.EXE&lt;/title&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;link href="https://fonts.googleapis.com/css2?family=VT323&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;:root {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#080808;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-panel: &nbsp;#0f0f0f;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-deep: &nbsp;&nbsp;#040404;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent: &nbsp;&nbsp;&nbsp;#ff2200;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-dim: rgba(255,34,0,0.3);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-glow: rgba(255,34,0,0.06);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#cccccc;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text-muted:#444444;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--border: &nbsp;&nbsp;&nbsp;#1a1a1a;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--white: &nbsp;&nbsp;&nbsp;&nbsp;#e8e8e8;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;body {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.crt-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: fixed; inset: 0; z-index: 9999; pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.crt-overlay::after {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: ''; position: absolute; inset: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.75) 100%);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.widget {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 520px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 40px var(--accent-glow);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.titlebar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #111;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 17px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 8px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.1em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.titlebar-btns { display: flex; gap: 4px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tbtn {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 14px; height: 14px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #000; border: 1px solid #333;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 9px; display: flex; align-items: center; justify-content: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer; color: var(--accent); font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tbtn:hover { border-color: var(--accent); }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* main scene */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.scene-wrap {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%; height: 300px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* static canvas underneath */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#static-canvas {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute; inset: 0; z-index: 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block; width: 100%; height: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image-rendering: pixelated;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* collage fragments */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.collage-layer {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute; inset: 0; z-index: 2; pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mix-blend-mode: screen;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: opacity 0.6s ease;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag.visible { opacity: 1; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag img {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter: grayscale(1) contrast(1.2) brightness(0.7);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* VHS tracking lines */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag::before {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: '';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute; inset: 0; z-index: 2; pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: repeating-linear-gradient(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0deg, transparent, transparent 3px,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255,255,255,0.03) 3px, rgba(255,255,255,0.03) 4px</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* horizontal glitch slice */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag::after {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: '';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 3px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: -5%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: -5%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: rgba(255,34,0,0.4);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: var(--glitch-top, 40%);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: scaleX(1.02) translateX(var(--glitch-shift, 0px));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* red channel split effect on some */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag.red-shift img {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter: grayscale(0.7) contrast(1.3) brightness(0.65);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.vhs-frag.red-shift::after { background: rgba(255,34,0,0.6); }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* scanline flicker overlay */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.scene-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute; inset: 0; z-index: 5; pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: repeating-linear-gradient(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0deg, transparent, transparent 1px,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0,0,0,0.18) 1px, rgba(0,0,0,0.18) 2px</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* tracking bar that sweeps */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tracking-bar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0; right: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 6px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 6;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: sweep 4s linear infinite;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@keyframes sweep {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0% &nbsp;&nbsp;{ top: -6px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100% { top: 300px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* channel/status strip */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ch-strip {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 4px 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.06em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ch-live { color: var(--accent); animation: blink 1.5s step-end infinite; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* waveform bar */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.wave-bar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 32px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#wave-canvas { display: block; width: 100%; height: 100%; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* signal tiles */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-row {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: grid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(4, 1fr);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-cell {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 7px 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-cell:last-child { border-right: none; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-label { font-size: 9px; color: var(--text-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 2px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-val {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace; font-size: 18px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--white); line-height: 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.sig-val.red { color: var(--accent); text-shadow: 0 0 6px var(--accent-dim); }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* ticker tape */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ticker {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 22px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ticker-inner {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;white-space: nowrap;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.06em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: ticker-scroll 28s linear infinite;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@keyframes ticker-scroll {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from { transform: translateX(100%); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to &nbsp;&nbsp;{ transform: translateX(-200%); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ticker-inner span { color: var(--accent); margin: 0 8px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* bottom */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.bottom {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex; align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 6px 12px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-panel);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.btns { display: flex; gap: 5px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.btn {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace; font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: transparent; color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border); padding: 3px 8px; cursor: pointer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.08em; text-transform: uppercase;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: color 100ms, border-color 100ms;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.btn:hover, .btn.active { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 5px var(--accent-dim); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.clock { font-family: 'VT323', monospace; font-size: 20px; color: var(--text-muted); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;div class="crt-overlay"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;div class="widget"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="titlebar"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;STATIC_BLOOM.EXE // SIGNAL RECOVERY&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="titlebar-btns"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;_&lt;/div&gt;&lt;div class="tbtn"&gt;[]&lt;/div&gt;&lt;div class="tbtn"&gt;X&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="scene-wrap"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;canvas id="static-canvas" width="520" height="300"&gt;&lt;/canvas&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="collage-layer" id="collage-layer"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="scene-overlay"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tracking-bar"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="ch-strip"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;CH: &lt;span class="ch-live" id="ch-num"&gt;04&lt;/span&gt;&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="sig-str"&gt;SIGNAL: 23%&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="frags-count"&gt;FRAGS: 0&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="wave-bar"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;canvas id="wave-canvas" width="520" height="32"&gt;&lt;/canvas&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="sig-row"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-label"&gt;Noise Floor&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-val" id="noise-val"&gt;-42dB&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-label"&gt;Carrier&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-val red" id="carrier-val"&gt;LOST&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-label"&gt;Bloom&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-val" id="bloom-val"&gt;0.34&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-label"&gt;Frames&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sig-val" id="frames-val"&gt;0000&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="ticker"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ticker-inner"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NO SIGNAL&lt;span&gt;//&lt;/span&gt;CARRIER LOST&lt;span&gt;//&lt;/span&gt;FRAGMENT RECOVERED: 0x3A&lt;span&gt;//&lt;/span&gt;BLOOM INDEX RISING&lt;span&gt;//&lt;/span&gt;STATIC NOMINAL&lt;span&gt;//&lt;/span&gt;CHANNEL SCAN ACTIVE&lt;span&gt;//&lt;/span&gt;FRAGMENT RECOVERED: 0x7F&lt;span&gt;//&lt;/span&gt;RECONNECT ATTEMPT 3&lt;span&gt;//&lt;/span&gt;NO SIGNAL&lt;span&gt;//&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="bottom"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="btns"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn active" onclick="setStatic('low',this)"&gt;LOW&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn" onclick="setStatic('med',this)"&gt;MED&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn" onclick="setStatic('max',this)"&gt;MAX&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="clock" id="clock"&gt;--:--:--&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// TV static generator</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const staticCanvas = document.getElementById('static-canvas');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sctx = staticCanvas.getContext('2d');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let staticIntensity = 0.25;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let frameCount = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// generate noise using ImageData directly for speed</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const imgData = sctx.createImageData(520, 300);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function drawStatic() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(drawStatic);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameCount++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const d = imgData.data;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; d.length; i += 4) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// mostly dark with occasional bright flecks</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const v = Math.random() &lt; staticIntensity ? Math.floor(Math.random() * 200) : Math.floor(Math.random() * 18);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[i] = v; d[i+1] = v; d[i+2] = v; d[i+3] = 255;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// occasional horizontal glitch bands</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.random() &lt; 0.06) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const bandY = Math.floor(Math.random() * 295);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const bandH = Math.floor(Math.random() * 4) + 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let y = bandY; y &lt; bandY + bandH &amp;&amp; y &lt; 300; y++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const shift = Math.floor((Math.random() - 0.5) * 40);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let x = 0; x &lt; 520; x++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const from = ((y * 520 + ((x + shift + 520) % 520)) * 4);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const to &nbsp;&nbsp;= (y * 520 + x) * 4;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (from &gt;= 0 &amp;&amp; from + 3 &lt; d.length) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[to] = d[from] + 60; d[to+1] = d[from+1]; d[to+2] = d[from+2]; d[to+3] = 255;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sctx.putImageData(imgData, 0, 0);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('frames-val').textContent = String(frameCount).padStart(4,'0').slice(-4);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;drawStatic();</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// waveform</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const waveCanvas = document.getElementById('wave-canvas');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const wctx = waveCanvas.getContext('2d');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let waveOff = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function drawWave() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(drawWave);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.clearRect(0,0,520,32);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.fillStyle = '#040404';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.fillRect(0,0,520,32);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waveOff += 3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.beginPath();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.strokeStyle = 'rgba(204,204,204,0.45)';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.lineWidth = 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let x=0;x&lt;520;x++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const y = 16 + Math.sin((x+waveOff)*0.045)*5</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ Math.sin((x+waveOff)*0.12)*2.5</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (Math.random()-0.5)*3.5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x===0 ? wctx.moveTo(x,y) : wctx.lineTo(x,y);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.stroke();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// red noise spikes</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(let i=0;i&lt;2;i++){</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const sx = Math.random()*520;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.beginPath();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.strokeStyle='rgba(255,34,0,0.5)';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.lineWidth=1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.moveTo(sx,0); wctx.lineTo(sx,32);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wctx.stroke();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;drawWave();</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// VHS fragment collage</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const seeds = [11,22,33,44,55,66,77,88,99,111,133,155,177,199,211,233,255,277];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const activeFrags = [];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let totalFrags = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function spawnFrag() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const layer = document.getElementById('collage-layer');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const seed = seeds[Math.floor(Math.random() * seeds.length)];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const w = 90 + Math.floor(Math.random() * 130);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const h = 60 + Math.floor(Math.random() * 90);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const x = Math.floor(Math.random() * (510 - w));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const y = Math.floor(Math.random() * (290 - h));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const glitchTop = Math.floor(Math.random() * 80) + 10;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const glitchShift = Math.floor((Math.random()-0.5) * 12);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const isRedShift = Math.random() &lt; 0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const zIdx = Math.floor(Math.random() * 5) + 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// sometimes clip only part of image (VHS tracking artifact)</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const clipTop = Math.random() &lt; 0.35 ? Math.floor(Math.random() * 30) : 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const clipBot = Math.random() &lt; 0.25 ? Math.floor(Math.random() * 20) : 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const el = document.createElement('div');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.className = 'vhs-frag' + (isRedShift ? ' red-shift' : '');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.style.cssText = `</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:${x}px; top:${y}px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:${w}px; height:${h}px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--glitch-top: ${glitchTop}%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--glitch-shift: ${glitchShift}px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index:${zIdx};</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip-path: inset(${clipTop}px 0 ${clipBot}px 0);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const img = document.createElement('img');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img.src = `https://picsum.photos/seed/${seed}/${w}/${h}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img.onerror = () =&gt; el.remove();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.appendChild(img);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.appendChild(el);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalFrags++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('frags-count').textContent = 'FRAGS: ' + totalFrags;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(() =&gt; requestAnimationFrame(() =&gt; el.classList.add('visible')));</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const maxFrags = staticIntensity &lt; 0.3 ? 4 : staticIntensity &lt; 0.5 ? 6 : 10;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const lifetime = 4000 + Math.random() * 3000;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.style.transition = 'opacity 0.5s ease';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.style.opacity = '0';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() =&gt; { el.remove(); const i=activeFrags.indexOf(el); if(i&gt;-1) activeFrags.splice(i,1); }, 500);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, lifetime);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activeFrags.push(el);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (activeFrags.length &gt; maxFrags + 3) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const old = activeFrags.shift();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (old &amp;&amp; old.parentNode) { old.style.transition='opacity 0.3s'; old.style.opacity='0'; setTimeout(()=&gt;old.remove(),300); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let spawnTimer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function setStatic(level, btn) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelectorAll('.btn').forEach(b=&gt;b.classList.remove('active'));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn.classList.add('active');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;staticIntensity = level==='low' ? 0.22 : level==='med' ? 0.42 : 0.72;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearInterval(spawnTimer);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const rate = level==='low' ? 1800 : level==='med' ? 1100 : 500;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spawnTimer = setInterval(spawnFrag, rate);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;window.setStatic = setStatic;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;spawnTimer = setInterval(spawnFrag, 1800);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setTimeout(spawnFrag, 400);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// live readouts</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function pad(n) { return String(n).padStart(2,'0'); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const carriers = ['LOST','WEAK','FAINT','NOISE','LOST','LOST'];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setInterval(() =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const n = new Date();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('clock').textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('noise-val').textContent = '-' + Math.floor(35+Math.random()*25) + 'dB';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('carrier-val').textContent = carriers[Math.floor(Math.random()*carriers.length)];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('bloom-val').textContent = (Math.random()).toFixed(2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('sig-str').textContent = 'SIGNAL: ' + Math.floor(5+Math.random()*40) + '%';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('ch-num').textContent = pad(Math.floor(Math.random()*12)+1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}, 1100);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/html&gt;</span>
-            </p>
-
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STATIC_BLOOM.EXE</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #080808;
+      --bg-panel:  #0f0f0f;
+      --bg-deep:   #040404;
+      --accent:    #ff2200;
+      --accent-dim: rgba(255,34,0,0.3);
+      --accent-glow: rgba(255,34,0,0.06);
+      --text:      #cccccc;
+      --text-muted:#444444;
+      --border:    #1a1a1a;
+      --white:     #e8e8e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .crt-overlay {
+      position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px);
+    }
+    .crt-overlay::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.75) 100%);
+    }
+    .widget {
+      width: 520px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+    .titlebar {
+      background: #111;
+      color: var(--accent);
+      font-family: 'VT323', monospace;
+      font-size: 17px;
+      padding: 3px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--accent);
+    }
+    .titlebar-btns { display: flex; gap: 4px; }
+    .tbtn {
+      width: 14px; height: 14px;
+      background: #000; border: 1px solid #333;
+      font-size: 9px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--accent); font-family: 'VT323', monospace;
+    }
+    .tbtn:hover { border-color: var(--accent); }
+    /* main scene */
+    .scene-wrap {
+      position: relative;
+      width: 100%; height: 300px;
+      background: #000;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    /* static canvas underneath */
+    #static-canvas {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; width: 100%; height: 100%;
+      image-rendering: pixelated;
+    }
+    /* collage fragments */
+    .collage-layer {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    }
+    .vhs-frag {
+      position: absolute;
+      overflow: hidden;
+      opacity: 0;
+      mix-blend-mode: screen;
+      transition: opacity 0.6s ease;
+    }
+    .vhs-frag.visible { opacity: 1; }
+    .vhs-frag img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.2) brightness(0.7);
+    }
+    /* VHS tracking lines */
+    .vhs-frag::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 3px,
+        rgba(255,255,255,0.03) 3px, rgba(255,255,255,0.03) 4px
+      );
+    }
+    /* horizontal glitch slice */
+    .vhs-frag::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      left: -5%;
+      right: -5%;
+      background: rgba(255,34,0,0.4);
+      pointer-events: none;
+      top: var(--glitch-top, 40%);
+      transform: scaleX(1.02) translateX(var(--glitch-shift, 0px));
+    }
+    /* red channel split effect on some */
+    .vhs-frag.red-shift img {
+      filter: grayscale(0.7) contrast(1.3) brightness(0.65);
+    }
+    .vhs-frag.red-shift::after { background: rgba(255,34,0,0.6); }
+    /* scanline flicker overlay */
+    .scene-overlay {
+      position: absolute; inset: 0; z-index: 5; pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 1px,
+        rgba(0,0,0,0.18) 1px, rgba(0,0,0,0.18) 2px
+      );
+    }
+    /* tracking bar that sweeps */
+    .tracking-bar {
+      position: absolute;
+      left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      z-index: 6;
+      pointer-events: none;
+      top: 0;
+      animation: sweep 4s linear infinite;
+    }
+    @keyframes sweep {
+      0%   { top: -6px; }
+      100% { top: 300px; }
+    }
+    /* channel/status strip */
+    .ch-strip {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 10px;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .ch-live { color: var(--accent); animation: blink 1.5s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    /* waveform bar */
+    .wave-bar {
+      height: 32px;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    #wave-canvas { display: block; width: 100%; height: 100%; }
+    /* signal tiles */
+    .sig-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+    .sig-cell {
+      padding: 7px 10px;
+      border-right: 1px solid var(--border);
+    }
+    .sig-cell:last-child { border-right: none; }
+    .sig-label { font-size: 9px; color: var(--text-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 2px; }
+    .sig-val {
+      font-family: 'VT323', monospace; font-size: 18px;
+      color: var(--white); line-height: 1;
+    }
+    .sig-val.red { color: var(--accent); text-shadow: 0 0 6px var(--accent-dim); }
+    /* ticker tape */
+    .ticker {
+      height: 22px;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-inner {
+      white-space: nowrap;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      animation: ticker-scroll 28s linear infinite;
+      position: absolute;
+      top: 5px;
+    }
+    @keyframes ticker-scroll {
+      from { transform: translateX(100%); }
+      to   { transform: translateX(-200%); }
+    }
+    .ticker-inner span { color: var(--accent); margin: 0 8px; }
+    /* bottom */
+    .bottom {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      background: var(--bg-panel);
+    }
+    .btns { display: flex; gap: 5px; }
+    .btn {
+      font-family: 'Share Tech Mono', monospace; font-size: 10px;
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border); padding: 3px 8px; cursor: pointer;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 100ms, border-color 100ms;
+    }
+    .btn:hover, .btn.active { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 5px var(--accent-dim); }
+    .clock { font-family: 'VT323', monospace; font-size: 20px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <div class="widget">
+    <div class="titlebar">
+      <span>STATIC_BLOOM.EXE // SIGNAL RECOVERY</span>
+      <div class="titlebar-btns">
+        <div class="tbtn">_</div><div class="tbtn">[]</div><div class="tbtn">X</div>
+      </div>
+    </div>
+    <div class="scene-wrap">
+      <canvas id="static-canvas" width="520" height="300"></canvas>
+      <div class="collage-layer" id="collage-layer"></div>
+      <div class="scene-overlay"></div>
+      <div class="tracking-bar"></div>
+    </div>
+    <div class="ch-strip">
+      <span>CH: <span class="ch-live" id="ch-num">04</span></span>
+      <span id="sig-str">SIGNAL: 23%</span>
+      <span id="frags-count">FRAGS: 0</span>
+    </div>
+    <div class="wave-bar">
+      <canvas id="wave-canvas" width="520" height="32"></canvas>
+    </div>
+    <div class="sig-row">
+      <div class="sig-cell">
+        <div class="sig-label">Noise Floor</div>
+        <div class="sig-val" id="noise-val">-42dB</div>
+      </div>
+      <div class="sig-cell">
+        <div class="sig-label">Carrier</div>
+        <div class="sig-val red" id="carrier-val">LOST</div>
+      </div>
+      <div class="sig-cell">
+        <div class="sig-label">Bloom</div>
+        <div class="sig-val" id="bloom-val">0.34</div>
+      </div>
+      <div class="sig-cell">
+        <div class="sig-label">Frames</div>
+        <div class="sig-val" id="frames-val">0000</div>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker-inner">
+        NO SIGNAL<span>//</span>CARRIER LOST<span>//</span>FRAGMENT RECOVERED: 0x3A<span>//</span>BLOOM INDEX RISING<span>//</span>STATIC NOMINAL<span>//</span>CHANNEL SCAN ACTIVE<span>//</span>FRAGMENT RECOVERED: 0x7F<span>//</span>RECONNECT ATTEMPT 3<span>//</span>NO SIGNAL<span>//</span>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="btns">
+        <button class="btn active" onclick="setStatic('low',this)">LOW</button>
+        <button class="btn" onclick="setStatic('med',this)">MED</button>
+        <button class="btn" onclick="setStatic('max',this)">MAX</button>
+      </div>
+      <div class="clock" id="clock">--:--:--</div>
+    </div>
+  </div>
+  <script>
+    // TV static generator
+    const staticCanvas = document.getElementById('static-canvas');
+    const sctx = staticCanvas.getContext('2d');
+    let staticIntensity = 0.25;
+    let frameCount = 0;
+    // generate noise using ImageData directly for speed
+    const imgData = sctx.createImageData(520, 300);
+    function drawStatic() {
+      requestAnimationFrame(drawStatic);
+      frameCount++;
+      const d = imgData.data;
+      for (let i = 0; i < d.length; i += 4) {
+        // mostly dark with occasional bright flecks
+        const v = Math.random() < staticIntensity ? Math.floor(Math.random() * 200) : Math.floor(Math.random() * 18);
+        d[i] = v; d[i+1] = v; d[i+2] = v; d[i+3] = 255;
+      }
+      // occasional horizontal glitch bands
+      if (Math.random() < 0.06) {
+        const bandY = Math.floor(Math.random() * 295);
+        const bandH = Math.floor(Math.random() * 4) + 1;
+        for (let y = bandY; y < bandY + bandH && y < 300; y++) {
+          const shift = Math.floor((Math.random() - 0.5) * 40);
+          for (let x = 0; x < 520; x++) {
+            const from = ((y * 520 + ((x + shift + 520) % 520)) * 4);
+            const to   = (y * 520 + x) * 4;
+            if (from >= 0 && from + 3 < d.length) {
+              d[to] = d[from] + 60; d[to+1] = d[from+1]; d[to+2] = d[from+2]; d[to+3] = 255;
+            }
+          }
+        }
+      }
+      sctx.putImageData(imgData, 0, 0);
+      document.getElementById('frames-val').textContent = String(frameCount).padStart(4,'0').slice(-4);
+    }
+    drawStatic();
+    // waveform
+    const waveCanvas = document.getElementById('wave-canvas');
+    const wctx = waveCanvas.getContext('2d');
+    let waveOff = 0;
+    function drawWave() {
+      requestAnimationFrame(drawWave);
+      wctx.clearRect(0,0,520,32);
+      wctx.fillStyle = '#040404';
+      wctx.fillRect(0,0,520,32);
+      waveOff += 3;
+      wctx.beginPath();
+      wctx.strokeStyle = 'rgba(204,204,204,0.45)';
+      wctx.lineWidth = 1;
+      for (let x=0;x<520;x++) {
+        const y = 16 + Math.sin((x+waveOff)*0.045)*5
+                     + Math.sin((x+waveOff)*0.12)*2.5
+                     + (Math.random()-0.5)*3.5;
+        x===0 ? wctx.moveTo(x,y) : wctx.lineTo(x,y);
+      }
+      wctx.stroke();
+      // red noise spikes
+      for(let i=0;i<2;i++){
+        const sx = Math.random()*520;
+        wctx.beginPath();
+        wctx.strokeStyle='rgba(255,34,0,0.5)';
+        wctx.lineWidth=1;
+        wctx.moveTo(sx,0); wctx.lineTo(sx,32);
+        wctx.stroke();
+      }
+    }
+    drawWave();
+    // VHS fragment collage
+    const seeds = [11,22,33,44,55,66,77,88,99,111,133,155,177,199,211,233,255,277];
+    const activeFrags = [];
+    let totalFrags = 0;
+    function spawnFrag() {
+      const layer = document.getElementById('collage-layer');
+      const seed = seeds[Math.floor(Math.random() * seeds.length)];
+      const w = 90 + Math.floor(Math.random() * 130);
+      const h = 60 + Math.floor(Math.random() * 90);
+      const x = Math.floor(Math.random() * (510 - w));
+      const y = Math.floor(Math.random() * (290 - h));
+      const glitchTop = Math.floor(Math.random() * 80) + 10;
+      const glitchShift = Math.floor((Math.random()-0.5) * 12);
+      const isRedShift = Math.random() < 0.3;
+      const zIdx = Math.floor(Math.random() * 5) + 1;
+      // sometimes clip only part of image (VHS tracking artifact)
+      const clipTop = Math.random() < 0.35 ? Math.floor(Math.random() * 30) : 0;
+      const clipBot = Math.random() < 0.25 ? Math.floor(Math.random() * 20) : 0;
+      const el = document.createElement('div');
+      el.className = 'vhs-frag' + (isRedShift ? ' red-shift' : '');
+      el.style.cssText = `
+        left:${x}px; top:${y}px;
+        width:${w}px; height:${h}px;
+        --glitch-top: ${glitchTop}%;
+        --glitch-shift: ${glitchShift}px;
+        z-index:${zIdx};
+        clip-path: inset(${clipTop}px 0 ${clipBot}px 0);
+      `;
+      const img = document.createElement('img');
+      img.src = `https://picsum.photos/seed/${seed}/${w}/${h}`;
+      img.onerror = () => el.remove();
+      el.appendChild(img);
+      layer.appendChild(el);
+      totalFrags++;
+      document.getElementById('frags-count').textContent = 'FRAGS: ' + totalFrags;
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('visible')));
+      const maxFrags = staticIntensity < 0.3 ? 4 : staticIntensity < 0.5 ? 6 : 10;
+      const lifetime = 4000 + Math.random() * 3000;
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.5s ease';
+        el.style.opacity = '0';
+        setTimeout(() => { el.remove(); const i=activeFrags.indexOf(el); if(i>-1) activeFrags.splice(i,1); }, 500);
+      }, lifetime);
+      activeFrags.push(el);
+      while (activeFrags.length > maxFrags + 3) {
+        const old = activeFrags.shift();
+        if (old && old.parentNode) { old.style.transition='opacity 0.3s'; old.style.opacity='0'; setTimeout(()=>old.remove(),300); }
+      }
+    }
+    let spawnTimer;
+    function setStatic(level, btn) {
+      document.querySelectorAll('.btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      staticIntensity = level==='low' ? 0.22 : level==='med' ? 0.42 : 0.72;
+      clearInterval(spawnTimer);
+      const rate = level==='low' ? 1800 : level==='med' ? 1100 : 500;
+      spawnTimer = setInterval(spawnFrag, rate);
+    }
+    window.setStatic = setStatic;
+    spawnTimer = setInterval(spawnFrag, 1800);
+    setTimeout(spawnFrag, 400);
+    // live readouts
+    function pad(n) { return String(n).padStart(2,'0'); }
+    const carriers = ['LOST','WEAK','FAINT','NOISE','LOST','LOST'];
+    setInterval(() => {
+      const n = new Date();
+      document.getElementById('clock').textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
+      document.getElementById('noise-val').textContent = '-' + Math.floor(35+Math.random()*25) + 'dB';
+      document.getElementById('carrier-val').textContent = carriers[Math.floor(Math.random()*carriers.length)];
+      document.getElementById('bloom-val').textContent = (Math.random()).toFixed(2);
+      document.getElementById('sig-str').textContent = 'SIGNAL: ' + Math.floor(5+Math.random()*40) + '%';
+      document.getElementById('ch-num').textContent = pad(Math.floor(Math.random()*12)+1);
+    }, 1100);
+  </script>
 </body>
 </html>

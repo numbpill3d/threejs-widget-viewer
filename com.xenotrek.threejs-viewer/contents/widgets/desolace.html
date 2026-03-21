@@ -1,1605 +1,482 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>
-d e a d __ s t a r 
-        </title>
-        <meta name="title" content="d e a d __ s t a r ">
-        <style type="text/css">
-<!-- #toc,
-.toc,
-.mw-warning {
-	border: 1px solid #aaa;
-	background-color: #f9f9f9;
-	padding: 5px;
-	font-size: 95%;
-}
-#toc h2,
-.toc h2 {
-	display: inline;
-	border: none;
-	padding: 0;
-	font-size: 100%;
-	font-weight: bold;
-}
-#toc #toctitle,
-.toc #toctitle,
-#toc .toctitle,
-.toc .toctitle {
-	text-align: center;
-}
-#toc ul,
-.toc ul {
-	list-style-type: none;
-	list-style-image: none;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: left;
-}
-#toc ul ul,
-.toc ul ul {
-	margin: 0 0 0 2em;
-}
-#toc .toctoggle,
-.toc .toctoggle {
-	font-size: 94%;
-}p, h1, h2, h3, li {
-	color:#000000;
-	font-family:'Liberation Serif';
-	font-size:12pt;
-	text-align:left;
-	vertical-align:normal;
-}
-body{
-padding-top : 1in;
-padding-bottom : 1in;
-padding-left : 1in;
-padding-right : 1in;
-font-family:'Liberation Serif';
-font-variant:normal;
-text-indent:0in;
-widows:2;
-font-style:normal;
-font-weight:normal;
-text-decoration:none;
-color:#000000;
-text-align:left;
-font-size:12pt;
-} -->
-        </style>
-
-    </head>
-<body>        <div>
-            <p class="" style="text-align:left">
-<span>&lt;!DOCTYPE html&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;html lang="en"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta charset="UTF-8"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;title&gt;DEAD_STAR.EXE&lt;/title&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;link href="https://fonts.googleapis.com/css2?family=VT323&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;:root {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg: #0a0000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-panel: #110000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-deep: #060000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent: #ff2200;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-dim: rgba(255,34,0,0.3);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-glow: rgba(255,34,0,0.07);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent2: #ff8800;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent2-dim: rgba(255,136,0,0.25);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text: #ffcccc;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text-muted: #5a2020;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--border: #2a0a0a;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--white: #ffeeee;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;body {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.crt-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: fixed; inset: 0; z-index: 9999; pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: flicker 10s infinite;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.crt-overlay::after {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: ''; position: absolute; inset: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.8) 100%);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@keyframes flicker {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%,96%,98%,100% { opacity:1; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97% { opacity:0.86; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.widget {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 510px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 60px var(--accent-glow), 0 0 2px var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* titlebar */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.titlebar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: #000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 17px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 8px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.08em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.titlebar-btns { display: flex; gap: 4px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tbtn {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 14px; height: 14px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #330000;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex; align-items: center; justify-content: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: background 80ms;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tbtn:hover { background: #330000; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* scene */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#star-canvas {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 250px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#star-canvas canvas { display: block; }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* coordinate overlay */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.coord-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 8px; left: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.08em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.6;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.coord-highlight { color: var(--accent); }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* collapse tag top-right */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.tag-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 8px; right: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 16px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 8px var(--accent-dim);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.05em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: right;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* mass/radius/temp strip */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.data-strip {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: grid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(4, 1fr);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ds-cell {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 7px 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ds-cell:last-child { border-right: none; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ds-label {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 9px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.15em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 3px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ds-value {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 8px var(--accent2-dim);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ds-value.red {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 8px var(--accent-dim);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* obituary log */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-header {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 5px 12px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-panel);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.15em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-header .live-dot {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 6px; height: 6px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-right: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: pulse-dot 1.2s ease-in-out infinite;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@keyframes pulse-dot {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%,100% { opacity:1; transform:scale(1); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50% { opacity:0.3; transform:scale(0.6); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-log {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 88px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow-y: scroll;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 6px 12px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-log::-webkit-scrollbar { width: 5px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-log::-webkit-scrollbar-track { background: var(--bg-deep); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-log::-webkit-scrollbar-thumb { background: var(--accent-dim); border: 1px solid var(--accent); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-entry {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.6;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left: 2px solid transparent;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding-left: 6px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: border-color 200ms;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-entry:hover { border-left-color: var(--accent); color: var(--text); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-entry .et { color: var(--text-muted); opacity: 0.4; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-entry .em { color: var(--text); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.obit-entry .ec { color: var(--accent); }</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* bottom */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.bottom {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 7px 12px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-panel);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.btn-row { display: flex; gap: 5px; }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.star-btn {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: transparent;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 8px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.09em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: color 100ms, border-color 100ms, box-shadow 100ms;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.star-btn:hover, .star-btn.active {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-color: var(--accent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 6px var(--accent-dim);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.bottom-right {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: right;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.bottom-clock {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 22px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent-dim);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.bottom-label {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 9px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.12em;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;div class="crt-overlay"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;div class="widget"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="titlebar"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;DEAD_STAR.EXE // STELLAR COLLAPSE&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="titlebar-btns"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;_&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;[]&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;X&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div id="star-canvas"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="coord-overlay"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RA: &lt;span class="coord-highlight" id="ra-val"&gt;05h 34m 32s&lt;/span&gt;&lt;br&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEC: &lt;span class="coord-highlight" id="dec-val"&gt;+22&amp;deg; 00' 52"&lt;/span&gt;&lt;br&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DIST: &lt;span class="coord-highlight" id="dist-val"&gt;6,523 ly&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tag-overlay" id="star-tag"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TYPE: WR&lt;br&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STAGE: IV&lt;br&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="collapse-pct"&gt;COL: 87%&lt;/span&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="data-strip"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-label"&gt;Mass&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-value red" id="mass-val"&gt;18.4M&amp;odot;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-label"&gt;Radius&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-value" id="radius-val"&gt;4.2R&amp;odot;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-label"&gt;Temp&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-value" id="temp-val"&gt;47kK&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-cell"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-label"&gt;Lum&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ds-value red" id="lum-val"&gt;10^5.6&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="obit-header"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;span class="live-dot"&gt;&lt;/span&gt;COLLAPSE EVENTS&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="event-count"&gt;0 events&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="obit-log" id="obit-log"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div class="bottom"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="btn-row"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="star-btn active" id="btn-collapse" onclick="setStarMode('collapse',this)"&gt;COLLAPSE&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="star-btn" id="btn-nova" onclick="setStarMode('nova',this)"&gt;NOVA&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="star-btn" id="btn-remnant" onclick="setStarMode('remnant',this)"&gt;REMNANT&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="bottom-right"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="bottom-label"&gt;ELAPSED&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="bottom-clock" id="star-clock"&gt;00:00:00&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// three.js: fragmented icosahedron frozen mid-explosion</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const container = document.getElementById('star-canvas');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const W = 510, H = 250;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;renderer.setSize(W, H);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;renderer.setClearColor(0x060000, 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;container.appendChild(renderer.domElement);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const scene = new THREE.Scene();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const camera = new THREE.PerspectiveCamera(58, W / H, 0.1, 100);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;camera.position.set(0, 0, 4);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(new THREE.AmbientLight(0x110000, 3));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const redLight = new THREE.PointLight(0xff2200, 6, 10);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;redLight.position.set(1, 1, 2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(redLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const orangeLight = new THREE.PointLight(0xff8800, 4, 8);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;orangeLight.position.set(-2, -1, 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(orangeLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// generate fragment shards from icosahedron faces</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const baseGeo = new THREE.IcosahedronGeometry(1.0, 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const shards = [];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const shardGroup = new THREE.Group();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(shardGroup);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// create individual triangle shards</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const pos = baseGeo.attributes.position;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const count = pos.count;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; count; i += 3) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const v0 = new THREE.Vector3(pos.getX(i), pos.getY(i), pos.getZ(i));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const v1 = new THREE.Vector3(pos.getX(i+1), pos.getY(i+1), pos.getZ(i+1));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const v2 = new THREE.Vector3(pos.getX(i+2), pos.getY(i+2), pos.getZ(i+2));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const center = new THREE.Vector3().addVectors(v0, v1).add(v2).divideScalar(3);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const geo = new THREE.BufferGeometry();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// offset verts relative to center</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const verts = new Float32Array([</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v0.x - center.x, v0.y - center.y, v0.z - center.z,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v1.x - center.x, v1.y - center.y, v1.z - center.z,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2.x - center.x, v2.y - center.y, v2.z - center.z,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geo.setAttribute('position', new THREE.BufferAttribute(verts, 3));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geo.computeVertexNormals();</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const shade = 0.5 + Math.random() * 0.5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const col = new THREE.Color(shade, shade * 0.2, 0);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mat = new THREE.MeshPhongMaterial({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: col,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emissive: new THREE.Color(shade * 0.3, 0, 0),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.8 + Math.random() * 0.2,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shininess: 80,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;side: THREE.DoubleSide,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mesh = new THREE.Mesh(geo, mat);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.position.copy(center);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// each shard has a drift vector (frozen mid-explosion)</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const drift = center.clone().normalize().multiplyScalar(0.3 + Math.random() * 0.9);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const spin = new THREE.Vector3(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.04,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.04,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.04</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shards.push({ mesh, origin: center.clone(), drift, spin, phase: Math.random() * Math.PI * 2 });</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shardGroup.add(mesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// glowing core point</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const coreMat = new THREE.PointsMaterial({ color: 0xff4400, size: 0.12, transparent: true, opacity: 0.9 });</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const coreGeo = new THREE.BufferGeometry();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;coreGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array([0,0,0]), 3));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const core = new THREE.Points(coreGeo, coreMat);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(core);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// particle debris</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debrisCount = 200;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debrisPositions = new Float32Array(debrisCount * 3);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debrisVelocities = [];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; debrisCount; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const theta = Math.random() * Math.PI * 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const phi = Math.acos(2 * Math.random() - 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const r = 0.5 + Math.random() * 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debrisPositions[i*3] = r * Math.sin(phi) * Math.cos(theta);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debrisPositions[i*3+1] = r * Math.sin(phi) * Math.sin(theta);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debrisPositions[i*3+2] = r * Math.cos(phi);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debrisVelocities.push(new THREE.Vector3(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.003,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.003,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Math.random() - 0.5) * 0.003</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debrisGeo = new THREE.BufferGeometry();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;debrisGeo.setAttribute('position', new THREE.BufferAttribute(debrisPositions, 3));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debrisMat = new THREE.PointsMaterial({ color: 0xff6600, size: 0.025, transparent: true, opacity: 0.5 });</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const debris = new THREE.Points(debrisGeo, debrisMat);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(debris);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let starMode = 'collapse';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;window.setStarMode = function(mode, btn) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starMode = mode;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelectorAll('.star-btn').forEach(b =&gt; b.classList.remove('active'));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn.classList.add('active');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;};</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let elapsed = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function animate() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(animate);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const t = Date.now() * 0.001;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elapsed++;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let explodeAmt = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (starMode === 'collapse') explodeAmt = 0.4 + 0.2 * Math.sin(t * 0.5);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (starMode === 'nova') explodeAmt = 0.85 + 0.1 * Math.sin(t * 2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else explodeAmt = 0.15 + 0.05 * Math.sin(t * 0.3);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// animate shards</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shards.forEach(s =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pulse = Math.sin(t * 1.2 + s.phase) * 0.04;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.mesh.position.lerpVectors(s.origin, s.origin.clone().add(s.drift), explodeAmt + pulse);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.mesh.rotation.x += s.spin.x;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.mesh.rotation.y += s.spin.y;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.mesh.rotation.z += s.spin.z;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.mesh.material.opacity = starMode === 'remnant' ? 0.3 + Math.random() * 0.1 : 0.7 + Math.random() * 0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shardGroup.rotation.y += 0.004;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shardGroup.rotation.x += 0.002;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// debris</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const dp = debrisGeo.attributes.position.array;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; debrisCount; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3] &nbsp;&nbsp;+= debrisVelocities[i].x;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3+1] += debrisVelocities[i].y;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3+2] += debrisVelocities[i].z;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const dist = Math.sqrt(dp[i*3]**2 + dp[i*3+1]**2 + dp[i*3+2]**2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (dist &gt; 3.5) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3] = (Math.random()-0.5)*0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3+1] = (Math.random()-0.5)*0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i*3+2] = (Math.random()-0.5)*0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debrisGeo.attributes.position.needsUpdate = true;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// lights</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redLight.position.x = 2 * Math.sin(t * 0.7);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redLight.position.y = 1.5 * Math.cos(t * 0.5);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orangeLight.position.x = -2 * Math.cos(t * 0.9);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orangeLight.intensity = starMode === 'nova' ? 6 + Math.sin(t * 3) * 2 : 4;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// core glow</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coreMat.size = starMode === 'nova' ? 0.25 + Math.sin(t*4) * 0.1 : 0.08;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.render(scene, camera);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;animate();</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// event log</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const collapseEvents = [</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'iron core collapse initiated'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'neutrino burst detected: 3.2e53 erg'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'shock wave stalled at 200km radius'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'convective overturn establishing'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'neutron star formation confirmed'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'envelope ejection velocity: 10,000 km/s'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'r-process nucleosynthesis active'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'Fe-56 peak at core — no further fusion'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'gravity wins at t+0.25s'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'density: 2.3 x nuclear saturation'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['ec', 'bounce shock generated at r=50km'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['em', 'explosion energy: 1 foe (10^51 erg)'],</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let evtCount = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let logCount = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function addEvent() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const log = document.getElementById('obit-log');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const entry = collapseEvents[evtCount % collapseEvents.length];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evtCount++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logCount++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('event-count').textContent = logCount + ' events';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const now = new Date();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const ts = `T+${String(logCount).padStart(3,'0')}s`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const div = document.createElement('div');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.className = 'obit-entry';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div.innerHTML = `&lt;span class="et"&gt;[${ts}]&lt;/span&gt; &lt;span class="${entry[0]}"&gt;${entry[1]}&lt;/span&gt;`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.appendChild(div);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.scrollTop = log.scrollHeight;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (log.children.length &gt; 40) log.removeChild(log.firstChild);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function pad(n) { return String(n).padStart(2,'0'); }</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let upSec = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setInterval(() =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upSec++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const h = Math.floor(upSec / 3600);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const m = Math.floor((upSec % 3600) / 60);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const s = upSec % 60;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('star-clock').textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// jitter data</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('mass-val').textContent = (16 + Math.random()*4).toFixed(1) + 'M&amp;#x2299;';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('radius-val').textContent = (3 + Math.random()*2).toFixed(1) + 'R&amp;#x2299;';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('temp-val').textContent = Math.floor(40 + Math.random()*15) + 'kK';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('collapse-pct').textContent = 'COL: ' + Math.floor(80 + Math.random()*19) + '%';</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// coordinates drift</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const raH = 5, raM = 34, raS = Math.floor(Math.random()*60);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('ra-val').textContent = `${raH}h ${raM}m ${pad(raS)}s`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}, 1000);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setInterval(addEvent, 2800);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;addEvent();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/html&gt;</span>
-            </p>
-
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEAD_STAR.EXE</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0000;
+      --bg-panel: #110000;
+      --bg-deep: #060000;
+      --accent: #ff2200;
+      --accent-dim: rgba(255,34,0,0.3);
+      --accent-glow: rgba(255,34,0,0.07);
+      --accent2: #ff8800;
+      --accent2-dim: rgba(255,136,0,0.25);
+      --text: #ffcccc;
+      --text-muted: #5a2020;
+      --border: #2a0a0a;
+      --white: #ffeeee;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .crt-overlay {
+      position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px);
+      animation: flicker 10s infinite;
+    }
+    .crt-overlay::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.8) 100%);
+    }
+    @keyframes flicker {
+      0%,96%,98%,100% { opacity:1; }
+      97% { opacity:0.86; }
+    }
+    .widget {
+      width: 510px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px var(--accent-glow), 0 0 2px var(--border);
+      position: relative;
+    }
+    /* titlebar */
+    .titlebar {
+      background: var(--accent);
+      color: #000;
+      font-family: 'VT323', monospace;
+      font-size: 17px;
+      padding: 3px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.08em;
+    }
+    .titlebar-btns { display: flex; gap: 4px; }
+    .tbtn {
+      width: 14px; height: 14px;
+      background: #000;
+      border: 1px solid #330000;
+      font-size: 10px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--accent);
+      font-family: 'VT323', monospace;
+      transition: background 80ms;
+    }
+    .tbtn:hover { background: #330000; }
+    /* scene */
+    #star-canvas {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    #star-canvas canvas { display: block; }
+    /* coordinate overlay */
+    .coord-overlay {
+      position: absolute;
+      top: 8px; left: 10px;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      line-height: 1.6;
+    }
+    .coord-highlight { color: var(--accent); }
+    /* collapse tag top-right */
+    .tag-overlay {
+      position: absolute;
+      top: 8px; right: 10px;
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+      color: var(--accent);
+      text-shadow: 0 0 8px var(--accent-dim);
+      pointer-events: none;
+      letter-spacing: 0.05em;
+      text-align: right;
+      line-height: 1.3;
+    }
+    /* mass/radius/temp strip */
+    .data-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-deep);
+    }
+    .ds-cell {
+      padding: 7px 10px;
+      border-right: 1px solid var(--border);
+    }
+    .ds-cell:last-child { border-right: none; }
+    .ds-label {
+      font-size: 9px;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .ds-value {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      color: var(--accent2);
+      text-shadow: 0 0 8px var(--accent2-dim);
+      line-height: 1;
+    }
+    .ds-value.red {
+      color: var(--accent);
+      text-shadow: 0 0 8px var(--accent-dim);
+    }
+    /* obituary log */
+    .obit-header {
+      padding: 5px 12px;
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+    .obit-header .live-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 5px;
+      animation: pulse-dot 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.3; transform:scale(0.6); }
+    }
+    .obit-log {
+      height: 88px;
+      overflow-y: scroll;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 12px;
+    }
+    .obit-log::-webkit-scrollbar { width: 5px; }
+    .obit-log::-webkit-scrollbar-track { background: var(--bg-deep); }
+    .obit-log::-webkit-scrollbar-thumb { background: var(--accent-dim); border: 1px solid var(--accent); }
+    .obit-entry {
+      font-size: 11px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      border-left: 2px solid transparent;
+      padding-left: 6px;
+      transition: border-color 200ms;
+    }
+    .obit-entry:hover { border-left-color: var(--accent); color: var(--text); }
+    .obit-entry .et { color: var(--text-muted); opacity: 0.4; }
+    .obit-entry .em { color: var(--text); }
+    .obit-entry .ec { color: var(--accent); }
+    /* bottom */
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 12px;
+      background: var(--bg-panel);
+    }
+    .btn-row { display: flex; gap: 5px; }
+    .star-btn {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      cursor: pointer;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: color 100ms, border-color 100ms, box-shadow 100ms;
+    }
+    .star-btn:hover, .star-btn.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 6px var(--accent-dim);
+    }
+    .bottom-right {
+      text-align: right;
+    }
+    .bottom-clock {
+      font-family: 'VT323', monospace;
+      font-size: 22px;
+      color: var(--accent-dim);
+    }
+    .bottom-label {
+      font-size: 9px;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <div class="widget">
+    <div class="titlebar">
+      <span>DEAD_STAR.EXE // STELLAR COLLAPSE</span>
+      <div class="titlebar-btns">
+        <div class="tbtn">_</div>
+        <div class="tbtn">[]</div>
+        <div class="tbtn">X</div>
+      </div>
+    </div>
+    <div id="star-canvas">
+      <div class="coord-overlay">
+        RA: <span class="coord-highlight" id="ra-val">05h 34m 32s</span><br>
+        DEC: <span class="coord-highlight" id="dec-val">+22&deg; 00' 52"</span><br>
+        DIST: <span class="coord-highlight" id="dist-val">6,523 ly</span>
+      </div>
+      <div class="tag-overlay" id="star-tag">
+        TYPE: WR<br>
+        STAGE: IV<br>
+        <span id="collapse-pct">COL: 87%</span>
+      </div>
+    </div>
+    <div class="data-strip">
+      <div class="ds-cell">
+        <div class="ds-label">Mass</div>
+        <div class="ds-value red" id="mass-val">18.4M&odot;</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">Radius</div>
+        <div class="ds-value" id="radius-val">4.2R&odot;</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">Temp</div>
+        <div class="ds-value" id="temp-val">47kK</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">Lum</div>
+        <div class="ds-value red" id="lum-val">10^5.6</div>
+      </div>
+    </div>
+    <div class="obit-header">
+      <div><span class="live-dot"></span>COLLAPSE EVENTS</div>
+      <div id="event-count">0 events</div>
+    </div>
+    <div class="obit-log" id="obit-log"></div>
+    <div class="bottom">
+      <div class="btn-row">
+        <button class="star-btn active" id="btn-collapse" onclick="setStarMode('collapse',this)">COLLAPSE</button>
+        <button class="star-btn" id="btn-nova" onclick="setStarMode('nova',this)">NOVA</button>
+        <button class="star-btn" id="btn-remnant" onclick="setStarMode('remnant',this)">REMNANT</button>
+      </div>
+      <div class="bottom-right">
+        <div class="bottom-label">ELAPSED</div>
+        <div class="bottom-clock" id="star-clock">00:00:00</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // three.js: fragmented icosahedron frozen mid-explosion
+    const container = document.getElementById('star-canvas');
+    const W = 510, H = 250;
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(W, H);
+    renderer.setClearColor(0x060000, 1);
+    container.appendChild(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(58, W / H, 0.1, 100);
+    camera.position.set(0, 0, 4);
+    scene.add(new THREE.AmbientLight(0x110000, 3));
+    const redLight = new THREE.PointLight(0xff2200, 6, 10);
+    redLight.position.set(1, 1, 2);
+    scene.add(redLight);
+    const orangeLight = new THREE.PointLight(0xff8800, 4, 8);
+    orangeLight.position.set(-2, -1, 1);
+    scene.add(orangeLight);
+    // generate fragment shards from icosahedron faces
+    const baseGeo = new THREE.IcosahedronGeometry(1.0, 1);
+    const shards = [];
+    const shardGroup = new THREE.Group();
+    scene.add(shardGroup);
+    // create individual triangle shards
+    const pos = baseGeo.attributes.position;
+    const count = pos.count;
+    for (let i = 0; i < count; i += 3) {
+      const v0 = new THREE.Vector3(pos.getX(i), pos.getY(i), pos.getZ(i));
+      const v1 = new THREE.Vector3(pos.getX(i+1), pos.getY(i+1), pos.getZ(i+1));
+      const v2 = new THREE.Vector3(pos.getX(i+2), pos.getY(i+2), pos.getZ(i+2));
+      const center = new THREE.Vector3().addVectors(v0, v1).add(v2).divideScalar(3);
+      const geo = new THREE.BufferGeometry();
+      // offset verts relative to center
+      const verts = new Float32Array([
+        v0.x - center.x, v0.y - center.y, v0.z - center.z,
+        v1.x - center.x, v1.y - center.y, v1.z - center.z,
+        v2.x - center.x, v2.y - center.y, v2.z - center.z,
+      ]);
+      geo.setAttribute('position', new THREE.BufferAttribute(verts, 3));
+      geo.computeVertexNormals();
+      const shade = 0.5 + Math.random() * 0.5;
+      const col = new THREE.Color(shade, shade * 0.2, 0);
+      const mat = new THREE.MeshPhongMaterial({
+        color: col,
+        emissive: new THREE.Color(shade * 0.3, 0, 0),
+        transparent: true,
+        opacity: 0.8 + Math.random() * 0.2,
+        shininess: 80,
+        side: THREE.DoubleSide,
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.copy(center);
+      // each shard has a drift vector (frozen mid-explosion)
+      const drift = center.clone().normalize().multiplyScalar(0.3 + Math.random() * 0.9);
+      const spin = new THREE.Vector3(
+        (Math.random() - 0.5) * 0.04,
+        (Math.random() - 0.5) * 0.04,
+        (Math.random() - 0.5) * 0.04
+      );
+      shards.push({ mesh, origin: center.clone(), drift, spin, phase: Math.random() * Math.PI * 2 });
+      shardGroup.add(mesh);
+    }
+    // glowing core point
+    const coreMat = new THREE.PointsMaterial({ color: 0xff4400, size: 0.12, transparent: true, opacity: 0.9 });
+    const coreGeo = new THREE.BufferGeometry();
+    coreGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array([0,0,0]), 3));
+    const core = new THREE.Points(coreGeo, coreMat);
+    scene.add(core);
+    // particle debris
+    const debrisCount = 200;
+    const debrisPositions = new Float32Array(debrisCount * 3);
+    const debrisVelocities = [];
+    for (let i = 0; i < debrisCount; i++) {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      const r = 0.5 + Math.random() * 2;
+      debrisPositions[i*3] = r * Math.sin(phi) * Math.cos(theta);
+      debrisPositions[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+      debrisPositions[i*3+2] = r * Math.cos(phi);
+      debrisVelocities.push(new THREE.Vector3(
+        (Math.random() - 0.5) * 0.003,
+        (Math.random() - 0.5) * 0.003,
+        (Math.random() - 0.5) * 0.003
+      ));
+    }
+    const debrisGeo = new THREE.BufferGeometry();
+    debrisGeo.setAttribute('position', new THREE.BufferAttribute(debrisPositions, 3));
+    const debrisMat = new THREE.PointsMaterial({ color: 0xff6600, size: 0.025, transparent: true, opacity: 0.5 });
+    const debris = new THREE.Points(debrisGeo, debrisMat);
+    scene.add(debris);
+    let starMode = 'collapse';
+    window.setStarMode = function(mode, btn) {
+      starMode = mode;
+      document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    };
+    let elapsed = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      const t = Date.now() * 0.001;
+      elapsed++;
+      let explodeAmt = 0;
+      if (starMode === 'collapse') explodeAmt = 0.4 + 0.2 * Math.sin(t * 0.5);
+      else if (starMode === 'nova') explodeAmt = 0.85 + 0.1 * Math.sin(t * 2);
+      else explodeAmt = 0.15 + 0.05 * Math.sin(t * 0.3);
+      // animate shards
+      shards.forEach(s => {
+        const pulse = Math.sin(t * 1.2 + s.phase) * 0.04;
+        s.mesh.position.lerpVectors(s.origin, s.origin.clone().add(s.drift), explodeAmt + pulse);
+        s.mesh.rotation.x += s.spin.x;
+        s.mesh.rotation.y += s.spin.y;
+        s.mesh.rotation.z += s.spin.z;
+        s.mesh.material.opacity = starMode === 'remnant' ? 0.3 + Math.random() * 0.1 : 0.7 + Math.random() * 0.3;
+      });
+      shardGroup.rotation.y += 0.004;
+      shardGroup.rotation.x += 0.002;
+      // debris
+      const dp = debrisGeo.attributes.position.array;
+      for (let i = 0; i < debrisCount; i++) {
+        dp[i*3]   += debrisVelocities[i].x;
+        dp[i*3+1] += debrisVelocities[i].y;
+        dp[i*3+2] += debrisVelocities[i].z;
+        const dist = Math.sqrt(dp[i*3]**2 + dp[i*3+1]**2 + dp[i*3+2]**2);
+        if (dist > 3.5) {
+          dp[i*3] = (Math.random()-0.5)*0.3;
+          dp[i*3+1] = (Math.random()-0.5)*0.3;
+          dp[i*3+2] = (Math.random()-0.5)*0.3;
+        }
+      }
+      debrisGeo.attributes.position.needsUpdate = true;
+      // lights
+      redLight.position.x = 2 * Math.sin(t * 0.7);
+      redLight.position.y = 1.5 * Math.cos(t * 0.5);
+      orangeLight.position.x = -2 * Math.cos(t * 0.9);
+      orangeLight.intensity = starMode === 'nova' ? 6 + Math.sin(t * 3) * 2 : 4;
+      // core glow
+      coreMat.size = starMode === 'nova' ? 0.25 + Math.sin(t*4) * 0.1 : 0.08;
+      renderer.render(scene, camera);
+    }
+    animate();
+    // event log
+    const collapseEvents = [
+      ['ec', 'iron core collapse initiated'],
+      ['em', 'neutrino burst detected: 3.2e53 erg'],
+      ['ec', 'shock wave stalled at 200km radius'],
+      ['em', 'convective overturn establishing'],
+      ['ec', 'neutron star formation confirmed'],
+      ['em', 'envelope ejection velocity: 10,000 km/s'],
+      ['ec', 'r-process nucleosynthesis active'],
+      ['em', 'Fe-56 peak at core — no further fusion'],
+      ['ec', 'gravity wins at t+0.25s'],
+      ['em', 'density: 2.3 x nuclear saturation'],
+      ['ec', 'bounce shock generated at r=50km'],
+      ['em', 'explosion energy: 1 foe (10^51 erg)'],
+    ];
+    let evtCount = 0;
+    let logCount = 0;
+    function addEvent() {
+      const log = document.getElementById('obit-log');
+      const entry = collapseEvents[evtCount % collapseEvents.length];
+      evtCount++;
+      logCount++;
+      document.getElementById('event-count').textContent = logCount + ' events';
+      const now = new Date();
+      const ts = `T+${String(logCount).padStart(3,'0')}s`;
+      const div = document.createElement('div');
+      div.className = 'obit-entry';
+      div.innerHTML = `<span class="et">[${ts}]</span> <span class="${entry[0]}">${entry[1]}</span>`;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+      if (log.children.length > 40) log.removeChild(log.firstChild);
+    }
+    function pad(n) { return String(n).padStart(2,'0'); }
+    let upSec = 0;
+    setInterval(() => {
+      upSec++;
+      const h = Math.floor(upSec / 3600);
+      const m = Math.floor((upSec % 3600) / 60);
+      const s = upSec % 60;
+      document.getElementById('star-clock').textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      // jitter data
+      document.getElementById('mass-val').textContent = (16 + Math.random()*4).toFixed(1) + 'M&#x2299;';
+      document.getElementById('radius-val').textContent = (3 + Math.random()*2).toFixed(1) + 'R&#x2299;';
+      document.getElementById('temp-val').textContent = Math.floor(40 + Math.random()*15) + 'kK';
+      document.getElementById('collapse-pct').textContent = 'COL: ' + Math.floor(80 + Math.random()*19) + '%';
+      // coordinates drift
+      const raH = 5, raM = 34, raS = Math.floor(Math.random()*60);
+      document.getElementById('ra-val').textContent = `${raH}h ${raM}m ${pad(raS)}s`;
+    }, 1000);
+    setInterval(addEvent, 2800);
+    addEvent();
+  </script>
 </body>
 </html>

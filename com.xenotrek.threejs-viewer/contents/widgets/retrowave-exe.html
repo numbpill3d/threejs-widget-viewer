@@ -1,2811 +1,928 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>
-RETROWAVE.EXE
-        </title>
-        <meta name="title" content="RETROWAVE.EXE">
-        <style type="text/css">
-<!-- #toc,
-.toc,
-.mw-warning {
-	border: 1px solid #aaa;
-	background-color: #f9f9f9;
-	padding: 5px;
-	font-size: 95%;
-}
-#toc h2,
-.toc h2 {
-	display: inline;
-	border: none;
-	padding: 0;
-	font-size: 100%;
-	font-weight: bold;
-}
-#toc #toctitle,
-.toc #toctitle,
-#toc .toctitle,
-.toc .toctitle {
-	text-align: center;
-}
-#toc ul,
-.toc ul {
-	list-style-type: none;
-	list-style-image: none;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: left;
-}
-#toc ul ul,
-.toc ul ul {
-	margin: 0 0 0 2em;
-}
-#toc .toctoggle,
-.toc .toctoggle {
-	font-size: 94%;
-}p, h1, h2, h3, li {
-	color:#000000;
-	font-family:'Liberation Serif';
-	font-size:12pt;
-	text-align:left;
-	vertical-align:normal;
-}
-body{
-padding-top : 1in;
-padding-bottom : 1in;
-padding-left : 1in;
-padding-right : 1in;
-font-family:'Liberation Serif';
-font-variant:normal;
-text-indent:0in;
-widows:2;
-font-style:normal;
-font-weight:normal;
-text-decoration:none;
-color:#000000;
-text-align:left;
-font-size:12pt;
-} -->
-        </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 98 Retrowave 3D Widget</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    /* Custom Windows 98 Font */
+    @font-face {
+      font-family: 'MS Sans Serif';
+      src: url('data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAABLMAA8AAAAAHwwAAQABAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAABWAAAABYAAAAWABMAFkdQT1MAAAFwAAAAIAAAACBEdkx1R1NVQgAAAZAAAABOAAAAZpn+Xc9PUy8yAAAB4AAAAEsAAABgWwJdQGNtYXAAAAIsAAAAUwAAAGIHZgmVZ2FzcAAAAoAAAAAQAAAAEAAVACNnbHlmAAACkAAAC4oAABDQDd0mTGhlYWQAAA4cAAAAMAAAADYmwWncaGhlYQAADkwAAAAgAAAAJAmvBbFobXR4AAAObAAAAFIAAABsYnAFwWxvY2EAAA7AAAAAPgAAAD42NjEMbWF4cAAADwAAAAAgAAAAIAAfAI9uYW1lAAAPIAAAAQIAAAGugynjp3Bvc3QAABAgAAAAKwAAAEBQJBsocHJlcAAAEEwAAAA5AAAAVpPzcbF4nGNgZGBg4GIwYbBjYHJx8wlh4MtJLMljkGJgAYoz/P/PwADETLnFoBwmZpVikGJmYFNgEQCAQQwbeJxjYGGeynRWBiDgZOBiAAGfGF2BAAABWgCOeJxjYGBgZoBgGQZGBhDIAfIYwXwWBgUgzQKEQP7///8P5v//DySAIsUEpBgZ4IDRgREoACQ0MTW3YHBgCGZwYISqAgAWXQhyAAAAKgCdAIAAigB4ANQAZABOAFoAhwBgAFYANAI8ALwAsgCmAHgAngDEAGAAVgBIAEQFEXicY2BkYGDgYpBj0GRgzUnOLyrOYO1KzEvOYWBg4mZgYGJgZGbXS87P5edgYGDnYGAEipkxMAAAqH8POgAAeJxdkD1OxDAQhcc4LOEGSBaSLSLRUKx0k4IIIR3eB0HpKVLs3oIdRyKGliPAnTgAzP5JsQRM6fH3vRmPZrKzbTPL3f6M3o+2E/VtSvuL6DvahU4d3QQ+h/7KxzT0r4KVBzq3vwmCnbJ3inxP5R7Vn/x4uAkUyZB+wOND1CN5qvRAkdfK9rrTr0K0B3VAd6B9LxrOKxCNNxpRo5Vn91a0x2d1M042LQxKO5MVPLnZ3EilVGDQKdVAMCrpUzTFuGZiX0o7LHWuVyLUPerlWQrRGZ3QXqE9MelNsBOb/sdG32MmRXv1jWxq2Wwhs7WRRl7Mox037xulADu5sPQqtIs2PqCk/leKNEFtqQ0LaAP+6FoQCZIg2BzfRU+rjAAAeJztVml300YUlbxlIxtZaFFLx2yyFESJpkKIQlBIG9JGHLFpCUhLmnhDOMSMxHMcZJLUvXXXXhvW7lrX7nt78nqzXvPss9vvPXPfe9/7MQJxfpH9P/fVnECYH2dqiXLp6ZLJrMamrIqqrKrKtKu6um56SJqZTb/ErE2vNUl7YQqb6qrcFyuUWZS1JrhHVS1VPVf1Wm2hJKqoqloqV01VPVe1Wm2ppKqqlaJWTVWdaq26bWyaquqmTVOTNtumqqq6aVNVbd2mqrppmw/j94qo6k1TQzLVJ9/e77ngd+qPNkK7L5yNV3P+EC6b7fPYrQiW+Mzm88prjvdKuNvM9MtdbLuF3EVmN3CLmGvmXuB2MmeYe4H7zHwA3Ac+A+4zl0G7lfB+5M1ynsA78HcSbwE/jhyC9o/xO5rnN+ItcRfwl5jXgLtRkDQMwFVpI3pqB5+gNphiKuUw0FU4ig5BZQUDVKVg0CzAEljDOIYAxXI8jGMY+xhXYx/jAb5HfA1+wnwhx/J8LjiIryn+EgcZh+KvOIjxGvfTDfJvGrjF/jUdIeZVk7fEvMN8KH6M+YX4VP3m+GP8YhrM32WuEH+VqYAPgo8wV4l/htxs4EHwMSbEqVw+Vh8BBxlXiP9u9g4x15hHmbOJ5pL5E+Ys82nxFIdeVmLOAYeYvxefIpdw5Hh4TPwF5gvxl4XpJv4N8zXxJTnF3MD3iXu4fXxfXGbuYCyK+4h74jHiUdwviMeJx4knxN15rszlxNPEM8SzxHPE88A+voJ4kXiJOEC8TLxCvJroJW4h9hG3Eq8SB4nXiNcD5W3EPuIN4k3gIHEXcYh4izjcuHbjHuJt4h3gu8S7xPeI94l7ifeID4gPiY+Ij4lPiE85t5zPiM+JL4gvgQ85HxFfEV8T3xDfEkeI74jvGz81viN+IH4k3gd+In5uLE78QhwlfiWOEb8Rx4kTxEnid+IPzvAQgP8jqv4DlfV434NCmVuZHN0cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQo1OTcwNg0KJSVFT0YNCg==') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* Windows 98 inspired UI */
+    :root {
+      --win98-gray: #c0c0c0;
+      --win98-dark: #808080;
+      --win98-darker: #404040;
+      --win98-light: #ffffff;
+      --win98-blue: #000080;
+      --win98-cyan: #008080;
+      --retrowave-pink: #ff00ff;
+      --retrowave-blue: #00ffff;
+      --retrowave-purple: #9900ff;
+      --retrowave-dark: #120458;
+      --retrowave-sunset: #fc3f9e;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+      overflow: hidden;
+      background-color: black;
+    }
+    #container {
+      width: 250px;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      background-color: var(--win98-gray);
+      border: 2px solid var(--win98-dark);
+      border-top-color: var(--win98-light);
+      border-left-color: var(--win98-light);
+    }
+    #title-bar {
+      background: linear-gradient(90deg, var(--win98-blue), var(--retrowave-purple));
+      color: white;
+      padding: 3px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 12px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+    #title-buttons {
+      display: flex;
+    }
+    .title-button {
+      width: 16px;
+      height: 14px;
+      margin-left: 2px;
+      background-color: var(--win98-gray);
+      border: 1px solid;
+      border-top-color: var(--win98-light);
+      border-left-color: var(--win98-light);
+      border-right-color: var(--win98-darker);
+      border-bottom-color: var(--win98-darker);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 9px;
+      cursor: pointer;
+    }
+    #controls {
+      background-color: var(--win98-gray);
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+    .control-group {
+      margin-bottom: 5px;
+      border: 1px solid;
+      border-top-color: var(--win98-darker);
+      border-left-color: var(--win98-darker);
+      border-right-color: var(--win98-light);
+      border-bottom-color: var(--win98-light);
+      padding: 5px;
+    }
+    .control-label {
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+    .win98-button {
+      background-color: var(--win98-gray);
+      border: 1px solid;
+      border-top-color: var(--win98-light);
+      border-left-color: var(--win98-light);
+      border-right-color: var(--win98-darker);
+      border-bottom-color: var(--win98-darker);
+      padding: 2px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      margin-top: 3px;
+    }
+    .win98-button:active {
+      border-top-color: var(--win98-darker);
+      border-left-color: var(--win98-darker);
+      border-right-color: var(--win98-light);
+      border-bottom-color: var(--win98-light);
+    }
+    .win98-slider {
+      width: 100%;
+      height: 10px;
+      -webkit-appearance: none;
+      background-color: var(--win98-light);
+      outline: none;
+      border: 1px solid var(--win98-darker);
+    }
+    .win98-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 20px;
+      background: var(--win98-gray);
+      border: 1px solid;
+      border-top-color: var(--win98-light);
+      border-left-color: var(--win98-light);
+      border-right-color: var(--win98-darker);
+      border-bottom-color: var(--win98-darker);
+    }
+    .win98-dropdown {
+      width: 100%;
+      background-color: white;
+      border: 1px solid;
+      border-top-color: var(--win98-darker);
+      border-left-color: var(--win98-darker);
+      border-right-color: var(--win98-light);
+      border-bottom-color: var(--win98-light);
+      font-size: 11px;
+      padding: 1px;
+    }
+    #status-bar {
+      font-size: 11px;
+      padding: 3px 5px;
+      background-color: var(--win98-gray);
+      border-top: 1px solid var(--win98-dark);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+    }
+    #scene-container {
+      width: 100%;
+      height: 230px;
+      background: black;
+      position: relative;
+    }
+    .ascii-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: rgba(0, 255, 255, 0.2);
+      font-family: monospace;
+      font-size: 8px;
+      overflow: hidden;
+      pointer-events: none;
+      text-shadow: 0 0 5px var(--retrowave-pink);
+      z-index: 10;
+      mix-blend-mode: screen;
+    }
+    .grid-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .grid-horizon {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(0deg,
+        var(--retrowave-sunset) 0%,
+        rgba(136, 0, 255, 0.5) 30%,
+        rgba(0, 0, 0, 0) 100%);
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 100% 4px;
+      z-index: 15;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    #fps-counter {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      color: var(--retrowave-pink);
+      font-size: 10px;
+      z-index: 20;
+      font-family: monospace;
+      text-shadow: 0 0 3px rgba(255, 0, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="title-bar">
+      <div>RETROWAVE.EXE</div>
+      <div id="title-buttons">
+        <div class="title-button" id="min-button">_</div>
+        <div class="title-button" id="max-button">□</div>
+        <div class="title-button" id="close-button">×</div>
+      </div>
+    </div>
+    <div id="scene-container">
+      <div class="grid-horizon"></div>
+      <div class="grid-lines"></div>
+      <div class="scan-line"></div>
+      <div class="ascii-overlay" id="ascii-art"></div>
+      <div id="fps-counter">60 FPS</div>
+    </div>
+    <div id="controls">
+      <div class="control-group">
+        <div class="control-label">OBJECT:</div>
+        <select class="win98-dropdown" id="shape-select">
+          <option value="gun">HANDGUN</option>
+          <option value="server">SERVER</option>
+          <option value="emp">EMP DEVICE</option>
+          <option value="lockpick">LOCKPICK</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <div class="control-label">ROTATION SPEED:</div>
+        <input type="range" min="0" max="10" value="5" class="win98-slider" id="speed-slider">
+      </div>
+      <div class="control-group">
+        <div class="control-label">GRID MODE:</div>
+        <select class="win98-dropdown" id="grid-mode">
+          <option value="wireframe">WIREFRAME</option>
+          <option value="solid">SOLID</option>
+          <option value="points">POINTS</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <div class="control-label">EFFECTS:</div>
+        <button class="win98-button" id="glitch-button">GLITCH</button>
+        <button class="win98-button" id="zoom-button">ZOOM</button>
+        <button class="win98-button" id="scan-button">SCAN</button>
+      </div>
 
-    </head>
-<body>        <div>
-            <p class="" style="text-align:left">
-<span>&lt;!DOCTYPE html&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;html lang="en"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta charset="UTF-8"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;title&gt;Windows 98 Retrowave 3D Widget&lt;/title&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* Custom Windows 98 Font */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;@font-face {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'MS Sans Serif';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src: url('data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAABLMAA8AAAAAHwwAAQABAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAABWAAAABYAAAAWABMAFkdQT1MAAAFwAAAAIAAAACBEdkx1R1NVQgAAAZAAAABOAAAAZpn+Xc9PUy8yAAAB4AAAAEsAAABgWwJdQGNtYXAAAAIsAAAAUwAAAGIHZgmVZ2FzcAAAAoAAAAAQAAAAEAAVACNnbHlmAAACkAAAC4oAABDQDd0mTGhlYWQAAA4cAAAAMAAAADYmwWncaGhlYQAADkwAAAAgAAAAJAmvBbFobXR4AAAObAAAAFIAAABsYnAFwWxvY2EAAA7AAAAAPgAAAD42NjEMbWF4cAAADwAAAAAgAAAAIAAfAI9uYW1lAAAPIAAAAQIAAAGugynjp3Bvc3QAABAgAAAAKwAAAEBQJBsocHJlcAAAEEwAAAA5AAAAVpPzcbF4nGNgZGBg4GIwYbBjYHJx8wlh4MtJLMljkGJgAYoz/P/PwADETLnFoBwmZpVikGJmYFNgEQCAQQwbeJxjYGGeynRWBiDgZOBiAAGfGF2BAAABWgCOeJxjYGBgZoBgGQZGBhDIAfIYwXwWBgUgzQKEQP7///8P5v//DySAIsUEpBgZ4IDRgREoACQ0MTW3YHBgCGZwYISqAgAWXQhyAAAAKgCdAIAAigB4ANQAZABOAFoAhwBgAFYANAI8ALwAsgCmAHgAngDEAGAAVgBIAEQFEXicY2BkYGDgYpBj0GRgzUnOLyrOYO1KzEvOYWBg4mZgYGJgZGbXS87P5edgYGDnYGAEipkxMAAAqH8POgAAeJxdkD1OxDAQhcc4LOEGSBaSLSLRUKx0k4IIIR3eB0HpKVLs3oIdRyKGliPAnTgAzP5JsQRM6fH3vRmPZrKzbTPL3f6M3o+2E/VtSvuL6DvahU4d3QQ+h/7KxzT0r4KVBzq3vwmCnbJ3inxP5R7Vn/x4uAkUyZB+wOND1CN5qvRAkdfK9rrTr0K0B3VAd6B9LxrOKxCNNxpRo5Vn91a0x2d1M042LQxKO5MVPLnZ3EilVGDQKdVAMCrpUzTFuGZiX0o7LHWuVyLUPerlWQrRGZ3QXqE9MelNsBOb/sdG32MmRXv1jWxq2Wwhs7WRRl7Mox037xulADu5sPQqtIs2PqCk/leKNEFtqQ0LaAP+6FoQCZIg2BzfRU+rjAAAeJztVml300YUlbxlIxtZaFFLx2yyFESJpkKIQlBIG9JGHLFpCUhLmnhDOMSMxHMcZJLUvXXXXhvW7lrX7nt78nqzXvPss9vvPXPfe9/7MQJxfpH9P/fVnECYH2dqiXLp6ZLJrMamrIqqrKrKtKu6um56SJqZTb/ErE2vNUl7YQqb6qrcFyuUWZS1JrhHVS1VPVf1Wm2hJKqoqloqV01VPVe1Wm2ppKqqlaJWTVWdaq26bWyaquqmTVOTNtumqqq6aVNVbd2mqrppmw/j94qo6k1TQzLVJ9/e77ngd+qPNkK7L5yNV3P+EC6b7fPYrQiW+Mzm88prjvdKuNvM9MtdbLuF3EVmN3CLmGvmXuB2MmeYe4H7zHwA3Ac+A+4zl0G7lfB+5M1ynsA78HcSbwE/jhyC9o/xO5rnN+ItcRfwl5jXgLtRkDQMwFVpI3pqB5+gNphiKuUw0FU4ig5BZQUDVKVg0CzAEljDOIYAxXI8jGMY+xhXYx/jAb5HfA1+wnwhx/J8LjiIryn+EgcZh+KvOIjxGvfTDfJvGrjF/jUdIeZVk7fEvMN8KH6M+YX4VP3m+GP8YhrM32WuEH+VqYAPgo8wV4l/htxs4EHwMSbEqVw+Vh8BBxlXiP9u9g4x15hHmbOJ5pL5E+Ys82nxFIdeVmLOAYeYvxefIpdw5Hh4TPwF5gvxl4XpJv4N8zXxJTnF3MD3iXu4fXxfXGbuYCyK+4h74jHiUdwviMeJx4knxN15rszlxNPEM8SzxHPE88A+voJ4kXiJOEC8TLxCvJroJW4h9hG3Eq8SB4nXiNcD5W3EPuIN4k3gIHEXcYh4izjcuHbjHuJt4h3gu8S7xPeI94l7ifeID4gPiY+Ij4lPiE85t5zPiM+JL4gvgQ85HxFfEV8T3xDfEkeI74jvGz81viN+IH4k3gd+In5uLE78QhwlfiWOEb8Rx4kTxEnid+IPzvAQgP8jqv4DlfV434NCmVuZHN0cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQo1OTcwNg0KJSVFT0YNCg==') format('woff');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight: normal;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-style: normal;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;/* Windows 98 inspired UI */</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;:root {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-gray: #c0c0c0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-dark: #808080;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-darker: #404040;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-light: #ffffff;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-blue: #000080;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--win98-cyan: #008080;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--retrowave-pink: #ff00ff;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--retrowave-blue: #00ffff;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--retrowave-purple: #9900ff;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--retrowave-dark: #120458;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--retrowave-sunset: #fc3f9e;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;body, html {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: "MS Sans Serif", Arial, sans-serif;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: black;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#container {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 250px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 500px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid var(--win98-dark);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#title-bar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(90deg, var(--win98-blue), var(--retrowave-purple));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: white;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 12px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#title-buttons {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.title-button {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 16px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 14px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-left: 2px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 9px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#controls {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.control-group {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.control-label {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 3px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.win98-button {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 2px 8px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top: 3px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.win98-button:active {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.win98-slider {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-webkit-appearance: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outline: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.win98-slider::-webkit-slider-thumb {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-webkit-appearance: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 20px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.win98-dropdown {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: white;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left-color: var(--win98-darker);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: var(--win98-light);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 1px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#status-bar {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--win98-gray);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top: 1px solid var(--win98-dark);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#scene-container {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 230px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: black;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.ascii-overlay {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: rgba(0, 255, 255, 0.2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 8px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 5px var(--retrowave-pink);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 10;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mix-blend-mode: screen;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.grid-lines {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-size: 20px 20px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.grid-horizon {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 50%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(0deg,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var(--retrowave-sunset) 0%,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(136, 0, 255, 0.5) 30%,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0, 0, 0, 0) 100%);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;.scan-line {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to bottom,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255, 255, 255, 0) 0%,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255, 255, 255, 0.03) 50%,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255, 255, 255, 0) 100%</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-size: 100% 4px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 15;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;#fps-counter {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: 5px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--retrowave-pink);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 20;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: monospace;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 3px rgba(255, 0, 255, 0.7);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/style&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/head&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;div id="container"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div id="title-bar"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;RETROWAVE.EXE&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="title-buttons"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="title-button" id="min-button"&gt;_&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="title-button" id="max-button"&gt;□&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="title-button" id="close-button"&gt;×&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div id="scene-container"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="grid-horizon"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="grid-lines"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="scan-line"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ascii-overlay" id="ascii-art"&gt;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="fps-counter"&gt;60 FPS&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div id="controls"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-group"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-label"&gt;OBJECT:&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select class="win98-dropdown" id="shape-select"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="gun"&gt;HANDGUN&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="server"&gt;SERVER&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="emp"&gt;EMP DEVICE&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="lockpick"&gt;LOCKPICK&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-group"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-label"&gt;ROTATION SPEED:&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="range" min="0" max="10" value="5" class="win98-slider" id="speed-slider"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-group"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-label"&gt;GRID MODE:&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select class="win98-dropdown" id="grid-mode"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="wireframe"&gt;WIREFRAME&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="solid"&gt;SOLID&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="points"&gt;POINTS&lt;/option&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-group"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-label"&gt;EFFECTS:&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="win98-button" id="glitch-button"&gt;GLITCH&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="win98-button" id="zoom-button"&gt;ZOOM&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="win98-button" id="scan-button"&gt;SCAN&lt;/button&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-group"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="control-label"&gt;LAYER DEPTH:&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="range" min="0" max="10" value="5" class="win98-slider" id="depth-slider"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;div id="status-bar"&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Ready&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="time-display"&gt;00:00:00&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/div&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// ASCII art generation with tech and hacker-themed characters</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function generateAsciiArt() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const techChars = 'xX0@#*+=:-.01&gt;!|/\\[]{}$%&amp;&lt;&gt;?;:~^`';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let ascii = '';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const rows = 30;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const cols = 40;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Technical terms to randomly insert</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const techTerms = [</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'HACK', 'SYS', 'ROOT', 'NET', 'PWN',</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'EXE', 'CMD', 'GET', 'LOG', 'KEY',</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'SSH', 'GPU', 'CPU', 'RAM', 'EOF',</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'HEX', 'BIN', 'ASM', 'SQL', 'DNS',</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'DOS', 'WIN', 'USB', 'FTP', 'VPN'</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; rows; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random chance to insert a tech term instead of random chars</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.random() &lt; 0.2) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const term = techTerms[Math.floor(Math.random() * techTerms.length)];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const padding = ' '.repeat(Math.floor(Math.random() * (cols - term.length)));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ascii += padding + term + ' '.repeat(cols - padding.length - term.length) + '\n';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let j = 0; j &lt; cols; j++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ascii += techChars[Math.floor(Math.random() * techChars.length)];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ascii += '\n';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('ascii-art').textContent = ascii;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;generateAsciiArt();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setInterval(generateAsciiArt, 5000);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Time display</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function updateTime() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const now = new Date();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const hours = String(now.getHours()).padStart(2, '0');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const minutes = String(now.getMinutes()).padStart(2, '0');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const seconds = String(now.getSeconds()).padStart(2, '0');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('time-display').textContent = `${hours}:${minutes}:${seconds}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;setInterval(updateTime, 1000);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;updateTime();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Window buttons</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('close-button').addEventListener('click', () =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('SYSTEM MESSAGE: Cannot close critical process.');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('min-button').addEventListener('click', () =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('scene-container').style.display =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('scene-container').style.display === 'none' ? 'block' : 'none';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('max-button').addEventListener('click', () =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('ERROR: Maximum window size reached.');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Three.js implementation</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const scene = new THREE.Scene();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const camera = new THREE.PerspectiveCamera(75, 250/230, 0.1, 1000);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const renderer = new THREE.WebGLRenderer({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;antialias: true,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alpha: true</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;renderer.setSize(250, 230);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('scene-container').appendChild(renderer.domElement);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Add lights</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Scene fog for depth</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.fog = new THREE.Fog(0x120458, 2, 8);</span>
-            </p>
-            <p class="" style="text-align:left">
-</p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Background</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;renderer.setClearColor(0x000000);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const ambientLight = new THREE.AmbientLight(0x404040);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(ambientLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;directionalLight.position.set(1, 1, 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(directionalLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Add point lights for retrowave effect</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const pinkLight = new THREE.PointLight(0xff00ff, 1, 100);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;pinkLight.position.set(2, 2, 2);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(pinkLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const blueLight = new THREE.PointLight(0x00ffff, 1, 100);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;blueLight.position.set(-2, -1, -1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(blueLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Add extra retrowave sun light</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sunLight = new THREE.PointLight(0xff3f9e, 0.8, 100);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;sunLight.position.set(0, -2, -5);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(sunLight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Add floor grid</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const gridHelper = new THREE.GridHelper(20, 40);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;gridHelper.position.y = -1.5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;gridHelper.material.opacity = 0.2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;gridHelper.material.transparent = true;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(gridHelper);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Add background sun sphere</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sunGeometry = new THREE.SphereGeometry(2, 32, 32);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sunMaterial = new THREE.MeshBasicMaterial({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0xff3f9e,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.4</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sun = new THREE.Mesh(sunGeometry, sunMaterial);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;sun.position.set(0, -1, -8);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(sun);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Create materials</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const wireframeMaterial = new THREE.MeshBasicMaterial({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x00ffff,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const solidMaterial = new THREE.MeshPhongMaterial({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0xffffff,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emissive: 0x222222,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specular: 0xff00ff,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shininess: 30,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flatShading: true</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const pointsMaterial = new THREE.PointsMaterial({</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0xff00ff,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size: 0.05,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sizeAttenuation: true</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Base geometries for fallback</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const sphereGeometry = new THREE.SphereGeometry(0.7, 16, 16);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const torusGeometry = new THREE.TorusGeometry(0.5, 0.2, 16, 50);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;const pyramidGeometry = new THREE.TetrahedronGeometry(0.8);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Create more complex 3D models</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Gun model</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function createGunModel() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const gunGroup = new THREE.Group();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Gun barrel</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const barrel = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CylinderGeometry(0.05, 0.05, 0.7, 8),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;barrel.rotation.x = Math.PI / 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;barrel.position.z = 0.35;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Gun handle</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const handle = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.1, 0.3, 0.2),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handle.position.y = -0.2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Gun body</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const body = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.2, 0.2, 0.4),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body.position.z = 0.1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Trigger</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const trigger = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.05, 0.1, 0.05),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger.position.set(0, -0.05, 0);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Sight</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const sight = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.05, 0.05, 0.05),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sight.position.set(0, 0.15, 0.05);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gunGroup.add(barrel, handle, body, trigger, sight);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return gunGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Server model</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function createServerModel() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const serverGroup = new THREE.Group();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Server chassis</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const chassis = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.8, 0.3, 0.6),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Server front panel with details</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 4; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const panel = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.15, 0.05, 0.01),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panel.position.set(0, -0.1 + i * 0.07, 0.31);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverGroup.add(panel);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add small LEDs</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const led = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.SphereGeometry(0.01, 4, 4),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.MeshBasicMaterial({ color: 0x00ff00 })</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;led.position.set(-0.3, -0.1 + i * 0.07, 0.31);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverGroup.add(led);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cooling vents</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 6; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const vent = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.05, 0.02, 0.1),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vent.position.set(0.3, -0.1 + i * 0.05, 0.31);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverGroup.add(vent);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverGroup.add(chassis);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return serverGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// EMP device model</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function createEMPModel() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const empGroup = new THREE.Group();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Main body (cylindrical casing)</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const body = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CylinderGeometry(0.3, 0.3, 0.2, 16),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Circuit board on top</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const circuit = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CircleGeometry(0.25, 16),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;circuit.rotation.x = -Math.PI / 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;circuit.position.y = 0.11;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add small electronic components</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 12; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const angle = (i / 12) * Math.PI * 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const radius = 0.15;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const component = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.03, 0.03, 0.03),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component.position.set(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.cos(angle) * radius,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.12,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.sin(angle) * radius</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empGroup.add(component);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add center capacitor</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const capacitor = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CylinderGeometry(0.07, 0.07, 0.05, 8),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capacitor.position.y = 0.14;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add antenna</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const antenna = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CylinderGeometry(0.01, 0.01, 0.3, 4),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;antenna.position.set(0, 0.3, 0);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add wires</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 4; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const wirePath = new THREE.CurvePath();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const angle = (i / 4) * Math.PI * 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const start = new THREE.Vector3(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.cos(angle) * 0.1,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.12,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.sin(angle) * 0.1</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const end = new THREE.Vector3(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.cos(angle) * 0.2,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.12,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.sin(angle) * 0.2</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mid = new THREE.Vector3(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.cos(angle) * 0.15,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.17,</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.sin(angle) * 0.15</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const curve = new THREE.QuadraticBezierCurve3(start, mid, end);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wirePath.add(curve);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const wire = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.TubeGeometry(curve, 8, 0.01, 4, false),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empGroup.add(wire);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empGroup.add(body, circuit, capacitor, antenna);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return empGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Lockpick model</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function createLockpickModel() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const lockpickGroup = new THREE.Group();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Lock body</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const lockBody = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.CylinderGeometry(0.2, 0.2, 0.3, 16),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockBody.rotation.x = Math.PI / 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Lock shackle</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const curve = new THREE.CurvePath();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p1 = new THREE.Vector3(0, 0.15, -0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p2 = new THREE.Vector3(0, 0.3, -0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p3 = new THREE.Vector3(0, 0.3, 0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p4 = new THREE.Vector3(0, 0.15, 0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curve.add(new THREE.LineCurve3(p1, p2));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curve.add(new THREE.LineCurve3(p2, p3));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curve.add(new THREE.LineCurve3(p3, p4));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const shackle = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.TubeGeometry(curve, 32, 0.03, 8, false),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Lockpick tool</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pick = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.01, 0.3, 0.01),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pick.position.set(0, 0, 0.15);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pick.rotation.x = Math.PI / 4;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Tension wrench</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const wrench = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.BoxGeometry(0.01, 0.25, 0.03),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrench.position.set(0.05, 0, 0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrench.rotation.x = Math.PI / 4;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrench.rotation.z = Math.PI / 12;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Keyhole</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const keyhole = new THREE.Mesh(</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.TorusGeometry(0.05, 0.02, 8, 16, Math.PI),</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframeMaterial</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyhole.position.set(0, 0, 0.16);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyhole.rotation.x = Math.PI / 2;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockpickGroup.add(lockBody, shackle, pick, wrench, keyhole);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return lockpickGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Create initial mesh</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let currentModel = 'gun';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let mesh = createGunModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;scene.add(mesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Set camera position</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;camera.position.z = 2.5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Animation loop variables</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let rotationSpeed = 0.01;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let currentGeometry = cubeGeometry;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let currentRenderMode = 'wireframe';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let frame = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let lastTime = performance.now();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let fps = 60;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Effect variables</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let glitchMode = false;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let zoomMode = false;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let scanMode = false;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let zoomDirection = 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let layerDepth = 5;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let scanLine = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Model selection</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('shape-select').addEventListener('change', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const modelType = this.value;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.remove(mesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentModel = modelType;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateMesh();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL: ${modelType.toUpperCase()}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Grid mode selection</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('grid-mode').addEventListener('change', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentRenderMode = this.value;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateMesh();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateLayerDepth();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODE: ${this.value.toUpperCase()}`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Update mesh based on current settings</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function updateMesh() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.remove(mesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let modelGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(currentModel) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'gun':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup = createGunModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'server':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup = createServerModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'emp':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup = createEMPModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'lockpick':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup = createLockpickModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup = createGunModel();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Apply materials based on current render mode</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modelGroup.traverse((object) =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (object.isMesh) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(currentRenderMode) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'wireframe':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.material = wireframeMaterial;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'solid':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.material = solidMaterial;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'points':</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// For points mode, we need to replace the mesh with points</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pointsGeom = object.geometry.clone();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const points = new THREE.Points(pointsGeom, pointsMaterial);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.position.copy(object.position);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.rotation.copy(object.rotation);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.scale.copy(object.scale);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.parent.add(points);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.parent.remove(object);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh = modelGroup;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(mesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Speed slider</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('speed-slider').addEventListener('input', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotationSpeed = this.value * 0.002;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Speed: ${this.value}/10`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Effect buttons</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('glitch-button').addEventListener('click', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glitchMode = !glitchMode;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.borderStyle = glitchMode ? 'inset' : 'outset';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glitchMode ? 'GLITCH ENABLED' : 'Ready';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('zoom-button').addEventListener('click', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoomMode = !zoomMode;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.borderStyle = zoomMode ? 'inset' : 'outset';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoomMode ? 'ZOOM ENABLED' : 'Ready';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('scan-button').addEventListener('click', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanMode = !scanMode;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.borderStyle = scanMode ? 'inset' : 'outset';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanMode ? 'SCANNING...' : 'Ready';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Layer depth slider</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;document.getElementById('depth-slider').addEventListener('input', function() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerDepth = parseInt(this.value);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateLayerDepth();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('status-bar').firstElementChild.textContent =</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DEPTH: ${this.value}/10`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Create layered duplicates of the model for depth effect</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;let layerMeshes = [];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function updateLayerDepth() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Remove existing layer meshes</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMeshes.forEach(layer =&gt; scene.remove(layer));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMeshes = [];</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (layerDepth &lt;= 1) return;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create new layer duplicates</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 1; i &lt; layerDepth; i++) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (mesh) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const layerMesh = mesh.clone();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Scale and position the layer</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const scale = 1 + (i * 0.03);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const offset = -i * 0.05;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMesh.scale.set(scale, scale, scale);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMesh.position.z = offset;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Make the layer semi-transparent</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMesh.traverse((object) =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (object.isMesh) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const newMaterial = object.material.clone();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newMaterial.transparent = true;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newMaterial.opacity = 0.3 - (i * 0.02);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.material = newMaterial;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(layerMesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMeshes.push(layerMesh);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;// Animation loop</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;function animate() {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(animate);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frame++;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (frame % 10 === 0) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const currentTime = performance.now();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fps = Math.round(1000 / ((currentTime - lastTime) / 10));</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastTime = currentTime;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('fps-counter').textContent = `${fps} FPS`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Rotate the mesh</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (mesh) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.rotation.x += rotationSpeed;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.rotation.y += rotationSpeed * 1.3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Glitch effect (randomly distort geometry)</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (glitchMode &amp;&amp; frame % 30 === 0) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (currentRenderMode !== 'points') {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const positions = mesh.geometry.attributes.position.array;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; positions.length; i += 3) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.random() &gt; 0.8) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i] += (Math.random() - 0.5) * 0.1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i+1] += (Math.random() - 0.5) * 0.1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i+2] += (Math.random() - 0.5) * 0.1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.geometry.attributes.position.needsUpdate = true;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Zoom effect</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (zoomMode) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.position.z += 0.01 * zoomDirection;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (camera.position.z &gt; 3.5) zoomDirection = -1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (camera.position.z &lt; 1.5) zoomDirection = 1;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Gradually return to default position</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.position.z += (2.5 - camera.position.z) * 0.05;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Animate lights</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pinkLight.position.x = 2 * Math.sin(Date.now() * 0.001);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pinkLight.position.y = 2 * Math.cos(Date.now() * 0.001);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blueLight.position.x = 2 * Math.cos(Date.now() * 0.0015);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blueLight.position.z = 2 * Math.sin(Date.now() * 0.0015);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Animate sun</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sun.rotation.y += 0.005;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Scan effect</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (scanMode &amp;&amp; frame % 2 === 0) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanLine += 3;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (scanLine &gt; 230) scanLine = 0;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const scanDiv = document.createElement('div');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.position = 'absolute';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.left = '0';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.top = `${scanLine}px`;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.width = '100%';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.height = '3px';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.backgroundColor = 'rgba(0, 255, 255, 0.5)';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.zIndex = '25';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.pointerEvents = 'none';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.style.boxShadow = '0 0 8px #00ffff';</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const oldScan = document.querySelector('.active-scan-line');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (oldScan) oldScan.remove();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanDiv.classList.add('active-scan-line');</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('scene-container').appendChild(scanDiv);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Animate layer meshes</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (layerMeshes.length &gt; 0) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layerMeshes.forEach((layer, index) =&gt; {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (layer) {</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Slightly offset rotation to create a trailing effect</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const offsetMultiplier = 0.8 - (index * 0.1);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.rotation.x = mesh.rotation.x * offsetMultiplier;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.rotation.y = mesh.rotation.y * offsetMultiplier;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pulse effect on layers</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pulseScale = 1 + (index * 0.03) + (Math.sin(Date.now() * 0.002 + index * 0.5) * 0.03);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.scale.set(pulseScale, pulseScale, pulseScale);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.render(scene, camera);</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;}</span>
-            </p>
-            <p class="" style="text-align:left">
-<span></span></p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&nbsp;&nbsp;animate();</span>
-            </p>
-            <p class="" style="text-align:left">
-<span> &nbsp;&lt;/script&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/body&gt;</span>
-            </p>
-            <p class="" style="text-align:left">
-<span>&lt;/html&gt;</span>
-            </p>
+      <div class="control-group">
+        <div class="control-label">LAYER DEPTH:</div>
+        <input type="range" min="0" max="10" value="5" class="win98-slider" id="depth-slider">
+      </div>
+    </div>
+    <div id="status-bar">
+      <div>Ready</div>
+      <div id="time-display">00:00:00</div>
+    </div>
+  </div>
+  <script>
+    // ASCII art generation with tech and hacker-themed characters
+    function generateAsciiArt() {
+      const techChars = 'xX0@#*+=:-.01>!|/\\[]{}$%&<>?;:~^`';
+      let ascii = '';
+      const rows = 30;
+      const cols = 40;
 
-        </div>
-        <div>
-            <p>
-</p>
-</div>
-</body></html>
+      // Technical terms to randomly insert
+      const techTerms = [
+        'HACK', 'SYS', 'ROOT', 'NET', 'PWN',
+        'EXE', 'CMD', 'GET', 'LOG', 'KEY',
+        'SSH', 'GPU', 'CPU', 'RAM', 'EOF',
+        'HEX', 'BIN', 'ASM', 'SQL', 'DNS',
+        'DOS', 'WIN', 'USB', 'FTP', 'VPN'
+      ];
+
+      for (let i = 0; i < rows; i++) {
+        // Random chance to insert a tech term instead of random chars
+        if (Math.random() < 0.2) {
+          const term = techTerms[Math.floor(Math.random() * techTerms.length)];
+          const padding = ' '.repeat(Math.floor(Math.random() * (cols - term.length)));
+          ascii += padding + term + ' '.repeat(cols - padding.length - term.length) + '\n';
+        } else {
+          for (let j = 0; j < cols; j++) {
+            ascii += techChars[Math.floor(Math.random() * techChars.length)];
+          }
+          ascii += '\n';
+        }
+      }
+
+      document.getElementById('ascii-art').textContent = ascii;
+    }
+
+    generateAsciiArt();
+    setInterval(generateAsciiArt, 5000);
+
+    // Time display
+    function updateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('time-display').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Window buttons
+    document.getElementById('close-button').addEventListener('click', () => {
+      alert('SYSTEM MESSAGE: Cannot close critical process.');
+    });
+
+    document.getElementById('min-button').addEventListener('click', () => {
+      document.getElementById('scene-container').style.display =
+        document.getElementById('scene-container').style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('max-button').addEventListener('click', () => {
+      alert('ERROR: Maximum window size reached.');
+    });
+
+    // Three.js implementation
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 250/230, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
+    renderer.setSize(250, 230);
+    document.getElementById('scene-container').appendChild(renderer.domElement);
+
+    // Add lights
+    // Scene fog for depth
+    scene.fog = new THREE.Fog(0x120458, 2, 8);
+    // Background
+    renderer.setClearColor(0x000000);
+
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    // Add point lights for retrowave effect
+    const pinkLight = new THREE.PointLight(0xff00ff, 1, 100);
+    pinkLight.position.set(2, 2, 2);
+    scene.add(pinkLight);
+
+    const blueLight = new THREE.PointLight(0x00ffff, 1, 100);
+    blueLight.position.set(-2, -1, -1);
+    scene.add(blueLight);
+
+    // Add extra retrowave sun light
+    const sunLight = new THREE.PointLight(0xff3f9e, 0.8, 100);
+    sunLight.position.set(0, -2, -5);
+    scene.add(sunLight);
+
+    // Add floor grid
+    const gridHelper = new THREE.GridHelper(20, 40);
+    gridHelper.position.y = -1.5;
+    gridHelper.material.opacity = 0.2;
+    gridHelper.material.transparent = true;
+    scene.add(gridHelper);
+
+    // Add background sun sphere
+    const sunGeometry = new THREE.SphereGeometry(2, 32, 32);
+    const sunMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff3f9e,
+      transparent: true,
+      opacity: 0.4
+    });
+    const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+    sun.position.set(0, -1, -8);
+    scene.add(sun);
+
+    // Create materials
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00ffff,
+      wireframe: true
+    });
+
+    const solidMaterial = new THREE.MeshPhongMaterial({
+      color: 0xffffff,
+      emissive: 0x222222,
+      specular: 0xff00ff,
+      shininess: 30,
+      flatShading: true
+    });
+
+    const pointsMaterial = new THREE.PointsMaterial({
+      color: 0xff00ff,
+      size: 0.05,
+      sizeAttenuation: true
+    });
+
+    // Base geometries for fallback
+    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+    const sphereGeometry = new THREE.SphereGeometry(0.7, 16, 16);
+    const torusGeometry = new THREE.TorusGeometry(0.5, 0.2, 16, 50);
+    const pyramidGeometry = new THREE.TetrahedronGeometry(0.8);
+
+    // Create more complex 3D models
+    // Gun model
+    function createGunModel() {
+      const gunGroup = new THREE.Group();
+
+      // Gun barrel
+      const barrel = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.05, 0.7, 8),
+        wireframeMaterial
+      );
+      barrel.rotation.x = Math.PI / 2;
+      barrel.position.z = 0.35;
+
+      // Gun handle
+      const handle = new THREE.Mesh(
+        new THREE.BoxGeometry(0.1, 0.3, 0.2),
+        wireframeMaterial
+      );
+      handle.position.y = -0.2;
+
+      // Gun body
+      const body = new THREE.Mesh(
+        new THREE.BoxGeometry(0.2, 0.2, 0.4),
+        wireframeMaterial
+      );
+      body.position.z = 0.1;
+
+      // Trigger
+      const trigger = new THREE.Mesh(
+        new THREE.BoxGeometry(0.05, 0.1, 0.05),
+        wireframeMaterial
+      );
+      trigger.position.set(0, -0.05, 0);
+
+      // Sight
+      const sight = new THREE.Mesh(
+        new THREE.BoxGeometry(0.05, 0.05, 0.05),
+        wireframeMaterial
+      );
+      sight.position.set(0, 0.15, 0.05);
+
+      gunGroup.add(barrel, handle, body, trigger, sight);
+      return gunGroup;
+    }
+
+    // Server model
+    function createServerModel() {
+      const serverGroup = new THREE.Group();
+
+      // Server chassis
+      const chassis = new THREE.Mesh(
+        new THREE.BoxGeometry(0.8, 0.3, 0.6),
+        wireframeMaterial
+      );
+
+      // Server front panel with details
+      for (let i = 0; i < 4; i++) {
+        const panel = new THREE.Mesh(
+          new THREE.BoxGeometry(0.15, 0.05, 0.01),
+          wireframeMaterial
+        );
+        panel.position.set(0, -0.1 + i * 0.07, 0.31);
+        serverGroup.add(panel);
+
+        // Add small LEDs
+        const led = new THREE.Mesh(
+          new THREE.SphereGeometry(0.01, 4, 4),
+          new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+        );
+        led.position.set(-0.3, -0.1 + i * 0.07, 0.31);
+        serverGroup.add(led);
+      }
+
+      // Cooling vents
+      for (let i = 0; i < 6; i++) {
+        const vent = new THREE.Mesh(
+          new THREE.BoxGeometry(0.05, 0.02, 0.1),
+          wireframeMaterial
+        );
+        vent.position.set(0.3, -0.1 + i * 0.05, 0.31);
+        serverGroup.add(vent);
+      }
+
+      serverGroup.add(chassis);
+      return serverGroup;
+    }
+
+    // EMP device model
+    function createEMPModel() {
+      const empGroup = new THREE.Group();
+
+      // Main body (cylindrical casing)
+      const body = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.3, 0.3, 0.2, 16),
+        wireframeMaterial
+      );
+
+      // Circuit board on top
+      const circuit = new THREE.Mesh(
+        new THREE.CircleGeometry(0.25, 16),
+        wireframeMaterial
+      );
+      circuit.rotation.x = -Math.PI / 2;
+      circuit.position.y = 0.11;
+
+      // Add small electronic components
+      for (let i = 0; i < 12; i++) {
+        const angle = (i / 12) * Math.PI * 2;
+        const radius = 0.15;
+
+        const component = new THREE.Mesh(
+          new THREE.BoxGeometry(0.03, 0.03, 0.03),
+          wireframeMaterial
+        );
+        component.position.set(
+          Math.cos(angle) * radius,
+          0.12,
+          Math.sin(angle) * radius
+        );
+        empGroup.add(component);
+      }
+
+      // Add center capacitor
+      const capacitor = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.07, 0.07, 0.05, 8),
+        wireframeMaterial
+      );
+      capacitor.position.y = 0.14;
+
+      // Add antenna
+      const antenna = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.01, 0.01, 0.3, 4),
+        wireframeMaterial
+      );
+      antenna.position.set(0, 0.3, 0);
+
+      // Add wires
+      for (let i = 0; i < 4; i++) {
+        const wirePath = new THREE.CurvePath();
+        const angle = (i / 4) * Math.PI * 2;
+        const start = new THREE.Vector3(
+          Math.cos(angle) * 0.1,
+          0.12,
+          Math.sin(angle) * 0.1
+        );
+        const end = new THREE.Vector3(
+          Math.cos(angle) * 0.2,
+          0.12,
+          Math.sin(angle) * 0.2
+        );
+        const mid = new THREE.Vector3(
+          Math.cos(angle) * 0.15,
+          0.17,
+          Math.sin(angle) * 0.15
+        );
+
+        const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+        wirePath.add(curve);
+
+        const wire = new THREE.Mesh(
+          new THREE.TubeGeometry(curve, 8, 0.01, 4, false),
+          wireframeMaterial
+        );
+        empGroup.add(wire);
+      }
+
+      empGroup.add(body, circuit, capacitor, antenna);
+      return empGroup;
+    }
+
+    // Lockpick model
+    function createLockpickModel() {
+      const lockpickGroup = new THREE.Group();
+
+      // Lock body
+      const lockBody = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.2, 0.2, 0.3, 16),
+        wireframeMaterial
+      );
+      lockBody.rotation.x = Math.PI / 2;
+
+      // Lock shackle
+      const curve = new THREE.CurvePath();
+      const p1 = new THREE.Vector3(0, 0.15, -0.1);
+      const p2 = new THREE.Vector3(0, 0.3, -0.1);
+      const p3 = new THREE.Vector3(0, 0.3, 0.1);
+      const p4 = new THREE.Vector3(0, 0.15, 0.1);
+
+      curve.add(new THREE.LineCurve3(p1, p2));
+      curve.add(new THREE.LineCurve3(p2, p3));
+      curve.add(new THREE.LineCurve3(p3, p4));
+
+      const shackle = new THREE.Mesh(
+        new THREE.TubeGeometry(curve, 32, 0.03, 8, false),
+        wireframeMaterial
+      );
+
+      // Lockpick tool
+      const pick = new THREE.Mesh(
+        new THREE.BoxGeometry(0.01, 0.3, 0.01),
+        wireframeMaterial
+      );
+      pick.position.set(0, 0, 0.15);
+      pick.rotation.x = Math.PI / 4;
+
+      // Tension wrench
+      const wrench = new THREE.Mesh(
+        new THREE.BoxGeometry(0.01, 0.25, 0.03),
+        wireframeMaterial
+      );
+      wrench.position.set(0.05, 0, 0.1);
+      wrench.rotation.x = Math.PI / 4;
+      wrench.rotation.z = Math.PI / 12;
+
+      // Keyhole
+      const keyhole = new THREE.Mesh(
+        new THREE.TorusGeometry(0.05, 0.02, 8, 16, Math.PI),
+        wireframeMaterial
+      );
+      keyhole.position.set(0, 0, 0.16);
+      keyhole.rotation.x = Math.PI / 2;
+
+      lockpickGroup.add(lockBody, shackle, pick, wrench, keyhole);
+      return lockpickGroup;
+    }
+
+    // Create initial mesh
+    let currentModel = 'gun';
+    let mesh = createGunModel();
+    scene.add(mesh);
+
+    // Set camera position
+    camera.position.z = 2.5;
+
+    // Animation loop variables
+    let rotationSpeed = 0.01;
+    let currentGeometry = cubeGeometry;
+    let currentRenderMode = 'wireframe';
+    let frame = 0;
+    let lastTime = performance.now();
+    let fps = 60;
+
+    // Effect variables
+    let glitchMode = false;
+    let zoomMode = false;
+    let scanMode = false;
+    let zoomDirection = 1;
+    let layerDepth = 5;
+    let scanLine = 0;
+
+    // Model selection
+    document.getElementById('shape-select').addEventListener('change', function() {
+      const modelType = this.value;
+      scene.remove(mesh);
+      currentModel = modelType;
+
+      updateMesh();
+      document.getElementById('status-bar').firstElementChild.textContent =
+        `MODEL: ${modelType.toUpperCase()}`;
+    });
+
+    // Grid mode selection
+    document.getElementById('grid-mode').addEventListener('change', function() {
+      currentRenderMode = this.value;
+      updateMesh();
+      updateLayerDepth();
+      document.getElementById('status-bar').firstElementChild.textContent =
+        `MODE: ${this.value.toUpperCase()}`;
+    });
+
+    // Update mesh based on current settings
+    function updateMesh() {
+      scene.remove(mesh);
+
+      let modelGroup;
+
+      switch(currentModel) {
+        case 'gun':
+          modelGroup = createGunModel();
+          break;
+        case 'server':
+          modelGroup = createServerModel();
+          break;
+        case 'emp':
+          modelGroup = createEMPModel();
+          break;
+        case 'lockpick':
+          modelGroup = createLockpickModel();
+          break;
+        default:
+          modelGroup = createGunModel();
+      }
+
+      // Apply materials based on current render mode
+      modelGroup.traverse((object) => {
+        if (object.isMesh) {
+          switch(currentRenderMode) {
+            case 'wireframe':
+              object.material = wireframeMaterial;
+              break;
+            case 'solid':
+              object.material = solidMaterial;
+              break;
+            case 'points':
+              // For points mode, we need to replace the mesh with points
+              const pointsGeom = object.geometry.clone();
+              const points = new THREE.Points(pointsGeom, pointsMaterial);
+              points.position.copy(object.position);
+              points.rotation.copy(object.rotation);
+              points.scale.copy(object.scale);
+              object.parent.add(points);
+              object.parent.remove(object);
+              break;
+          }
+        }
+      });
+
+      mesh = modelGroup;
+      scene.add(mesh);
+    }
+
+    // Speed slider
+    document.getElementById('speed-slider').addEventListener('input', function() {
+      rotationSpeed = this.value * 0.002;
+      document.getElementById('status-bar').firstElementChild.textContent =
+        `Speed: ${this.value}/10`;
+    });
+
+    // Effect buttons
+    document.getElementById('glitch-button').addEventListener('click', function() {
+      glitchMode = !glitchMode;
+      this.style.borderStyle = glitchMode ? 'inset' : 'outset';
+      document.getElementById('status-bar').firstElementChild.textContent =
+        glitchMode ? 'GLITCH ENABLED' : 'Ready';
+    });
+
+    document.getElementById('zoom-button').addEventListener('click', function() {
+      zoomMode = !zoomMode;
+      this.style.borderStyle = zoomMode ? 'inset' : 'outset';
+      document.getElementById('status-bar').firstElementChild.textContent =
+        zoomMode ? 'ZOOM ENABLED' : 'Ready';
+    });
+
+    document.getElementById('scan-button').addEventListener('click', function() {
+      scanMode = !scanMode;
+      this.style.borderStyle = scanMode ? 'inset' : 'outset';
+      document.getElementById('status-bar').firstElementChild.textContent =
+        scanMode ? 'SCANNING...' : 'Ready';
+    });
+
+    // Layer depth slider
+    document.getElementById('depth-slider').addEventListener('input', function() {
+      layerDepth = parseInt(this.value);
+      updateLayerDepth();
+      document.getElementById('status-bar').firstElementChild.textContent =
+        `DEPTH: ${this.value}/10`;
+    });
+
+    // Create layered duplicates of the model for depth effect
+    let layerMeshes = [];
+
+    function updateLayerDepth() {
+      // Remove existing layer meshes
+      layerMeshes.forEach(layer => scene.remove(layer));
+      layerMeshes = [];
+
+      if (layerDepth <= 1) return;
+
+      // Create new layer duplicates
+      for (let i = 1; i < layerDepth; i++) {
+        if (mesh) {
+          const layerMesh = mesh.clone();
+
+          // Scale and position the layer
+          const scale = 1 + (i * 0.03);
+          const offset = -i * 0.05;
+
+          layerMesh.scale.set(scale, scale, scale);
+          layerMesh.position.z = offset;
+
+          // Make the layer semi-transparent
+          layerMesh.traverse((object) => {
+            if (object.isMesh) {
+              const newMaterial = object.material.clone();
+              newMaterial.transparent = true;
+              newMaterial.opacity = 0.3 - (i * 0.02);
+              object.material = newMaterial;
+            }
+          });
+
+          scene.add(layerMesh);
+          layerMeshes.push(layerMesh);
+        }
+      }
+    }
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      frame++;
+      if (frame % 10 === 0) {
+        const currentTime = performance.now();
+        fps = Math.round(1000 / ((currentTime - lastTime) / 10));
+        lastTime = currentTime;
+        document.getElementById('fps-counter').textContent = `${fps} FPS`;
+      }
+
+      // Rotate the mesh
+      if (mesh) {
+        mesh.rotation.x += rotationSpeed;
+        mesh.rotation.y += rotationSpeed * 1.3;
+      }
+
+      // Glitch effect (randomly distort geometry)
+      if (glitchMode && frame % 30 === 0) {
+        if (currentRenderMode !== 'points') {
+          const positions = mesh.geometry.attributes.position.array;
+          for (let i = 0; i < positions.length; i += 3) {
+            if (Math.random() > 0.8) {
+              positions[i] += (Math.random() - 0.5) * 0.1;
+              positions[i+1] += (Math.random() - 0.5) * 0.1;
+              positions[i+2] += (Math.random() - 0.5) * 0.1;
+            }
+          }
+          mesh.geometry.attributes.position.needsUpdate = true;
+        }
+      }
+
+      // Zoom effect
+      if (zoomMode) {
+        camera.position.z += 0.01 * zoomDirection;
+        if (camera.position.z > 3.5) zoomDirection = -1;
+        if (camera.position.z < 1.5) zoomDirection = 1;
+      } else {
+        // Gradually return to default position
+        camera.position.z += (2.5 - camera.position.z) * 0.05;
+      }
+
+      // Animate lights
+      pinkLight.position.x = 2 * Math.sin(Date.now() * 0.001);
+      pinkLight.position.y = 2 * Math.cos(Date.now() * 0.001);
+      blueLight.position.x = 2 * Math.cos(Date.now() * 0.0015);
+      blueLight.position.z = 2 * Math.sin(Date.now() * 0.0015);
+
+      // Animate sun
+      sun.rotation.y += 0.005;
+
+      // Scan effect
+      if (scanMode && frame % 2 === 0) {
+        scanLine += 3;
+        if (scanLine > 230) scanLine = 0;
+
+        const scanDiv = document.createElement('div');
+        scanDiv.style.position = 'absolute';
+        scanDiv.style.left = '0';
+        scanDiv.style.top = `${scanLine}px`;
+        scanDiv.style.width = '100%';
+        scanDiv.style.height = '3px';
+        scanDiv.style.backgroundColor = 'rgba(0, 255, 255, 0.5)';
+        scanDiv.style.zIndex = '25';
+        scanDiv.style.pointerEvents = 'none';
+        scanDiv.style.boxShadow = '0 0 8px #00ffff';
+
+        const oldScan = document.querySelector('.active-scan-line');
+        if (oldScan) oldScan.remove();
+
+        scanDiv.classList.add('active-scan-line');
+        document.getElementById('scene-container').appendChild(scanDiv);
+      }
+
+      // Animate layer meshes
+      if (layerMeshes.length > 0) {
+        layerMeshes.forEach((layer, index) => {
+          if (layer) {
+            // Slightly offset rotation to create a trailing effect
+            const offsetMultiplier = 0.8 - (index * 0.1);
+            layer.rotation.x = mesh.rotation.x * offsetMultiplier;
+            layer.rotation.y = mesh.rotation.y * offsetMultiplier;
+
+            // Pulse effect on layers
+            const pulseScale = 1 + (index * 0.03) + (Math.sin(Date.now() * 0.002 + index * 0.5) * 0.03);
+            layer.scale.set(pulseScale, pulseScale, pulseScale);
+          }
+        });
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
