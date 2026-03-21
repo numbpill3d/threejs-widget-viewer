@@ -1,11 +1,1634 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head><meta charset="UTF-8"><title>VOID_BUFFER</title></head>
-<body style="background:#000;color:#9d00ff;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
-  <div style="text-align:center;">
-    <div style="font-size:32px;margin-bottom:12px;">⬡</div>
-    <div style="font-size:14px;letter-spacing:2px;">VOID_BUFFER</div>
-    <div style="font-size:10px;color:#444;margin-top:8px;">Widget HTML not yet deployed — copy source file here</div>
-  </div>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+VOID_BUFFER
+        </title>
+        <meta name="title" content="VOID_BUFFER">
+        <style type="text/css">
+<!-- #toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+	vertical-align:normal;
+}
+body{
+padding-top : 1in;
+padding-bottom : 1in;
+padding-left : 1in;
+padding-right : 1in;
+font-family:'Liberation Serif';
+font-variant:normal;
+text-indent:0in;
+widows:2;
+font-style:normal;
+font-weight:normal;
+text-decoration:none;
+color:#000000;
+text-align:left;
+font-size:12pt;
+} -->
+        </style>
+
+    </head>
+<body>        <div>
+            <p class="" style="text-align:left">
+<span>&lt;!DOCTYPE html&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;html&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body, html {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #000;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Courier New', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#neural-interface {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 120px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: crosshair;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: #000;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #333;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: inset 0 0 20px #f00, inset 0 0 10px #600, inset 0 0 5px #300;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#synaptic-response {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: #f00;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 8px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Courier New', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 1px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 10;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.interface-button {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 24px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 24px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgba(40, 10, 10, 0.7);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #600;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Courier New', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 8px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: #f00;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 24px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 5px #f00;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.3s;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.interface-button:hover {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgba(80, 10, 10, 0.9);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 8px #f00, 0 0 15px #600;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#external-link-1 {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#external-link-2 {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: 44px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#cortical-membrane {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #500;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.3);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#membrane-outer {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: -5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: -5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right: -5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bottom: -5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid #300;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;canvas {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div id="neural-interface"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="synaptic-response"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="cortical-membrane"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="membrane-outer"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="https://nolove.neocities.org" target="_blank" class="interface-button" id="external-link-1"&gt;RH&lt;/a&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="https://voidrane.neocities.org" target="_blank" class="interface-button" id="external-link-2"&gt;W/C&lt;/a&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NEURAL PARAMETERS</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const SYNAPSE_COLOR = 0x0F1525;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const AXON_COLOR = 0xFF1A1A;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const MEMBRANE_COLOR = 0x000000;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const RECEPTOR_COLOR = 0x151A20;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const PARTICLE_COUNT = 150;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// SYSTEM INITIALIZATION</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let scene, camera, renderer;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let nervousSystem = [];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let particles = [];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let organicLayers = [];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let syntheticTime = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let container = document.getElementById('neural-interface');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let synapticResponse = document.getElementById('synaptic-response');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NEUROMORPHIC INTERFACE INITIALIZATION</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function initializeNeuralInterface() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Membrane formation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene = new THREE.Scene();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.background = new THREE.Color(MEMBRANE_COLOR);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Visual cortex parameters</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.position.set(0, 15, 40);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.lookAt(0, 0, 0);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Retinal projection system</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.setSize(container.clientWidth, container.clientHeight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.setPixelRatio(window.devicePixelRatio * 0.7);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.appendChild(renderer.domElement);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Basal illumination</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const ambientLight = new THREE.AmbientLight(0x050708);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(ambientLight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Directed stimulus</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const directionalLight = new THREE.DirectionalLight(0xccddff, 0.4);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionalLight.position.set(1, 1, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(directionalLight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Point light for organic glow</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pointLight = new THREE.PointLight(0xff3333, 0.8, 50);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointLight.position.set(0, 10, 20);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(pointLight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generate neural substrate</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generateSubstrate();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create organic layering</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createOrganicLayers();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Spawn particle system</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createParticleSystem();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generate symbiotic buttons</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createSymbioticButtons();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Bind synaptic receptors</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.addEventListener('mousemove', stimulateSynapse);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.addEventListener('click', triggerActionPotential);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.addEventListener('resize', recalibrateVisualField);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// SUBSTRATE GENERATION</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function generateSubstrate() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add central spinal structure</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const spineGeometry = new THREE.BoxGeometry(1, 1, 60);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const spineMaterial = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x333333,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const spine = new THREE.Mesh(spineGeometry, spineMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spine.position.y = -5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(spine);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generate digital neural networks</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 48; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const nodeSize = Math.random() * 0.8 + 0.2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create axon geometry</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let geometry;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const morphType = Math.floor(Math.random() * 4);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (morphType === 0) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geometry = new THREE.TetrahedronGeometry(nodeSize * 2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (morphType === 1) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geometry = new THREE.OctahedronGeometry(nodeSize * 1.5);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (morphType === 2) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geometry = new THREE.IcosahedronGeometry(nodeSize);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geometry = new THREE.BoxGeometry(nodeSize, nodeSize, nodeSize);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Myelin sheath material</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const material = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: SYNAPSE_COLOR,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.8</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generate neuron</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const neuron = new THREE.Mesh(geometry, material);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Position within neural field</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.position.x = Math.random() * 40 - 20;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.position.y = Math.random() * 10 - 5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.position.z = Math.random() * 40 - 20;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random rotation to simulate chaotic neural growth</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.rotation.x = Math.random() * Math.PI;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.rotation.y = Math.random() * Math.PI;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.rotation.z = Math.random() * Math.PI;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add to neural network</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(neuron);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nervousSystem.push(neuron);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create dendrite connections</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i &gt; 0 &amp;&amp; Math.random() &gt; 0.3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const previousNeuron = nervousSystem[Math.floor(Math.random() * i)];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connectNeurons(neuron, previousNeuron);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create neural substrate</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const substrateGeometry = new THREE.PlaneGeometry(80, 80, 20, 20);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substrateGeometry.rotateX(-Math.PI / 2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Deform to create sulci and gyri</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const vertices = substrateGeometry.attributes.position.array;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; vertices.length; i += 3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertices[i + 2] = Math.sin(vertices[i] / 5) * Math.cos(vertices[i + 1] / 5) * 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const substrateMaterial = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: RECEPTOR_COLOR,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.3</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const substrate = new THREE.Mesh(substrateGeometry, substrateMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substrate.position.y = -8;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(substrate);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CREATE ORGANIC MEMBRANE LAYERING</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function createOrganicLayers() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create multiple layered neural membranes</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 3; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const layerGeometry = new THREE.PlaneGeometry(100 - i * 10, 30, 20, 5);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create tissue folds</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const vertices = layerGeometry.attributes.position.array;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let j = 0; j &lt; vertices.length; j += 3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertices[j + 2] = Math.sin(vertices[j] / 3) * 0.5 + Math.cos(vertices[j + 1] * 2) * 0.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create semi-transparent tissue material</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const layerMaterial = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: new THREE.Color(0.1 + i * 0.05, 0.05, 0.05),</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.3 - i * 0.05</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const layer = new THREE.Mesh(layerGeometry, layerMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.position.z = -10 + i * 5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.position.y = 5 - i * 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.rotation.x = Math.PI / 2.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(layer);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;organicLayers.push(layer);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create central sphere as neural core</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const coreGeometry = new THREE.SphereGeometry(5, 8, 8);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const coreMaterial = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x330000,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.4</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const core = new THREE.Mesh(coreGeometry, coreMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;core.position.z = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;core.position.y = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(core);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;organicLayers.push(core);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create surrounding torus as protective sheathing</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const torusGeometry = new THREE.TorusGeometry(12, 1, 8, 16);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const torusMaterial = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x220000,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.5</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const torus = new THREE.Mesh(torusGeometry, torusMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;torus.rotation.x = Math.PI / 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(torus);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;organicLayers.push(torus);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CREATE PARTICLE SYSTEM FOR NEURAL TRANSMISSION</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function createParticleSystem() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create particle system for neural transmitters</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particleGeometry = new THREE.BufferGeometry();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particlePositions = new Float32Array(PARTICLE_COUNT * 3);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particleSizes = new Float32Array(PARTICLE_COUNT);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particleColors = new Float32Array(PARTICLE_COUNT * 3);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; PARTICLE_COUNT; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random position within bounds</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const x = Math.random() * 60 - 30;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const y = Math.random() * 20 - 10;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const z = Math.random() * 60 - 30;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particlePositions[i * 3] = x;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particlePositions[i * 3 + 1] = y;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particlePositions[i * 3 + 2] = z;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Varying particle sizes</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleSizes[i] = Math.random() * 0.5 + 0.1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Red color with slight variations</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleColors[i * 3] = 0.5 + Math.random() * 0.5; // Red</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleColors[i * 3 + 1] = 0; // Green</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleColors[i * 3 + 2] = 0; // Blue</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleGeometry.setAttribute('size', new THREE.BufferAttribute(particleSizes, 1));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particleGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create point material</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particleMaterial = new THREE.PointsMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0xff0000,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size: 0.5,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.6,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertexColors: true</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const particleSystem = new THREE.Points(particleGeometry, particleMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(particleSystem);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particles.push(particleSystem);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// CREATE 3D BUTTONS AS SYMBIOTIC INTERFACES</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function createSymbioticButtons() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create 3D button models to match the HTML links</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const buttonGeometry = new THREE.BoxGeometry(3, 3, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First button</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const buttonMaterial1 = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x330000,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const button1 = new THREE.Mesh(buttonGeometry, buttonMaterial1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button1.position.set(15, -3, 15);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(button1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Second button</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const buttonMaterial2 = new THREE.MeshBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x330000,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireframe: true</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const button2 = new THREE.Mesh(buttonGeometry, buttonMaterial2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button2.position.set(10, -3, 15);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(button2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// SYNAPSE FORMATION BETWEEN NEURONS</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function connectNeurons(neuronA, neuronB) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create axon geometry</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const points = [];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.push(new THREE.Vector3(neuronA.position.x, neuronA.position.y, neuronA.position.z));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add intermediary points for realistic axon path</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const midX = (neuronA.position.x + neuronB.position.x) / 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const midY = (neuronA.position.y + neuronB.position.y) / 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const midZ = (neuronA.position.z + neuronB.position.z) / 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random displacement to avoid straight lines</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const displaceY = (Math.random() * 4) - 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.push(new THREE.Vector3(midX, midY + displaceY, midZ));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points.push(new THREE.Vector3(neuronB.position.x, neuronB.position.y, neuronB.position.z));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create the axon fiber</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const axonGeometry = new THREE.BufferGeometry().setFromPoints(points);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const axonMaterial = new THREE.LineBasicMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x223344,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.6</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const axon = new THREE.Line(axonGeometry, axonMaterial);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.add(axon);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// STIMULUS RESPONSE FUNCTIONS</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function stimulateSynapse(event) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Convert user input to neural stimulation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const rect = container.getBoundingClientRect();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mouseX = ((event.clientX - rect.left) / container.clientWidth) * 2 - 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mouseY = -((event.clientY - rect.top) / container.clientHeight) * 2 + 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Neural excitation based on receptor input</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.position.x = mouseX * 8;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.lookAt(mouseX * 3, 0, 0);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function triggerActionPotential(event) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Depolarize system</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synapticResponse.style.opacity = 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synapticResponse.innerText = 'neural_cascade_' + Math.floor(Math.random() * 1000);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Create depolarization wave</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.background = new THREE.Color(AXON_COLOR);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random neuron excitation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nervousSystem.forEach(neuron =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.material.color.set(AXON_COLOR);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.scale.multiplyScalar(1.5);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Accelerate particles</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (particles.length &gt; 0) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const positions = particles[0].geometry.attributes.position.array;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; positions.length; i += 3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i] *= 1.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 1] *= 1.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 2] *= 1.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particles[0].geometry.attributes.position.needsUpdate = true;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Repolarization after delay</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.background = new THREE.Color(MEMBRANE_COLOR);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nervousSystem.forEach(neuron =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.material.color.set(SYNAPSE_COLOR);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.scale.set(1, 1, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Reset particles</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (particles.length &gt; 0) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const positions = particles[0].geometry.attributes.position.array;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; positions.length; i += 3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 1] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 2] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particles[0].geometry.attributes.position.needsUpdate = true;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Hyperpolarization</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synapticResponse.style.opacity = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, 300);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, 150);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function recalibrateVisualField() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.aspect = container.clientWidth / container.clientHeight;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camera.updateProjectionMatrix();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.setSize(container.clientWidth, container.clientHeight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NEURAL OSCILLATION SYSTEM</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function oscillateNeuralSystem() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(oscillateNeuralSystem);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderNeuralOutput();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function renderNeuralOutput() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;syntheticTime += 0.01;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simulate ion channel fluctuations</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scene.rotation.y = Math.sin(syntheticTime * 0.1) * 0.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Neuron oscillation patterns</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nervousSystem.forEach((neuron, i) =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.rotation.x += 0.002;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.rotation.z += 0.003;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simulate neural rhythm</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const oscillation = Math.sin(syntheticTime + i * 0.1) * 0.1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.position.y += oscillation;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Return to homeostasis</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;neuron.position.y *= 0.99;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Update particle system motion</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (particles.length &gt; 0) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const positions = particles[0].geometry.attributes.position.array;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; positions.length; i += 3) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Brownian motion to simulate neurotransmitter diffusion</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i] += (Math.random() - 0.5) * 0.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 1] += (Math.random() - 0.5) * 0.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positions[i + 2] += (Math.random() - 0.5) * 0.05;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Contain particles within bounds</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.abs(positions[i]) &gt; 30) positions[i] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.abs(positions[i + 1]) &gt; 15) positions[i + 1] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Math.abs(positions[i + 2]) &gt; 30) positions[i + 2] *= 0.95;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;particles[0].geometry.attributes.position.needsUpdate = true;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Organic layer pulsation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;organicLayers.forEach((layer, i) =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simulate tissue respiration</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.rotation.x += Math.sin(syntheticTime * 0.2) * 0.0005;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.rotation.z += Math.cos(syntheticTime * 0.15) * 0.0003;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Scale pulsation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pulsation = Math.sin(syntheticTime * 0.3 + i * 0.5) * 0.02 + 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.scale.set(1, pulsation, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.render(scene, camera);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// NEURAL SYSTEM ACTIVATION</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initializeNeuralInterface();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oscillateNeuralSystem();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/html&gt;</span>
+            </p>
+
+        </div>
 </body>
 </html>

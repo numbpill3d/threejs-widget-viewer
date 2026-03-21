@@ -1,15 +1,13 @@
 {
     "widgets": [
         { "name": "Retrowave EXE (Win98 3D)",       "file": "retrowave-exe.html" },
-        { "name": "Corrupted Terminal",              "file": "corrupted-terminal.html" },
         { "name": "Desolace (ASCII Glitch)",         "file": "desolace.html" },
-        { "name": "Win98 Gallery (3D + Images)",     "file": "win98-gallery.html" },
         { "name": "Ethereal Sigil Banner",           "file": "sigil-banner.html" },
         { "name": "Void Buffer (Amethyst OS)",       "file": "void-buffer.html" },
         { "name": "Chrome Alchemist (PS1 Low-Poly)", "file": "chrome-alchemist.html" },
-        { "name": "Soul Executor (Dark Window)",     "file": "soul-executor.html" },
         { "name": "Clorophilic Alchemist",           "file": "clorophilic-alchemist.html" },
         { "name": "Plasma Divider",                  "file": "plasma-divider.html" },
-        { "name": "Rotating Geometry",               "file": "rotating-geometry.html" }
+        { "name": "Rotating Geometry",               "file": "rotating-geometry.html" },
+        { "name": "Static Window",                   "file": "static-window.html" }
     ]
 }

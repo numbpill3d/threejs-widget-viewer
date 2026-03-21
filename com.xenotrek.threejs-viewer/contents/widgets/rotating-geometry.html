@@ -1,289 +1,1440 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHROME_ALCHEMIST_v1.0.8</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <style>
-        :root {
-            --chrome: #c0c0c0;
-            --dark-metal: #1a1a1a;
-            --neon-blue: #00f0ff;
-            --ritual-purple: #7000ff;
-            --border-style: 2px solid #fff;
-        }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+CHROME_ALCHEMIST_v1.0.8
+        </title>
+        <meta name="title" content="CHROME_ALCHEMIST_v1.0.8">
+        <style type="text/css">
+<!-- #toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+	vertical-align:normal;
+}
+body{
+padding-top : 1in;
+padding-bottom : 1in;
+padding-left : 1in;
+padding-right : 1in;
+font-family:'Liberation Serif';
+font-variant:normal;
+text-indent:0in;
+widows:2;
+font-style:normal;
+font-weight:normal;
+text-decoration:none;
+color:#000000;
+text-align:left;
+font-size:12pt;
+} -->
+        </style>
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            color: #fff;
-            font-family: "MS Gothic", "Courier New", monospace;
-            overflow: hidden;
-            text-transform: uppercase;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        /* SCANLINE EFFECT */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                rgba(18, 16, 16, 0) 50%, 
-                rgba(0, 0, 0, 0.25) 50%
-            ), linear-gradient(
-                90deg, 
-                rgba(255, 0, 0, 0.06), 
-                rgba(0, 255, 0, 0.02), 
-                rgba(0, 0, 255, 0.06)
-            );
-            background-size: 100% 4px, 3px 100%;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        /* UI COMPONENTS */
-        .window {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.85);
-            border: var(--border-style);
-            z-index: 20;
-            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.5);
-        }
-
-        .title-bar {
-            background: #fff;
-            color: #000;
-            padding: 2px 5px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .content {
-            padding: 10px;
-            border-top: var(--border-style);
-        }
-
-        /* MAIN RITUAL PANEL */
-        #ritual-panel {
-            top: 20px;
-            left: 20px;
-            width: 280px;
-        }
-
-        .status-bar {
-            height: 15px;
-            background: #333;
-            margin: 5px 0;
-            border: 1px solid #fff;
-            position: relative;
-        }
-
-        .status-fill {
-            height: 100%;
-            background: var(--neon-blue);
-            width: 65%;
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-
-        /* INTERACTIVE ELEMENTS */
-        .btn {
-            display: block;
-            width: 100%;
-            background: transparent;
-            color: #fff;
-            border: 1px solid #fff;
-            padding: 5px;
-            margin-top: 5px;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.1s;
-        }
-
-        .btn:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        .btn:active {
-            transform: translate(2px, 2px);
-        }
-
-        /* NAV COMPONENT */
-        #nav-window {
-            bottom: 20px;
-            right: 20px;
-            width: 200px;
-        }
-
-        /* PS1 ERA SYMBOLS */
-        .glyph {
-            font-size: 24px;
-            line-height: 1;
-            margin-bottom: 10px;
-            color: var(--neon-blue);
-        }
-
-        .corner-accent {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-        }
-
-        .top-l { top: -5px; left: -5px; }
-        .top-r { top: -5px; right: -5px; }
-        .bot-l { bottom: -5px; left: -5px; }
-        .bot-r { bottom: -5px; right: -5px; }
-
-        marquee {
-            position: fixed;
-            bottom: 0;
-            background: #fff;
-            color: #000;
-            font-size: 12px;
-            z-index: 100;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="overlay"></div>
-    <div id="canvas-container"></div>
-
-    <!-- MAIN RITUAL WINDOW -->
-    <div class="window" id="ritual-panel">
-        <div class="title-bar">
-            <span>RITUAL_MANIFEST.EXE</span>
-            <span>[X]</span>
-        </div>
-        <div class="content">
-            <div class="glyph">✧ ⟁ ✧</div>
-            <label>CHROME_STABILITY</label>
-            <div class="status-bar"><div class="status-fill"></div></div>
-            <p style="font-size: 10px; color: #888;">MEMORY_SECTOR: 0x00FF81<br>LOW_POLY_MESH: ACTIVE</p>
-            <button class="btn">_INITIATE SYNTHESIS</button>
-            <button class="btn">_REFRACT METALS</button>
-            <button class="btn">_PURGE SOUL_DATA</button>
-        </div>
-        <div class="corner-accent top-l"></div>
-        <div class="corner-accent top-r"></div>
-        <div class="corner-accent bot-l"></div>
-        <div class="corner-accent bot-r"></div>
-    </div>
-
-    <!-- SECONDARY WINDOW -->
-    <div class="window" id="nav-window">
-        <div class="title-bar">
-            <span>KINGDOM_LINK</span>
-        </div>
-        <div class="content">
-            <div style="border: 1px solid #444; height: 80px; margin-bottom: 10px; background: repeating-linear-gradient(45deg, #111, #111 5px, #222 5px, #222 10px);"></div>
-            <div style="font-size: 11px;">
-                > TARGET: HEART_LOCKED<br>
-                > WORLD: NULL_VOID<br>
-                > STATUS: ALCHEMY_STABLE
-            </div>
-        </div>
-    </div>
-
-    <marquee scrollamount="10">CORE_STABLE // PS1_EMULATION_MODE // LIQUID_CHROME_DETECTED // NO_HEARTS_FOUND // MEMORY_CARD_INSERTED // RITUAL_IN_PROGRESS...</marquee>
-
-    <script>
-        // THREE.JS - LOW POLY CHROME ENGINE
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio / 4); // Pixelated look
-        document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-        // Low Poly Liquid Heart (Octahedron for PS1 vibes)
-        const geometry = new THREE.OctahedronGeometry(2, 0); 
-        const material = new THREE.MeshPhongMaterial({
-            color: 0xffffff,
-            specular: 0x00f0ff,
-            shininess: 100,
-            flatShading: true,
-            wireframe: false
-        });
-
-        // Add secondary wireframe for that tech-ritual look
-        const wireframeGeo = new THREE.OctahedronGeometry(2.1, 0);
-        const wireframeMat = new THREE.MeshBasicMaterial({ color: 0x7000ff, wireframe: true, transparent: true, opacity: 0.3 });
-        
-        const mesh = new THREE.Mesh(geometry, material);
-        const wireframe = new THREE.Mesh(wireframeGeo, wireframeMat);
-        
-        const group = new THREE.Group();
-        group.add(mesh);
-        group.add(wireframe);
-        scene.add(group);
-
-        // Lighting
-        const light = new THREE.PointLight(0x00f0ff, 2, 100);
-        light.position.set(10, 10, 10);
-        scene.add(light);
-
-        const ambientLight = new THREE.AmbientLight(0x404040, 2); 
-        scene.add(ambientLight);
-
-        const ritualLight = new THREE.PointLight(0x7000ff, 5, 50);
-        ritualLight.position.set(-10, -10, 5);
-        scene.add(ritualLight);
-
-        camera.position.z = 5;
-
-        // Animation Loop
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            group.rotation.y += 0.01;
-            group.rotation.x += 0.005;
-            
-            // Pulsing scale
-            const scale = 1 + Math.sin(Date.now() * 0.002) * 0.1;
-            group.scale.set(scale, scale, scale);
-
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-
-        // Jitter effect for windows (PS1 vertex wobble simulation)
-        setInterval(() => {
-            const windows = document.querySelectorAll('.window');
-            windows.forEach(win => {
-                if(Math.random() > 0.95) {
-                    win.style.transform = `translate(${Math.random() * 2}px, ${Math.random() * 2}px)`;
-                } else {
-                    win.style.transform = `translate(0, 0)`;
-                }
-            });
-        }, 50);
-    </script>
-</body>
-</html>
+    </head>
+<body>        <div>
+            <p class="" style="text-align:left">
+<span>&lt;!DOCTYPE html&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;html lang="en"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;meta charset="UTF-8"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;title&gt;VOID_RITE.EXE&lt;/title&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;link href="https://fonts.googleapis.com/css2?family=VT323&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;:root {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg: #020d0d;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-panel: #041414;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bg-deep: #010808;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent: #00e5cc;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-dim: rgba(0,229,204,0.3);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent-glow: rgba(0,229,204,0.08);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent2: #9900ff;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--accent2-dim: rgba(153,0,255,0.25);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text: #b0fff8;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--text-muted: #2a6e68;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--border: #082020;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--warn: #ff6600;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;body {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.crt-overlay {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: fixed; inset: 0; z-index: 9999; pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.09) 2px, rgba(0,0,0,0.09) 4px);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: flicker 8s infinite;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.crt-overlay::after {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: ''; position: absolute; inset: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes flicker {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%,97%,99%,100% { opacity: 1; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;98% { opacity: 0.88; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.widget {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 50px var(--accent-glow), 0 0 100px rgba(153,0,255,0.04);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* titlebar */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.titlebar {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(90deg, var(--accent2) 0%, #006060 100%);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 17px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 8px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.1em;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.titlebar-btns { display: flex; gap: 4px; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.tbtn {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 14px; height: 14px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--text-muted);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex; align-items: center; justify-content: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: background 80ms;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.tbtn:hover { background: var(--accent2); color: var(--text); }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* scene */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;#void-canvas {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 240px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;#void-canvas canvas { display: block; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* floating ASCII corruption overlay */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ascii-drift {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute; top: 0; left: 0; right: 0; bottom: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 12px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.08;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;white-space: pre;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 4px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;word-break: break-all;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* signal noise bar */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.noise-bar {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 36px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;#noise-canvas { display: block; width: 100%; height: 100%; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* system grid */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-grid {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: grid;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-cell {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 8px 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-cell:last-child { border-right: none; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-label {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 9px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.18em;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 3px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-value {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 22px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 10px var(--accent-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-value.purple { color: #cc77ff; text-shadow: 0 0 10px var(--accent2-dim); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-value.warn { color: var(--warn); text-shadow: 0 0 10px rgba(255,102,0,0.3); animation: blink 1.8s step-end infinite; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-bar {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 3px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top: 4px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-bar-fill {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 6px var(--accent-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: width 800ms ease;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sys-bar-fill.purple { background: #9900ff; box-shadow: 0 0 6px var(--accent2-dim); }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* glitch readout strip */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-strip {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 6px 12px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-deep);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gap: 14px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-item { display: flex; gap: 6px; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-key { color: var(--text-muted); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-val { color: var(--text); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-val.corrupt {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: corrupt 3s infinite;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes corrupt {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%,90%,100% { opacity: 1; letter-spacing: normal; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;92% { opacity: 0.4; letter-spacing: 0.2em; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;95% { opacity: 0.9; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* bottom controls */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.bottom {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 7px 12px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--bg-panel);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.btn-row { display: flex; gap: 5px; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ctrl-btn {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: transparent;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--border);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px 9px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.1em;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-transform: uppercase;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: color 100ms, border-color 100ms, box-shadow 100ms;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ctrl-btn:hover, .ctrl-btn.active {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-color: var(--accent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 8px var(--accent-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.bottom-clock {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'VT323', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 22px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--accent-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.04em;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: right;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.bottom-clock span {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: block;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--text-muted);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 0.12em;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;/style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;div class="crt-overlay"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;div class="widget"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="titlebar"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;VOID_RITE.EXE // PROCESS MONITOR&lt;/span&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="titlebar-btns"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;_&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;[]&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tbtn"&gt;X&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div id="void-canvas"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ascii-drift" id="ascii-drift"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="noise-bar"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;canvas id="noise-canvas"&gt;&lt;/canvas&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="sys-grid"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-cell"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-label"&gt;CPU&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-value" id="cpu-val"&gt;62%&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-bar"&gt;&lt;div class="sys-bar-fill" id="cpu-bar" style="width:62%"&gt;&lt;/div&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-cell"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-label"&gt;Memory&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-value purple" id="mem-val"&gt;4.1GB&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-bar"&gt;&lt;div class="sys-bar-fill purple" id="mem-bar" style="width:51%"&gt;&lt;/div&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-cell"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-label"&gt;Void Index&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-value warn" id="void-val"&gt;CRITICAL&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sys-bar"&gt;&lt;div class="sys-bar-fill" id="void-bar" style="width:89%;background:var(--warn);box-shadow:0 0 6px rgba(255,102,0,0.3)"&gt;&lt;/div&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="glitch-strip"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glitch-item"&gt;&lt;span class="glitch-key"&gt;PID:&lt;/span&gt;&lt;span class="glitch-val"&gt;0x4A2F&lt;/span&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glitch-item"&gt;&lt;span class="glitch-key"&gt;THREAD:&lt;/span&gt;&lt;span class="glitch-val corrupt" id="thread-val"&gt;7&lt;/span&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glitch-item"&gt;&lt;span class="glitch-key"&gt;NODE:&lt;/span&gt;&lt;span class="glitch-val"&gt;lain_v3.local&lt;/span&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glitch-item"&gt;&lt;span class="glitch-key"&gt;DEPTH:&lt;/span&gt;&lt;span class="glitch-val corrupt" id="depth-val"&gt;INF&lt;/span&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="bottom"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="btn-row"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ctrl-btn active" onclick="cycleShape(this)"&gt;OCT&lt;/button&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ctrl-btn" onclick="cycleShape(this)"&gt;ICOS&lt;/button&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="ctrl-btn" onclick="cycleShape(this)"&gt;TETRA&lt;/button&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="bottom-clock"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="void-clock"&gt;--:--:--&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="void-date"&gt;--/--/----&lt;/span&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// three.js: crystalline octahedron with inner wire lattice</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const container = document.getElementById('void-canvas');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const W = 500, H = 240;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;renderer.setSize(W, H);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;renderer.setClearColor(0x010808, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;container.appendChild(renderer.domElement);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const scene = new THREE.Scene();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 100);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;camera.position.set(0, 0, 3.8);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(new THREE.AmbientLight(0x003333, 3));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const tealLight = new THREE.PointLight(0x00e5cc, 5, 10);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;tealLight.position.set(2, 1, 2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(tealLight);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const purpleLight = new THREE.PointLight(0x9900ff, 4, 8);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;purpleLight.position.set(-2, -1, 1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(purpleLight);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const shapes = [</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.OctahedronGeometry(1.0, 0),</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.IcosahedronGeometry(1.0, 0),</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new THREE.TetrahedronGeometry(1.0, 0),</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const shapeIdx = { OCT: 0, ICOS: 1, TETRA: 2 };</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;let currentShape = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const mat = new THREE.MeshPhongMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x00e5cc,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emissive: 0x002222,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.7,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shininess: 200,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const mesh = new THREE.Mesh(shapes[0], mat);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(mesh);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// inner crystal</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const innerMat = new THREE.MeshPhongMaterial({</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 0x9900ff,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emissive: 0x110022,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transparent: true,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.4,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shininess: 300,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const innerMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.55, 0), innerMat);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(innerMesh);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// wire shell</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const wireMat = new THREE.MeshBasicMaterial({ color: 0x00e5cc, wireframe: true, transparent: true, opacity: 0.12 });</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const wireMesh = new THREE.Mesh(new THREE.OctahedronGeometry(1.08, 0), wireMat);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(wireMesh);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// orbit line rings</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const ringGeo = new THREE.RingGeometry(1.35, 1.37, 64);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const ringMat = new THREE.MeshBasicMaterial({ color: 0x00e5cc, side: THREE.DoubleSide, transparent: true, opacity: 0.15 });</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const ring1 = new THREE.Mesh(ringGeo, ringMat);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;ring1.rotation.x = Math.PI / 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(ring1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const ring2 = new THREE.Mesh(ringGeo, ringMat.clone());</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;ring2.rotation.y = Math.PI / 4;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;scene.add(ring2);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;function cycleShape(btn) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelectorAll('.ctrl-btn').forEach(b =&gt; b.classList.remove('active'));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn.classList.add('active');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const key = btn.textContent.trim();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const idx = shapeIdx[key] ?? 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.geometry = shapes[idx];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;window.cycleShape = cycleShape;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;function animate() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(animate);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const t = Date.now() * 0.001;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.rotation.x += 0.005;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.rotation.y += 0.009;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerMesh.rotation.x -= 0.007;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerMesh.rotation.z += 0.005;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireMesh.rotation.x = mesh.rotation.x * 0.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireMesh.rotation.y = mesh.rotation.y * 0.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring1.rotation.z += 0.003;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ring2.rotation.x += 0.004;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// pulse</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p = 1 + 0.05 * Math.sin(t * 1.8);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh.scale.set(p, p, p);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tealLight.position.x = 2.5 * Math.sin(t * 0.6);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tealLight.position.y = 1.5 * Math.cos(t * 0.4);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purpleLight.position.x = -2 * Math.cos(t * 0.8);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purpleLight.position.z = 2 * Math.sin(t * 0.5);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// color shift</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mat.emissive.setHex(Math.random() &gt; 0.99 ? 0x006655 : 0x002222);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer.render(scene, camera);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;animate();</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// noise bar canvas</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const noiseCanvas = document.getElementById('noise-canvas');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;noiseCanvas.width = 500;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;noiseCanvas.height = 36;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const nctx = noiseCanvas.getContext('2d');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;let noiseOffset = 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;function drawNoise() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(drawNoise);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.clearRect(0, 0, 500, 36);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.fillStyle = '#010808';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.fillRect(0, 0, 500, 36);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// signal line</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.beginPath();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.strokeStyle = 'rgba(0,229,204,0.5)';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.lineWidth = 1.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noiseOffset += 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let x = 0; x &lt; 500; x++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const y = 18 + Math.sin((x + noiseOffset) * 0.05) * 6</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ Math.sin((x + noiseOffset) * 0.13) * 3</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (Math.random() - 0.5) * 2.5;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x === 0 ? nctx.moveTo(x, y) : nctx.lineTo(x, y);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.stroke();</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// noise spikes</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 3; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const sx = Math.random() * 500;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.beginPath();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.strokeStyle = 'rgba(153,0,255,0.4)';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.lineWidth = 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.moveTo(sx, 0);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.lineTo(sx, 36);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nctx.stroke();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;drawNoise();</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// ASCII drift background</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;const ascii = '01アイウエオカキクケコ∂∇∅∞≠≈⊕⊗⊞⊟▓▒░█▐▌▄▀ ';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;function fillAscii() {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const el = document.getElementById('ascii-drift');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let str = '';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; 60 * 20; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str += ascii[Math.floor(Math.random() * ascii.length)];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i % 60 === 59) str += '\n';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.textContent = str;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;fillAscii();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;setInterval(fillAscii, 800);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;// live metrics</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;function pad(n) { return String(n).padStart(2, '0'); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;setInterval(() =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const cpu = Math.floor(45 + Math.random() * 40);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('cpu-val').textContent = cpu + '%';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('cpu-bar').style.width = cpu + '%';</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const mem = (3.2 + Math.random() * 2.4).toFixed(1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('mem-val').textContent = mem + 'GB';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('mem-bar').style.width = Math.min(95, (parseFloat(mem)/8)*100) + '%';</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const threads = [3,5,7,9,11,'??'][Math.floor(Math.random()*6)];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('thread-val').textContent = threads;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const depths = ['INF','∞','DEEP','NULL','N/A'][Math.floor(Math.random()*5)];</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('depth-val').textContent = depths;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const now = new Date();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('void-clock').textContent =</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('void-date').textContent =</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`${pad(now.getMonth()+1)}/${pad(now.getDate())}/${now.getFullYear()}`;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}, 1000);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&lt;/script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/html&gt;</span>
+            </p>
+            <p>
+</p>
+</div>
+        <div>
+            <p>
+</p>
+</div>
+</body></html>

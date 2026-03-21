@@ -1,451 +1,1378 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chlorocryptic Gnosis</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Share+Tech+Mono&display=swap');
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+Chlorocryptic Gnosis
+        </title>
+        <meta name="title" content="Chlorocryptic Gnosis">
+        <style type="text/css">
+<!-- #toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+	vertical-align:normal;
+}
+body{
+padding-top : 1in;
+padding-bottom : 1in;
+padding-left : 1in;
+padding-right : 1in;
+font-family:'Liberation Serif';
+font-variant:normal;
+text-indent:0in;
+widows:2;
+font-style:normal;
+font-weight:normal;
+text-decoration:none;
+color:#000000;
+text-align:left;
+font-size:12pt;
+} -->
+        </style>
 
-    :root {
-        --void: #020402;
-        --bio-slime: #0f2a15;
-        --terminal: #00ff41;
-        --ether: #ccffdd;
-        --occult-dim: #004d1a;
-        --glitch-color: #ff00ff;
-    }
+    </head>
+<body>        <div>
+            <p class="" style="text-align:left">
+<span>&lt;!DOCTYPE html&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;html lang="en"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;meta charset="UTF-8"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;title&gt;Chlorocryptic Gnosis&lt;/title&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Share+Tech+Mono&amp;display=swap');</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;:root {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--void: #020402;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--bio-slime: #0f2a15;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--terminal: #00ff41;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--ether: #ccffdd;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--occult-dim: #004d1a;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--glitch-color: #ff00ff;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;* {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: crosshair;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;body {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--void);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100vh;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100vw;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perspective: 1000px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Background Atmosphere --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.noise-overlay {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.08;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.scanlines {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to bottom,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255,255,255,0),</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(255,255,255,0) 50%,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0,0,0,0.4) 50%,</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgba(0,0,0,0.4)</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-size: 100% 4px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 100;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.6;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.vignette {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: radial-gradient(circle, transparent 40%, #000 120%);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 90;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Main Interface --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.altar-container {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 10;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 800px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 600px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: grid;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 2fr 1fr;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-rows: 1fr 4fr 1fr;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Ethereal Glow Orb --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.spirit-orb {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 50%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 50%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translate(-50%, -50%);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 400px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 400px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: radial-gradient(circle, rgba(0,255,65,0.2) 0%, rgba(0,0,0,0) 70%);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter: url(#wavy);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.6;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: breathe 8s infinite ease-in-out;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: -1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- The Sigil (Center) --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sigil-wrapper {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-column: 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-row: 2;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ring {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 50%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 15px var(--occult-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ring-1 { width: 300px; height: 300px; border-left: transparent; animation: spin 10s linear infinite; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ring-2 { width: 260px; height: 260px; border-right: transparent; border-top: transparent; border-color: var(--ether); animation: spin-rev 15s linear infinite; opacity: 0.7; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.ring-3 { width: 180px; height: 180px; border-style: dashed; animation: spin 20s linear infinite; opacity: 0.5; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.triangle {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-left: 100px solid transparent;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-right: 100px solid transparent;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 173.2px solid rgba(0, 255, 65, 0.1);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter: drop-shadow(0 0 5px var(--terminal));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.tri-up { animation: float 6s ease-in-out infinite; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.tri-down { transform: rotate(180deg); animation: float-rev 6s ease-in-out infinite; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.eye {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Cinzel Decorative', cursive;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 4rem;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--ether);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 20px var(--terminal), 0 0 40px var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 20;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: flicker 3s infinite;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user-select: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Data Columns --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.data-col {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 20px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid rgba(0, 255, 65, 0.2);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: rgba(0, 10, 0, 0.4);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backdrop-filter: blur(2px);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.data-col.left { grid-column: 1; grid-row: 2; border-right: 2px solid var(--terminal); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.data-col.right { grid-column: 3; grid-row: 2; border-left: 2px solid var(--terminal); text-align: right; }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.header-bar {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-column: 1 / -1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-row: 1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: flex-end;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.footer-bar {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-column: 1 / -1;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-row: 3;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding-top: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top: 1px solid var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Typography &amp; Elements --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;h1 {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Cinzel Decorative', cursive;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2rem;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 4px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--ether);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 0 0 10px var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.sub {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.8rem;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--occult-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 2px 5px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: #000;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glyph-stream {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line-height: 12px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--occult-dim);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.7;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.status-item {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 10px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.label { font-size: 0.7rem; color: var(--ether); opacity: 0.6; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.value { font-size: 1rem; color: var(--terminal); text-shadow: 0 0 5px var(--terminal); }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.btn-invoke {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: transparent;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Share Tech Mono', monospace;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.2rem;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px 40px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing: 2px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: 0.3s;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.btn-invoke:hover {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: var(--void);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 30px var(--terminal);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.btn-invoke::before {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: '';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: -100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition: 0.5s;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.btn-invoke:hover::before {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Glitch Effects --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-text {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: relative;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-text::before, .glitch-text::after {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content: attr(data-text);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: var(--void);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-text::before {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 2px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: -1px 0 red;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip: rect(24px, 550px, 90px, 0);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: glitch-anim-2 3s infinite linear alternate-reverse;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.glitch-text::after {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: -2px;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: -1px 0 blue;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clip: rect(85px, 550px, 140px, 0);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animation: glitch-anim 2.5s infinite linear alternate-reverse;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;/* --- Animations --- */</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes spin { 100% { transform: rotate(360deg); } }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes spin-rev { 100% { transform: rotate(-360deg); } }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes breathe {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes flicker {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 20px var(--terminal); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20%, 24%, 55% { opacity: 0.5; text-shadow: none; }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes glitch-anim {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0% { clip: rect(10px, 9999px, 30px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20% { clip: rect(50px, 9999px, 80px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40% { clip: rect(20px, 9999px, 60px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60% { clip: rect(80px, 9999px, 10px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80% { clip: rect(40px, 9999px, 90px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100% { clip: rect(70px, 9999px, 20px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes glitch-anim-2 {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0% { clip: rect(60px, 9999px, 10px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20% { clip: rect(10px, 9999px, 50px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40% { clip: rect(90px, 9999px, 20px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60% { clip: rect(30px, 9999px, 80px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80% { clip: rect(70px, 9999px, 40px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100% { clip: rect(20px, 9999px, 90px, 0); }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;@keyframes float-rev { 0%, 100% { transform: rotate(180deg) translateY(0); } 50% { transform: rotate(180deg) translateY(-10px); } }</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;.hex-bg {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 10rem;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: rgba(0, 255, 65, 0.02);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 20%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 20%;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index: 0;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/style&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/head&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;!-- SVG Filters for Ethereal Effects --&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;svg style="position: absolute; width: 0; height: 0;"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;filter id="wavy"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" result="noise"/&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;feDisplacementMap in="SourceGraphic" in2="noise" scale="30" /&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/filter&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/svg&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="noise-overlay"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="scanlines"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="vignette"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;div class="hex-bg"&gt;†&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;main class="altar-container"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header class="header-bar"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="glitch-text" data-text="CHLOROCRYPTIC"&gt;CHLOROCRYPTIC&lt;/h1&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="sub"&gt;LVL.07 // DEEP_NET_PROTOCOL&lt;/span&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="text-align: right;"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="label"&gt;SESSION_ID&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="value" id="session-id"&gt;0x9F_A3&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Left Data Column --&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;aside class="data-col left"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="status-item"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="label"&gt;PSYCHE_INTEGRITY&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="value" style="color: var(--ether)"&gt;96.4%&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="width: 100%; height: 2px; background: #004d1a; margin-top: 5px;"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="width: 96%; height: 100%; background: var(--terminal); box-shadow: 0 0 5px var(--terminal);"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="status-item"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="label"&gt;ETHER_PING&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="value"&gt;33ms&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glyph-stream" id="stream-left"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01001101 01011001 01010011 01010100 01001001 01000011</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VOID_ENTRY_DETECTED</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARSING_SOUL_DATA...</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HEX_DUMP: 0x00A 0xFF2</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Center Sigil --&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sigil-wrapper"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="spirit-orb"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ring ring-1"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ring ring-2"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ring ring-3"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="triangle tri-up"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="triangle tri-down"&gt;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="eye"&gt;👁&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Right Data Column --&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;aside class="data-col right"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="status-item"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="label"&gt;DAEMON_STATUS&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="value blink"&gt;LISTENING&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="status-item"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="label"&gt;ENCRYPTION&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="value"&gt;AES-256-GCM-OCCULT&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="glyph-stream" id="stream-right"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONNECTING...</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HANDSHAKE_INIT</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACCESS_GRANTED</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DOWNLOADING_GNOSIS</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer class="footer-bar"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn-invoke" onclick="alert('RITUAL_INITIATED: DO_NOT_DISCONNECT_SOUL')"&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ INVOKE_DAEMON ]</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/main&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Matrix Stream Effect for side panels</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function updateStream(elementId) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ†‡§abcdefghijklmnopqrstuvwxyz';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const el = document.getElementById(elementId);</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let text = '';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(let i=0; i&lt;15; i++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let line = '';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(let j=0; j&lt;8; j++) {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line += chars.charAt(Math.floor(Math.random() * chars.length));</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += line + '&lt;br&gt;';</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.innerHTML = text;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setInterval(() =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateStream('stream-left');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateStream('stream-right');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, 150);</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Random Session ID generation</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('session-id').innerText = '0x' + Math.floor(Math.random()*16777215).toString(16).toUpperCase();</span>
+            </p>
+            <p class="" style="text-align:left">
+<span></span></p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Interactive Eye Follow (Subtle)</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener('mousemove', (e) =&gt; {</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const eye = document.querySelector('.eye');</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const x = (window.innerWidth / 2 - e.pageX) / 50;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const y = (window.innerHeight / 2 - e.pageY) / 50;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eye.style.transform = `translate(${-x}px, ${-y}px)`;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span>
+            </p>
+            <p class="" style="text-align:left">
+<span> &nbsp;&nbsp;&nbsp;&lt;/script&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/body&gt;</span>
+            </p>
+            <p class="" style="text-align:left">
+<span>&lt;/html&gt;</span>
+            </p>
 
-    * {
-        box-sizing: border-box;
-        cursor: crosshair;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--void);
-        color: var(--terminal);
-        font-family: 'Share Tech Mono', monospace;
-        overflow: hidden;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        perspective: 1000px;
-    }
-
-    /* --- Background Atmosphere --- */
-    .noise-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.08;
-        pointer-events: none;
-        background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-        z-index: 0;
-    }
-
-    .scanlines {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to bottom,
-            rgba(255,255,255,0),
-            rgba(255,255,255,0) 50%,
-            rgba(0,0,0,0.4) 50%,
-            rgba(0,0,0,0.4)
-        );
-        background-size: 100% 4px;
-        z-index: 100;
-        pointer-events: none;
-        opacity: 0.6;
-    }
-
-    .vignette {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, transparent 40%, #000 120%);
-        z-index: 90;
-        pointer-events: none;
-    }
-
-    /* --- Main Interface --- */
-    .altar-container {
-        position: relative;
-        z-index: 10;
-        width: 800px;
-        height: 600px;
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 1fr 4fr 1fr;
-        gap: 20px;
-    }
-
-    /* --- Ethereal Glow Orb --- */
-    .spirit-orb {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        height: 400px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(0,255,65,0.2) 0%, rgba(0,0,0,0) 70%);
-        filter: url(#wavy);
-        opacity: 0.6;
-        animation: breathe 8s infinite ease-in-out;
-        z-index: -1;
-    }
-
-    /* --- The Sigil (Center) --- */
-    .sigil-wrapper {
-        grid-column: 2;
-        grid-row: 2;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .ring {
-        position: absolute;
-        border: 1px solid var(--terminal);
-        border-radius: 50%;
-        box-shadow: 0 0 15px var(--occult-dim);
-    }
-
-    .ring-1 { width: 300px; height: 300px; border-left: transparent; animation: spin 10s linear infinite; }
-    .ring-2 { width: 260px; height: 260px; border-right: transparent; border-top: transparent; border-color: var(--ether); animation: spin-rev 15s linear infinite; opacity: 0.7; }
-    .ring-3 { width: 180px; height: 180px; border-style: dashed; animation: spin 20s linear infinite; opacity: 0.5; }
-
-    .triangle {
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-left: 100px solid transparent;
-        border-right: 100px solid transparent;
-        border-bottom: 173.2px solid rgba(0, 255, 65, 0.1);
-        filter: drop-shadow(0 0 5px var(--terminal));
-    }
-    
-    .tri-up { animation: float 6s ease-in-out infinite; }
-    .tri-down { transform: rotate(180deg); animation: float-rev 6s ease-in-out infinite; }
-
-    .eye {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 4rem;
-        color: var(--ether);
-        text-shadow: 0 0 20px var(--terminal), 0 0 40px var(--terminal);
-        z-index: 20;
-        animation: flicker 3s infinite;
-        user-select: none;
-    }
-
-    /* --- Data Columns --- */
-    .data-col {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px;
-        border: 1px solid rgba(0, 255, 65, 0.2);
-        background: rgba(0, 10, 0, 0.4);
-        backdrop-filter: blur(2px);
-    }
-
-    .data-col.left { grid-column: 1; grid-row: 2; border-right: 2px solid var(--terminal); }
-    .data-col.right { grid-column: 3; grid-row: 2; border-left: 2px solid var(--terminal); text-align: right; }
-
-    .header-bar {
-        grid-column: 1 / -1;
-        grid-row: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--terminal);
-    }
-
-    .footer-bar {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        border-top: 1px solid var(--terminal);
-    }
-
-    /* --- Typography & Elements --- */
-    h1 {
-        margin: 0;
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 2rem;
-        letter-spacing: 4px;
-        color: var(--ether);
-        text-shadow: 0 0 10px var(--terminal);
-    }
-
-    .sub {
-        font-size: 0.8rem;
-        color: var(--occult-dim);
-        background: var(--terminal);
-        padding: 2px 5px;
-        color: #000;
-        font-weight: bold;
-    }
-
-    .glyph-stream {
-        font-size: 10px;
-        line-height: 12px;
-        color: var(--occult-dim);
-        overflow: hidden;
-        height: 100px;
-        opacity: 0.7;
-    }
-
-    .status-item {
-        margin-bottom: 10px;
-    }
-    
-    .label { font-size: 0.7rem; color: var(--ether); opacity: 0.6; }
-    .value { font-size: 1rem; color: var(--terminal); text-shadow: 0 0 5px var(--terminal); }
-
-    .btn-invoke {
-        background: transparent;
-        border: 1px solid var(--terminal);
-        color: var(--terminal);
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.2rem;
-        padding: 10px 40px;
-        letter-spacing: 2px;
-        transition: 0.3s;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .btn-invoke:hover {
-        background: var(--terminal);
-        color: var(--void);
-        box-shadow: 0 0 30px var(--terminal);
-        cursor: pointer;
-    }
-
-    .btn-invoke::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
-        transition: 0.5s;
-    }
-
-    .btn-invoke:hover::before {
-        left: 100%;
-    }
-
-    /* --- Glitch Effects --- */
-    .glitch-text {
-        position: relative;
-    }
-
-    .glitch-text::before, .glitch-text::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--void);
-    }
-
-    .glitch-text::before {
-        left: 2px;
-        text-shadow: -1px 0 red;
-        clip: rect(24px, 550px, 90px, 0);
-        animation: glitch-anim-2 3s infinite linear alternate-reverse;
-    }
-
-    .glitch-text::after {
-        left: -2px;
-        text-shadow: -1px 0 blue;
-        clip: rect(85px, 550px, 140px, 0);
-        animation: glitch-anim 2.5s infinite linear alternate-reverse;
-    }
-
-    /* --- Animations --- */
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-    @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-    
-    @keyframes breathe {
-        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
-    }
-
-    @keyframes flicker {
-        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 20px var(--terminal); }
-        20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
-    }
-
-    @keyframes glitch-anim {
-        0% { clip: rect(10px, 9999px, 30px, 0); }
-        20% { clip: rect(50px, 9999px, 80px, 0); }
-        40% { clip: rect(20px, 9999px, 60px, 0); }
-        60% { clip: rect(80px, 9999px, 10px, 0); }
-        80% { clip: rect(40px, 9999px, 90px, 0); }
-        100% { clip: rect(70px, 9999px, 20px, 0); }
-    }
-    
-    @keyframes glitch-anim-2 {
-        0% { clip: rect(60px, 9999px, 10px, 0); }
-        20% { clip: rect(10px, 9999px, 50px, 0); }
-        40% { clip: rect(90px, 9999px, 20px, 0); }
-        60% { clip: rect(30px, 9999px, 80px, 0); }
-        80% { clip: rect(70px, 9999px, 40px, 0); }
-        100% { clip: rect(20px, 9999px, 90px, 0); }
-    }
-
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    @keyframes float-rev { 0%, 100% { transform: rotate(180deg) translateY(0); } 50% { transform: rotate(180deg) translateY(-10px); } }
-
-    .hex-bg {
-        position: absolute;
-        font-size: 10rem;
-        color: rgba(0, 255, 65, 0.02);
-        top: 20%;
-        left: 20%;
-        z-index: 0;
-        pointer-events: none;
-    }
-</style>
-</head>
-<body>
-
-    <!-- SVG Filters for Ethereal Effects -->
-    <svg style="position: absolute; width: 0; height: 0;">
-        <filter id="wavy">
-            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
-        </filter>
-    </svg>
-
-    <div class="noise-overlay"></div>
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
-
-    <div class="hex-bg">†</div>
-
-    <main class="altar-container">
-        
-        <header class="header-bar">
-            <div>
-                <h1 class="glitch-text" data-text="CHLOROCRYPTIC">CHLOROCRYPTIC</h1>
-                <span class="sub">LVL.07 // DEEP_NET_PROTOCOL</span>
-            </div>
-            <div style="text-align: right;">
-                <div class="label">SESSION_ID</div>
-                <div class="value" id="session-id">0x9F_A3</div>
-            </div>
-        </header>
-
-        <!-- Left Data Column -->
-        <aside class="data-col left">
-            <div class="status-item">
-                <div class="label">PSYCHE_INTEGRITY</div>
-                <div class="value" style="color: var(--ether)">96.4%</div>
-                <div style="width: 100%; height: 2px; background: #004d1a; margin-top: 5px;">
-                    <div style="width: 96%; height: 100%; background: var(--terminal); box-shadow: 0 0 5px var(--terminal);"></div>
-                </div>
-            </div>
-            <div class="status-item">
-                <div class="label">ETHER_PING</div>
-                <div class="value">33ms</div>
-            </div>
-            <div class="glyph-stream" id="stream-left">
-                01001101 01011001 01010011 01010100 01001001 01000011 
-                VOID_ENTRY_DETECTED
-                PARSING_SOUL_DATA...
-                HEX_DUMP: 0x00A 0xFF2
-            </div>
-        </aside>
-
-        <!-- Center Sigil -->
-        <div class="sigil-wrapper">
-            <div class="spirit-orb"></div>
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div>
-            <div class="triangle tri-up"></div>
-            <div class="triangle tri-down"></div>
-            <div class="eye">👁</div>
         </div>
-
-        <!-- Right Data Column -->
-        <aside class="data-col right">
-            <div class="status-item">
-                <div class="label">DAEMON_STATUS</div>
-                <div class="value blink">LISTENING</div>
-            </div>
-            <div class="status-item">
-                <div class="label">ENCRYPTION</div>
-                <div class="value">AES-256-GCM-OCCULT</div>
-            </div>
-            <div class="glyph-stream" id="stream-right">
-                CONNECTING...
-                HANDSHAKE_INIT
-                ACCESS_GRANTED
-                DOWNLOADING_GNOSIS
-            </div>
-        </aside>
-
-        <footer class="footer-bar">
-            <button class="btn-invoke" onclick="alert('RITUAL_INITIATED: DO_NOT_DISCONNECT_SOUL')">
-                [ INVOKE_DAEMON ]
-            </button>
-        </footer>
-
-    </main>
-
-    <script>
-        // Matrix Stream Effect for side panels
-        function updateStream(elementId) {
-            const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ†‡§abcdefghijklmnopqrstuvwxyz';
-            const el = document.getElementById(elementId);
-            let text = '';
-            for(let i=0; i<15; i++) {
-                let line = '';
-                for(let j=0; j<8; j++) {
-                    line += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                text += line + '<br>';
-            }
-            el.innerHTML = text;
-        }
-
-        setInterval(() => {
-            updateStream('stream-left');
-            updateStream('stream-right');
-        }, 150);
-
-        // Random Session ID generation
-        document.getElementById('session-id').innerText = '0x' + Math.floor(Math.random()*16777215).toString(16).toUpperCase();
-        
-        // Interactive Eye Follow (Subtle)
-        document.addEventListener('mousemove', (e) => {
-            const eye = document.querySelector('.eye');
-            const x = (window.innerWidth / 2 - e.pageX) / 50;
-            const y = (window.innerHeight / 2 - e.pageY) / 50;
-            eye.style.transform = `translate(${-x}px, ${-y}px)`;
-        });
-    </script>
 </body>
 </html>
